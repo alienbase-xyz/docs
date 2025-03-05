@@ -55,6 +55,12 @@ If you decide to unlock all or part of your escrowed tokens, they will become "V
 
 You will see your vested tokens under the "Vested" category in the Dashboard, with a countdown and a "Redeem" button that will be enabled after the vesting period of 30 days ends.&#x20;
 
+{% hint style="warning" %}
+You will have 7 days to Redeem your tokens. If tokens are not redeemed after 7 days they will be automatically re-locked and another 30 days of vesting will be required for the unlock.
+{% endhint %}
+
+
+
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 23.11.35.png" alt=""><figcaption><p>AlienBase Dashboard</p></figcaption></figure>
 
 ### Unlock 1% every 12 hours
