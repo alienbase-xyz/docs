@@ -1,18 +1,13 @@
-# Contracts & Timelocks
+# Contracts
 
 Token
 
 * Ticker: $ALB
 * Contract: [https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)
 * Max Supply: 510 Million
-* Initial supply: 5.1% (26 Million)
-* 25 million ALB was placed behind a time lock contract at
-  * &#x20;[https://basescan.org/tx/0x44d3753e8e0e104f4751665af885c77fc8ee338abd377496cb33b1a35b10aca9](https://basescan.org/tx/0x44d3753e8e0e104f4751665af885c77fc8ee338abd377496cb33b1a35b10aca9)
-  * [https://basescan.org/tx/0x5936515cc428ce9d66396d995b490f059da4152c182e1e8f42dc7ce6a38fd278](https://basescan.org/tx/0x5936515cc428ce9d66396d995b490f059da4152c182e1e8f42dc7ce6a38fd278)
-* These ALB are reserved as a treasury and vested team allocation, and aren't currently part of circulating supply. The timelock lasts forever, as it introduces a 7 day delay to any action. Any movement can be tracked and will be announced by the team.
+* Initial supply: 5.1% (26 Million)\
 
-\
-\
+
 DEX Contracts:
 
 * Factory: [https://basescan.org/address/0x3e84d913803b02a4a7f027165e8ca42c14c0fde7](https://basescan.org/address/0x3e84d913803b02a4a7f027165e8ca42c14c0fde7)

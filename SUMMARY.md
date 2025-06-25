@@ -4,7 +4,7 @@
 * [ALB Token](alb-token.md)
 * [Escrowed ALB (esALB)](escrowed-alb-esalb/README.md)
   * [Changing allowance](escrowed-alb-esalb/changing-allowance.md)
-* [Contracts & Timelocks](contracts-and-timelocks.md)
+* [Contracts](contracts.md)
 * [Roadmap](roadmap.md)
 * [Alien Base DAO](alien-base-dao/README.md)
   * [DAO Multisig](alien-base-dao/dao-multisig.md)
