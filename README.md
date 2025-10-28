@@ -1,5 +1,5 @@
 ---
-description: Welcome to the Alien Base Documentation
+Description: Welcome to the Alien Base Documentation
 ---
 
 # Alien Base Docs
