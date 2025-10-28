@@ -12,7 +12,7 @@ In decentralized finance (DeFi), "allowance" refers to the permission that token
 
 #### **Step 1: Understanding Allowance**
 
-Before adjusting allowances, it's important to understand why they are necessary:
+Before adjusting allowances, it is important to understand why they are necessary:
 
 * **Security Measure**: Allowances limit how much a contract can handle without requiring further authorization, protecting your funds.
 * **Functionality**: For certain features like farming or trading on decentralized exchanges, setting the correct allowance ensures these functions work without interruption.
