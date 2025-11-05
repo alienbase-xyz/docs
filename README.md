@@ -2,38 +2,54 @@
 description: Welcome to the Alien Base Documentation
 ---
 
-# Alien Base Docs
+# Alien Base Documentation
 
-Alien Base revolutionises DeFi by offering fast, secure swaps and easy token launches.
+Alien Base is redefining DeFi by providing lightning-fast swaps, secure transactions, and effortless token launches.
 
-### Quick Start
+## Overview
 
-Alien Base is dedicated to enhancing the trading experience on DeFi by offering a CEX-like interface combined with the privacy benefits of decentralized finance.&#x20;
+Alien Base enhances decentralized trading with a **CEX-like interface** while maintaining the **privacy and autonomy** that DeFi users expect.
 
-Through its innovative Epsilon technology, Alien Base seamlessly aggregates all pools on the Base network, selecting the safest and most efficient pathways for quicker and more cost-effective swaps.&#x20;
+Powered by **Epsilon aggregation technology**, the platform automatically identifies and routes trades through the most efficient and secure liquidity pools on the **Base Network**.  
+This ensures each swap is optimized for speed, safety, and minimal cost.
 
-Additionally, with features like our token generator and straightforward pool deployment, Alien Base simplifies the trading process for users and enables developers to launch their own tokens in mere seconds.&#x20;
+Developers can deploy tokens and liquidity pools in just seconds using Alien Base’s streamlined tools, making it an ideal environment for both traders and builders.
 
-This integration of advanced technology ensures a superior trading experience that is both user-friendly and developer-friendly.
+---
 
-For more information on Roadmap, Contracts and guides for specific products, check the dedicated pages on the Docs.
+## Quick Start
 
-**Quick Stats and Links:**
+1. **Explore the App** — Visit the Alien Base interface and connect your wallet.  
+2. **Swap Tokens** — Enjoy low swap fees and optimized routes.  
+3. **Launch Your Token** — Deploy your own token with the built-in token generator.  
+4. **Earn Rewards** — Provide liquidity and farm without hidden fees or taxes.
 
-* Github: [https://github.com/alienbase-xyz/](https://github.com/alienbase-xyz/)
-* Swap Fees: 0.16%
-* No buy/sell taxes or deposit/withdraw fees on farming
-* Token
-  * Ticker: $ALB
-  * Contract: [https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)
-  * Max Supply: 510 Million
-  * Initial supply: 5.1% (26 Million)
-  * Circulating Supply (as of October 2023): 52,000,000 ALB
-  * Monthly Emission Rate: 20,700,000 ALB
-* DEX Contracts:
-  * Factory: [https://basescan.org/address/0x3e84d913803b02a4a7f027165e8ca42c14c0fde7](https://basescan.org/address/0x3e84d913803b02a4a7f027165e8ca42c14c0fde7)
-  * Router: [https://basescan.org/address/0x8c1A3cF8f83074169FE5D7aD50B978e1cD6b37c7](https://basescan.org/address/0x8c1A3cF8f83074169FE5D7aD50B978e1cD6b37c7)
-  * Farm Contract: [https://basescan.org/address/0x52eaecac2402633d98b95213d0b473e069d86590](https://basescan.org/address/0x52eaecac2402633d98b95213d0b473e069d86590)
+Alien Base combines efficiency, transparency, and accessibility for a next-generation DeFi experience.
 
+---
 
+## Quick Stats and Links
 
+- **Website:** [Alien Base](https://alienbase.xyz)
+- **GitHub:** [https://github.com/alienbase-xyz/](https://github.com/alienbase-xyz/)
+- **Swap Fees:** 0.16%
+- **Taxes/Fees:** No buy/sell taxes or deposit/withdrawal fees on farming
+
+### Token ($ALB)
+- **Contract:** [0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)
+- **Max Supply:** 510,000,000 ALB  
+- **Initial Supply:** 26,000,000 ALB (5.1%)  
+- **Circulating Supply (October 2023):** 52,000,000 ALB  
+- **Monthly Emission Rate:** 20,700,000 ALB  
+
+### DEX Contracts
+- **Factory:** [0x3e84d913803b02a4a7f027165e8ca42c14c0fde7](https://basescan.org/address/0x3e84d913803b02a4a7f027165e8ca42c14c0fde7)  
+- **Router:** [0x8c1A3cF8f83074169FE5D7aD50B978e1cD6b37c7](https://basescan.org/address/0x8c1A3cF8f83074169FE5D7aD50B978e1cD6b37c7)  
+- **Farm Contract:** [0x52eaecac2402633d98b95213d0b473e069d86590](https://basescan.org/address/0x52eaecac2402633d98b95213d0b473e069d86590)
+
+---
+
+## Learn More
+
+For guides on liquidity pools, token creation, farming, and more, visit the dedicated sections of this documentation.  
+Stay tuned for updates on the roadmap, governance features, and advanced developer integrations.
