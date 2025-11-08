@@ -21,7 +21,7 @@ For more information on Roadmap, Contracts and guides for specific products, che
 **Quick Stats and Links:**
 
 * Github: [https://github.com/alienbase-xyz/](https://github.com/alienbase-xyz/)
-* Swap Fees: 0.16%
+* Swap Fees: 0.17%
 * No buy/sell taxes or deposit/withdraw fees on farming
 * Token
   * Ticker: $ALB
