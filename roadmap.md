@@ -1,39 +1,70 @@
-# Roadmap
+# 🛸 Alien Base Roadmap
 
-Alien Base is designed to be the human-friendly DEX for trading on Base and beyond. By focusing on user interface and utility, you will be able to enjoy the richest trading experience across all chains and all other liquidity sources.
+**Alien Base** is built to be the most **human-friendly DEX** for trading on **Base** and beyond.  
+By focusing on **user interface**, **utility**, and **accessibility**, Alien Base delivers the **richest cross-chain trading experience** — connecting liquidity and technology from across the DeFi universe.
 
-The idea is: when you trade on Alien Base, you use alien technology to trade everywhere.
+> **When you trade on Alien Base, you use alien technology to trade everywhere.**
 
-### 2024 Roadmap
+---
 
-**Liquidity Aggregation and Indexing**
+## 🚀 2024 Roadmap
 
-The first stage of our vision is integrating liquidity and pairs from everywhere. From Alien Base, you will be able to see at a glance everything that is happening onchain to make quick and snappy decisions.
+### 🧭 Liquidity Aggregation & Indexing
 
-This includes advanced charts, token analysis, holder analysis, tagging and much more.
+The first phase of the mission is **integrating liquidity and trading pairs from every major source**.  
+From within Alien Base, traders will gain **a unified view of all on-chain activity**, enabling **fast and informed decisions**.
 
-**Advanced trading tools**
+This stage includes:
+- Advanced charting and analytics  
+- Token and holder analysis  
+- Real-time pair indexing  
+- Smart tagging and watchlists  
 
-Alien Base traders must have full access to trading tools, even in DeFi. This means true limit orders, stop loss, TWAP and more.&#x20;
+---
 
-**Margin Trading & Project Quasar**
+### ⚙️ Advanced Trading Tools
 
-One of the key components of healthy markets is the ability to go leverage long and short. This will be enabled by Quasar, our advanced lending platform.
+Alien Base empowers traders with **CEX-level tools in a DeFi environment**, ensuring full control and precision.  
+Upcoming features include:
+- True **limit orders**
+- **Stop-loss** and **take-profit** orders
+- **TWAP** (Time-Weighted Average Price) orders  
+- Enhanced execution visualization and analytics  
 
-Project Quasar is a lending and options platform built on top of the Alien Base pools that allows traders to supply and borrow a much wider range of assets than seen on other platforms.
+---
 
-This includes newly launched tokens for memecoins or smaller DeFi/NFT projects, as well as LP positions on V2 and V3.
+### 💫 Margin Trading & Project Quasar
 
-Over time, this will evolve into a full-on options platform powered by LP positions.
+Healthy markets require **leverage and flexibility** — and Alien Base will deliver both through **Project Quasar**.
 
-### Project Nebula
+**Quasar** is a **lending and options platform** built on Alien Base’s liquidity pools, allowing:
+- Leveraged **long** and **short** positions  
+- Borrowing and supplying across a broad set of assets  
+- Support for **newly launched tokens**, **memecoins**, and **smaller DeFi/NFT projects**  
+- Collateralization of **V2 and V3 LP positions**  
 
-Project Nebula is Alien Base V2, an evolution of the AMM architecture to enable spot and derivatives trading in one system.
+Over time, Quasar will evolve into a **comprehensive DeFi options engine**, powered by LP-backed liquidity.
 
-It will support deep, permissionless and flexible liquidity on any kind of asset, from the most liquid to the freshly-launched gems. Compared to existing concentrated liquidity, it will be more effective and automated, maintaining the spirit of DeFi while making it simpler for humans to use.
+---
 
-The vision for Nebula is to become the ultimate DeFi platform, uniting all key swapping primitives, spot, derivatives in one place.
+## 🌌 Project Nebula — Alien Base V2
 
-### Future Work
+**Project Nebula** represents the next evolutionary leap — a **unified AMM architecture** that merges **spot and derivatives trading** into a single protocol.
 
-The aliens have more ideas to bring to Earth, including things that aren't all about swapping. The roadmap for the far future is in flux for now, but it will not finish any time soon.
+Nebula aims to provide:
+- Deep, permissionless, and flexible liquidity  
+- Native support for all asset types, from blue chips to brand-new tokens  
+- Automated position management with simplified concentrated liquidity  
+- A user experience that retains **DeFi’s openness** while feeling **intuitive and human**  
+
+The **Nebula vision** is to create **the ultimate DeFi hub**, where **swaps, derivatives, and liquidity** coexist harmoniously.
+
+---
+
+## 👽 Future Work
+
+The aliens have even more **technologies to bring to Earth**.  
+While some remain classified for now, future updates will extend beyond swapping — expanding Alien Base into **new forms of decentralized infrastructure** and **cross-chain synergy**.
+
+> 🚀 The roadmap may evolve, but the mission continues:  
+> to make DeFi **faster, smarter, and truly universal**.
