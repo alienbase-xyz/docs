@@ -17,8 +17,8 @@ ALB is the native token of Alien Base — used for governance, staking, liquidit
 | Network | Base (chain id 8453) |
 | Token Generation Event | August 8, 2023 |
 | Current max supply | 510,000,000 ALB |
-| Currently minted | ~461,500,000 ALB (~90.5% of cap) |
-| Circulating supply | ~234,000,000 ALB (~46% of cap) |
+| Currently minted | ~467,000,000 ALB (~91.6% of cap) <!-- as of 2026-06-30, CoinGecko --> |
+| Circulating supply | ~236,000,000 ALB (~46% of cap) <!-- as of 2026-06-30, CoinGecko --> |
 | Mint timelock | 14 days (no insider mint without delay) |
 
 For up-to-date market data: [CoinGecko](https://www.coingecko.com/en/coins/alienbase) · [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) · [DefiLlama](https://defillama.com/protocol/alien-base-v3).
@@ -43,7 +43,7 @@ Alien Base's emission schedule has changed several times since launch as the DAO
 | 2025-06 | ~1.875 ALB/sec (yearly inflation 30% → 15%) | 3rd halving — confirmed in the [Oct 2025 roadmap retrospective](https://medium.com/@alienbase/alien-base-roadmap-plotting-the-next-phase-of-the-invasion-11ede525e2ea) |
 | 2026-04 | **Flexible emissions, no fixed halving** | [AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2) — replaces farming with POL fund + buyback-and-burn |
 
-Today, **~90.5% of the original 510M cap has been minted**. The team cannot mint additional ALB without going through the 14-day timelock; farming emission parameters are also timelocked for 7 days.
+Today, **~91.6% of the original 510M cap has been minted** (~467M ALB, of which ~236M circulates and the rest is locked as esALB). The team cannot mint additional ALB without going through the 14-day timelock; farming emission parameters are also timelocked for 7 days.
 
 > The original "halving every 9 months" schedule was a launch-time plan. As the project matured, the DAO adjusted the path twice (AIP-3, AIP-4) to align emissions with revenue, and finally replaced the halving model entirely (AIP-5) with a flexible system tied to protocol earnings.
 

@@ -8,6 +8,23 @@ Alien Base data is published live across several venues. The **Dune dashboard ma
 
 > *Last updated: {{today}}.*
 
+## Market snapshot
+
+Point-in-time figures, refreshed manually. Treat these as a sanity check, not live data — click through to the source for the current number.
+
+| Metric | Value | As of | Source |
+| --- | --- | --- | --- |
+| ALB price | ~$0.0039 | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Market cap | ~$0.93M | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Fully-diluted valuation | ~$1.83M | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Circulating supply | ~236M ALB | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Total minted supply | ~467M ALB (~91.6% of the 510M cap) | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| All-time high | $0.5724 on 2024-11-27 (−99% from ATH) | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| TVL | ~$1.5M | 2026-06-30 | [DefiLlama](https://defillama.com/protocol/alien-base) |
+| Deepest pool | ALB/WETH on Alien Base, ~$145k liquidity | 2026-06-30 | [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) |
+
+> **esALB share, holder counts, per-pair volume, lifetime trades/users, and protocol-fee totals** are not exposed by these public APIs — read them off the [Dune dashboard](https://dune.com/sealaunch/alienbase) (`ALB Token & esALB` and `Alien Base Overview` panels) and update the [Welcome page](README.md) Quick Stats when they move materially. <!-- TODO:USER refresh esALB-locked %, holder counts, lifetime users from Dune -->
+
 ## Canonical dashboard — Dune (Sealaunch)
 
 **[dune.com/sealaunch/alienbase](https://dune.com/sealaunch/alienbase)** — the official Alien Base analytics dashboard, developed in partnership with [Sealaunch](https://www.sealaunch.xyz/).
