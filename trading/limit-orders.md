@@ -36,7 +36,9 @@ Quick preset buttons (**±5% / ±10% / ±25%**) set the trigger relative to the 
 6. Choose the expiry (default **1 week**) and slippage (default 0.5%).
 7. Review → confirm in your wallet.
 
-The order rests on-chain. You'll find it under **Open orders** in the positions panel; filled and expired orders move to **Closed orders**.
+The order rests on-chain. You'll find it under **Open orders** in the positions panel — with type, amount, trigger price, live distance to trigger, and time to expiry — and its trigger level is drawn directly on the chart. Filled and expired orders move to **Closed orders**.
+
+![Open orders tab — a resting stop loss with its trigger line on the chart](../.gitbook/assets/17-open-orders.png)
 
 ## Take Profit and Stop Loss together
 

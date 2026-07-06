@@ -18,6 +18,8 @@ Three core surfaces:
 - **Token detail** — for any token: live price, charts, holder distribution, top pools, top trades, and an automated **GoPlus safety check** flagging things like honeypot risk, owner-can-mint, blacklist functions, and so on.
 - **Pool detail** — for any pool on any supported venue: TVL, 24h volume, fee tier, and recent trades.
 
+![Token detail — chart, pool balance, live transactions, holders, and price scenarios (here a WETH/USDC pool on another DEX — the Explorer covers all of Base)](../.gitbook/assets/22-token-detail-explorer.png)
+
 Powerful filtering (Token Filters panel) lets you slice on price, liquidity, market cap, holder count, age, txn count, dev address, "show risky tokens" toggle, and more. Useful for systematic discovery; brutal for memecoin hunters.
 
 Access via the **Explorer** entry in the dApp sidebar, or directly at [app.alienbase.xyz/info](https://app.alienbase.xyz/info).

@@ -20,7 +20,9 @@ A DCA (Dollar-Cost-Average) order splits a single buy or sell into many smaller 
 6. (Optional) **+ Trigger price** — the DCA stays dormant until the market reaches this price, then starts executing.
 7. Set slippage (default 0.5%) and confirm.
 
-The order rests on-chain in the [Epsilon Router](epsilon.md#the-epsilon-router). At each interval the **Matcher** executes one chunk, routed through whichever venue gives the best price at that moment. Track progress in the **Active DCAs** tab of the positions panel.
+The order rests on-chain in the [Epsilon Router](epsilon.md#the-epsilon-router). At each interval the **Matcher** executes one chunk, routed through whichever venue gives the best price at that moment. Track progress in the **Active DCAs** tab of the positions panel: chunks completed, amount sold, average fill price, amount received, and countdown to the next order.
+
+![Active DCAs tab — a running DCA with progress and next-order countdown](../.gitbook/assets/18-active-dcas.png)
 
 ## Stop-loss DCA
 
