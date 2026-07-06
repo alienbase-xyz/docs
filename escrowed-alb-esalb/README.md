@@ -1,74 +1,105 @@
 ---
-description: Details about escrowed ALB (esALB), its functionalities and benefits
+description: Escrowed ALB — what it is, what it does, and how to use it
 ---
 
 # Escrowed ALB (esALB)
 
-## What is esALB?
+**esALB** is the locked, non-transferable form of ALB. It's the asset that earns governance voting power, single-staking APR, and **Real Yield** (WETH from protocol fees). If you plan to hold ALB long-term, you almost certainly want it as esALB.
 
-$esALB is an escrowed version of the $ALB token. This means that to obtain it you need to interact with a contract and lock whatever percentage of your ALB holdings. EsALB is non transferable. By holding esALB, you are able to single stake your ALB holdings and earn APR.&#x20;
+> *Last updated: July 6, 2026.*
 
-More benefits of owning esALB include all governance decisions, airdrops and extra rewards that will be only delivered to esALB or other locked LP holders.
+## In one paragraph
 
-For a more detailed description about the role of esALB on AlienBase read the following release article: [_Introducing EsALB: The Next Phase of Alien Base Tokenomics_](https://medium.com/@alienbase/introducing-esalb-the-next-phase-of-alien-base-tokenomics-e5bfa049486f)
+You convert ALB → esALB **1:1** via the Lock UI on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is non-transferable. You can stake esALB to earn unlocked ALB, vote on Snapshot, and receive Real Yield in WETH. To convert back, you use one of two paths (mixable): **100% in 30 days** with no penalty, or **1% every 12 hours** instantly. Both are documented below.
 
-## How does esALB work?
+## At a glance
 
-esALB works similarly to xGRAIL on the Camelot protocol (and the contracts are heavily based on it). You can decide to exchange your ALB for esALB, and use esALB to unlock benefits on the AlienBase platform. At any moment you can decide to unlock your ALB by exchanging esALB to ALB.
+| | |
+| --- | --- |
+| esALB token | [`0x365c6d58…4113`](https://basescan.org/address/0x365c6d588e8611125de3bea5b9280c304fa54113) |
+| Lock ratio | 1 ALB → 1 esALB (and back) |
+| Transferable? | No. esALB is bound to the address that minted it. |
+| Voting weight | 1× per esALB (10× per [govALB](#govalb-coming-via-aip-5) once AIP-5 ships) |
+| Earn while staking? | Yes — unlocked ALB rewards from the esALB single-stake vault |
+| Real Yield? | Yes — pro-rata share of WETH protocol fees |
 
-## How to lock ALB into esALB?
+## What esALB is for
 
-From the [Dashboard](https://app.alienbase.xyz/liquidity) section on AlienBase, you can toggle your portfolio view (the one on the right). You will see your $ALB balance, together with other tokens in your wallet. Under your ALB balance, there is a "Lock" button.&#x20;
+- **Single-staking APR.** Stake esALB under **Locked earn** on the [Vaults](https://app.alienbase.xyz/vaults) page to farm unlocked ALB.
+- **Real Yield.** Stakers earn a share of protocol fees, paid in **WETH**, **USDC**, and other liquid assets — not in extra ALB inflation. Details: [Real Yield](real-yield.md).
+- **Governance.** Voting power on Snapshot is weighted by esALB. See [Alien Base DAO](../alien-base-dao/README.md).
+- **Airdrops & extra rewards.** Targeted distributions (partner tokens, special-event drops) generally land in esALB holders' wallets.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 22.47.16.png" alt=""><figcaption><p>the AlienBase dashboard</p></figcaption></figure>
+## How to lock ALB into esALB
 
-By clicking on the "Lock" button, a modal will appear where you can select the amount of ALB you are willing to lock. You will be first asked to Approve the contract to interact with the ALB in your wallet, and then Confirm the transaction to exchange ALB to esALB.
+1. Open the [Dashboard](https://app.alienbase.xyz/dashboard) and find your ALB balance in the portfolio panel on the right.
+2. Click **Lock**. A modal opens.
+3. Choose the amount of ALB to lock.
+4. Approve the esALB contract to spend ALB (one-time, per address).
+5. Confirm the conversion transaction.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 22.50.41.png" alt=""><figcaption><p>Lock ALB preview modal</p></figcaption></figure>
+You'll receive 1 esALB for every ALB locked. To see the esALB balance in your wallet, add the contract address [`0x365c6d58…4113`](https://basescan.org/address/0x365c6d588e8611125de3bea5b9280c304fa54113) as a custom token.
 
-Once Confirmed, a transaction will execute which will remove ALB from your balance and give in return the same amount in esALB. Now you will see esALB in your wallet. To add esALB on your wallet add the following address: [0x365c6d588e8611125De3bEA5B9280C304FA54113](https://basescan.org/address/0x365c6d588e8611125de3bea5b9280c304fa54113)
+## Staking esALB
 
-## What can I do with esALB?
+After locking, head to the [Vaults](https://app.alienbase.xyz/vaults) page → **Locked earn** tab. The **esALB** position is at the top, next to the escrowed ALB-WETH LP positions (Infinite and Backstop).
 
-esALB allows ALB holders to access major benefits, but mainly the ability to single stake their ALB tokens with high APRs, in exchange for making them illiquid (i.e. not having immediate access to your ALB holdings)
+![Locked earn](../.gitbook/assets/08-locked-earn.png)
 
-Once you locked your ALB for esALB, you can go on the [Farms page](https://app.alienbase.xyz/farms) and you will see the esALB single stake farm. After you Enable the farm, you can stake your esALB and start farming ALB.&#x20;
+1. Click **Enable** to authorize the staking contract to move esALB.
+2. Click **Stake** and choose the amount.
+3. Rewards (unlocked ALB) accrue continuously. The APR is shown split by source (ALB emissions vs. Real Yield). Click **Harvest** (or **Harvest all**) any time to claim.
 
-The escrowed ALB tokens will be farming unlocked ALB tokens with generally higher APRs than unlocked single-staking farms.
+Your staked esALB still counts for **governance voting** and **Real Yield**.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 22.58.47.png" alt=""><figcaption><p>AlienBase Farm Page</p></figcaption></figure>
+## How to unlock back to ALB
 
-## How do I unlock my ALB holdings?
+You can mix and match two redemption paths:
 
-Exchanging your esALB for ALB can be done at any moment in **2 main ways:**&#x20;
+### Path A — 100% in 30 days, no penalty
 
-* Unlocking 1% every 12 hours
-* Unlocking 100% in 30 days (with no penalty)
+1. On the Dashboard, find your locked esALB position. (If it's staked in the single-stake vault, unstake first.)
+2. Click **Unlock** → choose **30 days**.
+3. The esALB enters a "Vested" state for 30 days. While vesting, **you continue to earn rewards at a 30% reduction**.
+4. After 30 days the **Redeem** button enables.
 
-To start any unlocking process, you will have to click on the "Unlock" button next to your esALB position in the [Dashboard](https://app.alienbase.xyz/liquidity). If you do not see your locked position, it might be because it's staked in the esALB Single Stake, so unstake before. Once you click the "Unlock" button, you will be presented with the 2 options.
+> {% hint style="warning" %}
+> You have **7 days** to redeem after vesting completes. If you miss the window, the position re-locks and starts a new 30-day vesting cycle.
+> {% endhint %}
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 23.08.04.png" alt=""><figcaption><p>Unlock modal on AlienBase platform</p></figcaption></figure>
+### Path B — 1% every 12 hours, instant
 
-### Unlock 100% in 30 days
+1. On the Dashboard, click **Unlock** → choose **1% every 12 hours**.
+2. Confirm the transaction. You instantly receive 1% of your esALB position back as ALB.
+3. You can repeat every 12 hours. A countdown shows when the next claim is available.
 
-If you decide to unlock all or part of your escrowed tokens, they will become "Vested" for 30 days. While in the vesting period, **you will still farm with reduced APRs (reduced by 30%)**, so your holdings will still produce returns.&#x20;
+The 1% is computed against your **total** esALB position, including any portion currently in 30-day vesting. You can use both paths simultaneously — e.g., put half into 30-day redemption and drip the rest 1% per 12h.
 
-You will see your vested tokens under the "Vested" category in the Dashboard, with a countdown and a "Redeem" button that will be enabled after the vesting period of 30 days ends.&#x20;
+## Common pitfalls
 
-{% hint style="warning" %}
-You will have 7 days to Redeem your tokens. If tokens are not redeemed after 7 days they will be automatically re-locked and another 30 days of vesting will be required for the unlock.
-{% endhint %}
+- **"I don't see my locked esALB on the Dashboard."** It's probably staked in the esALB Single Stake vault. Unstake first; it'll reappear under your portfolio.
+- **"My approve transaction succeeded but Lock still says I need to approve."** Likely an allowance-cap quirk on Base. See [Changing allowance](changing-allowance.md).
+- **"I missed the 7-day redeem window."** It auto-relocks. Re-trigger redemption to start a fresh 30-day cycle, or use Path B to drip out.
+- **"Why is my staking APR lower than expected?"** APR includes the unlocked ALB stream from the vault. The Real Yield (WETH) is shown separately. Total economics is APR + WETH yield + governance optionality.
 
+## govALB (coming via AIP-5)
 
+[AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2) introduces **govALB** — a longer-locked variant of esALB that confers **10× voting weight**. The trade-off is a longer effective lock (~2 years). It's designed for users who want maximum governance influence and are willing to commit time for it. Mechanics will be documented as it rolls out — see [Alien Base 2.0](../alien-base-2-0.md).
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 23.11.35.png" alt=""><figcaption><p>AlienBase Dashboard</p></figcaption></figure>
+## Live data
 
-### Unlock 1% every 12 hours
+The [Dune dashboard](https://dune.com/sealaunch/alienbase) tracks esALB live:
 
-You can decide to unlock 1% of your esALB into ALB every 12 hours, on a continuous basis. This option allows you to slowly remove from your escrowed position. To do that, just select the "1% every 12 hours" option in the Unlock Modal.&#x20;
+- **esALB Holders** — current count and growth over time.
+- **ALB locked on esALB** and **ALB in esALB** — the supply view.
+- **ALB-esALB Lock/Unlock** — daily inflows/outflows between ALB and esALB.
+- **Total Holders (ALB + esALB)** — combined holder count, useful for evaluating decentralization.
 
-After confirming the transaction, you will immediately receive 1% on your locked ALB. You can repeat this every 12 hours. A countdown in the modal will appear if 12 hours didn't pass yet.
+## See also
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-25 at 23.16.55.png" alt=""><figcaption><p>Unlock Modal with countdown</p></figcaption></figure>
-
-These two paths can be mixed and matched. For example, you can place 50% of your stash into a full 30 day redemption, and unlock the rest gradually every 12 hours. The 1% is counted against your entire position, including the portion currently in redemption.
+- [esLP](eslp.md) — locked LP positions (e.g., ALB-ETH).
+- [Vesting](vesting.md) — long-form vesting schedules (team, advisors, contributors).
+- [Real Yield (WETH)](real-yield.md) — the protocol-fee distribution mechanism.
+- [Changing allowance](changing-allowance.md) — fixing the "approve but won't lock" issue.
+- [Data & Analytics](../data-and-analytics.md) — full data-source map.
+- [Introducing EsALB: The Next Phase of Alien Base Tokenomics](https://medium.com/@alienbase/introducing-esalb-the-next-phase-of-alien-base-tokenomics-e5bfa049486f) — original launch article.

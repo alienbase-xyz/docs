@@ -8,7 +8,7 @@ description: How protocol fees are distributed to esALB stakers as WETH yield
 
 It's the central reason esALB exists: instead of diluting holders with emissions, the protocol returns a portion of its actual revenue to the people who lock long-term.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## How it works
 
@@ -34,9 +34,8 @@ Protocol-share collection mechanics:
 
 - **V2 pools.** Pools charge **0.16%** per swap, paid to LPs in-pool. The V2 Factory's `feeToSetter` is the DAO Multisig — the protocol-side carve-out can be enabled by DAO vote.
 - **V3 pools.** Each fee tier collects fees automatically; **50% goes to LPs and 50% goes to esALB stakers** as Real Yield. The seven tiers are 0.01% / 0.02% / 0.03% / 0.04% / 0.075% / 0.30% / 1.00%. (AIP-2 originated the LP/staker fee-sharing structure; the current split is 50/50.)
-- **Epsilon front-end fee** on non-native pools — **0.03%** for blue chips (stables / ETH / BTC), **0.20%** for everything else. Routed to the Treasury / esALB stream.
-- **Carbon orders** (Limit / Range / Recurring) — **0.40%** Alien Base fee on the executed trade, on top of the maker's spread. Routed to the Treasury / esALB stream.
-- **DCA orders** — same schedule as Epsilon (**0.03%** blue chips, **0.20%** everything else) per chunk.
+- **Epsilon platform fees** on every swap — **0.01%** stables / **0.05%** blue chips / **0.15%** everything else, plus the flat 0.05% Matcher execution fee. Routed to the Treasury / esALB stream.
+- **Epsilon Router orders** — tiered fees on Limit / Take Profit (0.01–0.10%), Stop Loss / Trailing Stop (0.10–0.45%), and DCA chunks (0.01–0.20%), each plus the 0.05% Matcher fee. Routed to the Treasury / esALB stream. Full table: [Fees](../fees.md).
 
 The protocol share is converted into **WETH** (and select stablecoins / partner tokens) and distributed pro-rata to esALB stakers via the EsToken reward distributor (`EsTokenController` and the rewarder family — see [Contracts](../contracts.md)).
 

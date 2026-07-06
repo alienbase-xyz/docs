@@ -6,7 +6,7 @@ description: A focused guide to the four most common swap-revert causes
 
 If your swap reverts (= the transaction goes through but the swap doesn't happen, and you pay gas), one of four things is almost always responsible. Walk through them in order.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## 1. Slippage too low
 

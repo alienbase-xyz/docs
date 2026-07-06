@@ -6,7 +6,7 @@ description: Escrowed LP positions — locked liquidity that earns boosted yield
 
 **esLP** ("escrowed LP") applies the esALB locking pattern to liquidity-pool tokens. The flagship esLP position is **esLP ALB-ETH** — a locked V2 LP token that earns boosted ALB rewards and protocol-fee yield, while remaining non-transferable.
 
-> *Last updated: {{today}}.* esLP was introduced after esALB shipped (April 2024) and is referenced in the [Welcome page](../README.md) and the AIP-2 fee-split structure.
+> *Last updated: July 6, 2026.* esLP was introduced after esALB shipped (April 2024) and is referenced in the [Welcome page](../README.md) and the AIP-2 fee-split structure.
 
 ## What esLP is
 
@@ -28,11 +28,11 @@ If you're providing the ALB-ETH liquidity that powers Alien Base's core market, 
 ## How to lock
 
 > {% hint style="info" %}
-> The exact UI flow for esLP varies depending on whether the position lives in the legacy Farms tab or the new [Vaults](https://app.alienbase.xyz/farms) page. Steps below describe the current Vaults flow.
+> The exact UI flow for esLP varies depending on whether the position lives in the legacy Farms tab or the new [Vaults](https://app.alienbase.xyz/vaults) page. Steps below describe the current Vaults flow.
 > {% endhint %}
 
 1. Provide ALB-ETH liquidity on the [V2 pool](https://app.alienbase.xyz/swap) and receive your LP token.
-2. Open the [Vaults](https://app.alienbase.xyz/farms) page and find the **esLP ALB-ETH** vault.
+2. Open the [Vaults](https://app.alienbase.xyz/vaults) page and find the **esLP ALB-ETH** vault.
 3. Click **Lock** → choose the LP amount → approve the contract → confirm.
 4. The LP token disappears from your wallet; an equivalent esLP balance appears in your portfolio.
 
@@ -49,9 +49,8 @@ You can mix the two paths as needed.
 
 ## Open items
 
-- <!-- TODO:USER -->Confirm the current esLP token contract address on Base — the EsToken family is at [`0x365c6d58…4113`](https://basescan.org/address/0x365c6d588e8611125de3bea5b9280c304fa54113) (the esALB token); we need the esLP ALB-ETH contract specifically.
+- The esLP contracts on Base: `esLP-ALB-ETH` ("Infinite") at [`0x3d3a5ad6…8ea0`](https://basescan.org/address/0x3d3a5ad6d7beab234d7f0338a01e62b1d36d8ea0) and `esLP-B-ALB-ETH` ("Backstop") at [`0x4a023efe…6978`](https://basescan.org/address/0x4a023efe4b5cd304e800f29074186164fda36978). Both appear under **Vaults → Locked earn** in the dApp. ALB-WETH is currently the only pair with esLP positions.
 - <!-- TODO:USER -->Confirm the live esLP boost (e.g., "esLP ALB-ETH receives X% more emissions vs. the unlocked LP farm").
-- <!-- TODO:USER -->Confirm whether other esLP positions (e.g., ALB-USDC, ALB-cbBTC) currently exist or are planned post-AIP-5 POL deployment.
 
 ## See also
 

@@ -8,11 +8,11 @@ Concentrated-liquidity positions only earn fees while the market price is **insi
 
 This is normal and expected — concentrated liquidity is a trade-off — but it has a few wrinkles worth knowing.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## How to tell
 
-On the [Vaults](https://app.alienbase.xyz/farms) or Liquidity page, an out-of-range position is flagged:
+On the [Vaults](https://app.alienbase.xyz/vaults) or Liquidity page, an out-of-range position is flagged:
 
 - **🟡 Out of range** badge on the position card.
 - The asset breakdown shows ~100% of one token, ~0% of the other.

@@ -6,7 +6,7 @@ description: How to submit a proposal to the Alien Base DAO
 
 A practical guide for ALB holders who want to submit a proposal.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## Before you start
 

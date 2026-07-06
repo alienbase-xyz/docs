@@ -6,7 +6,7 @@ description: Long-form ALB vesting via the VestingFactory contract
 
 Some ALB allocations — to the team, contributors, advisors, and certain DAO-budgeted recipients — are released over multi-year schedules through the on-chain **VestingFactory** instead of via direct distribution.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## What it is
 
@@ -36,7 +36,7 @@ Vesting recipients include (non-exhaustive):
 - Long-term core developers and operators.
 - Recipients of the AIP-3 / AIP-4 vested allocations.
 
-The full list of recipient addresses is on-chain — every per-recipient vesting contract is created by `VestingFactory` and is therefore visible on Basescan via the factory's contract-creation history. <!-- TODO:USER provide the VestingFactory address so we can link the explorer view directly -->
+The full list of recipient addresses is on-chain — every per-recipient vesting contract is created by `VestingFactory` ([`0x77ec0394…ed84`](https://basescan.org/address/0x77ec0394e4edea1997bdb1919bb354d880faed84), second deployment [`0xf61cc1ae…453d`](https://basescan.org/address/0xf61cc1aedd072784d8f133ba9409c538cfc9453d)) and is therefore visible on Basescan via the factory's contract-creation history.
 
 ## How it interacts with circulating supply
 

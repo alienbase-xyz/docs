@@ -6,7 +6,7 @@ description: Get your token visible on the data sites and wallets that matter
 
 Once your token has at least one trade and a liquidity pool, it's discoverable on Base — but it'll show up as a generic "unverified" entry until you fill in the metadata. This page is a checklist for getting your token properly listed across the sites traders actually use.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## Prerequisites
 
@@ -71,7 +71,7 @@ Listings make you visible. Trust signals make people trade. The high-impact ones
 If you deployed via the [Token Generator](token-generator/README.md):
 
 1. Token is already verified — skip the manual verification dance.
-2. Add liquidity at [app.alienbase.xyz/add](https://app.alienbase.xyz/add).
+2. Add liquidity via **New position** on [app.alienbase.xyz/vaults](https://app.alienbase.xyz/vaults).
 3. Update Basescan info while waiting for the first organic trade.
 4. Apply to DexScreener / DexTools / GeckoTerminal in parallel.
 5. Apply to CoinGecko after a few days of organic volume.

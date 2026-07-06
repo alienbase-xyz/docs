@@ -6,7 +6,7 @@ description: Index of every passed proposal in the Alien Base DAO
 
 A complete index of every Alien Base governance proposal voted on at [`alienbase-dex.eth`](https://snapshot.org/#/alienbase-dex.eth) on Snapshot.
 
-> *Last updated: {{today}}. 9 proposals total. All passed; none failed; none currently active.*
+> *Last updated: July 6, 2026. 9 proposals total. All passed; none failed; none currently active.*
 
 | # | Date (UTC) | Title | State | Result | Tag |
 | --- | --- | --- | --- | --- | --- |

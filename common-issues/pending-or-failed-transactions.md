@@ -4,7 +4,7 @@ description: What to do when a transaction is stuck or reverted
 
 # Pending or failed transactions
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## My transaction is stuck "Pending"
 

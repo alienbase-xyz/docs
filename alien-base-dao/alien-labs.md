@@ -6,7 +6,7 @@ description: The product/build arm of Alien Base
 
 **Alien Labs** is the offchain product, frontend, and revenue arm of Alien Base, formalized in [AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2) (April 2026).
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## What it is
 

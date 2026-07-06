@@ -6,7 +6,7 @@ description: The legal entity behind Alien Base
 
 The **Alien Foundation** is a Cayman-Islands-registered, ownerless legal entity established in **December 2024**. Its purpose is to give the Alien Base DAO a stable offchain legal footing — for partnerships, audits, fiat denominated services, and anything else that benefits from a real-world counterparty.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## Why it exists
 
