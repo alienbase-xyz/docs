@@ -1,12 +1,8 @@
 # Changing allowance
 
-EsALB uses a different allowance system for allocating to farms, which is what happens when you click "Enable" on our Farms page.
+esALB uses a different allowance system for allocating to farms — this is what happens when you click **Enable** before staking esALB (today under **Vaults → Locked earn**).
 
-
-
-In some cases, the allowance might be insufficient, or you may want to revoke it fully. Tools like revoke.cash wouldn't support this kind of allowance (but also, no one can take esALB from you).
-
-
+In some cases, the allowance might be insufficient, or you may want to revoke it fully. Tools like revoke.cash don't support this kind of allowance (but also, no one can take esALB from you).
 
 To fix allowance issues, for now you need to manually approve usage on Basescan. To do so, head over to this link: [https://basescan.org/token/0x365c6d588e8611125De3bEA5B9280C304FA54113#writeContract](https://basescan.org/token/0x365c6d588e8611125De3bEA5B9280C304FA54113#writeContract)
 

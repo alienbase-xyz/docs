@@ -14,7 +14,7 @@ It's the "let winners run, but lock in gains" order — previously only availabl
 
 ## How it works
 
-1. You sell-side deposit a token and set **Trail by** — a percentage (e.g., 10%).
+1. You place a sell order for a token and set **Trail by** — a percentage (e.g., 10%).
 2. The order tracks the highest price observed since creation.
 3. The **Fires at** level is always `peak price × (1 − trail%)`, shown live in the form.
 4. If price keeps climbing, the fire level climbs with it — it never moves down.

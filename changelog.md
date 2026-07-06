@@ -32,7 +32,7 @@ Long-form preview article: [Alien Base 2.0 — Building Sustainable Tokenomics f
 
 The Vaults page replaces the legacy Farms tab. Unifies V3 / Bunni positions and esALB / esLP staking. Introduces Zap-in flow for one-click LP creation and a Claim All button across positions.
 
-Mothership repo gets its `audit-scope` commit (see [audits.md](audits-and-security.md)).
+Mothership repo gets its `audit-scope` commit (see [Audits & Security](audits-and-security.md)).
 
 ## 2025
 

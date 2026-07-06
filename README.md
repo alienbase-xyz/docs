@@ -29,7 +29,6 @@ What does that mean? We don't really know — ChatGPT wrote it. But in plain Ear
 | Lifetime swap volume | $2.86 B (V2 alone) |
 | TVL | ~$1.6 M pooled + ~$1.0 M staked <!-- DefiLlama, 2026-07-06 --> |
 
-
 For up-to-date market data, see our [Dune dashboard](https://dune.com/sealaunch/alienbase) (the canonical source, built with Sealaunch), [CoinGecko](https://www.coingecko.com/en/coins/alienbase), or [DefiLlama](https://defillama.com/protocol/alien-base-v3). For full contract addresses, see [Contracts](contracts.md). For the full data-source map, see [Data & Analytics](data-and-analytics.md).
 
 ## Where can I start?
@@ -80,24 +79,21 @@ Full breakdown — including per-tier rationale, historical changes, and how eac
 
 ### What is esALB?
 
-esALB ("escrowed ALB") is a non-transferable lock-wrapped form of ALB. You convert ALB → esALB 1:1 via the Lock UI on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is what earns governance voting power, single-staking APR (paid in ALB), and **Real Yield** (paid in WETH from protocol fees).
+esALB ("escrowed ALB") is a non-transferable lock-wrapped form of ALB. You convert ALB → esALB 1:1 via **Lock & Earn** on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is what earns governance voting power, single-staking APR (paid in ALB), and **Real Yield** (paid in WETH from protocol fees).
 
 You can convert back at any time via two paths, mixable: 100% after a 30-day cooldown (no penalty), or 1% instantly every 24 hours. [Full guide](escrowed-alb-esalb/README.md).
 
 ### How do I stake ALB?
 
 1. Acquire ALB on the [Swap](https://app.alienbase.xyz/swap) page (any pair routed through Epsilon will give the best price).
-2. Open the [Dashboard](https://app.alienbase.xyz/dashboard), find your ALB balance, click **Lock**.
-3. Choose how much to lock and confirm. You receive non-transferable esALB.
-4. Stake the esALB in the esALB single-stake vault on the [Vaults](https://app.alienbase.xyz/vaults) page to begin earning rewards.
+2. Open the [Dashboard](https://app.alienbase.xyz/dashboard) and click **Lock & Earn** (or use **Lock & Stake** under Vaults → Locked earn).
+3. Pick the **esALB** farm, choose how much to lock, and confirm. Your ALB converts 1:1 to non-transferable esALB and is staked automatically — rewards start accruing immediately.
 
 ### Is the team doxxed?
 
 Alien Base was founded and built by entrepreneurs and DeFi enthusiasts who chose to remain pseudonymous. There are no clear regulatory rules in many jurisdictions for DeFi projects: the rulebooks of classical or centralized finance don't translate cleanly (e.g., the entire concept of KYCing every user). Until that changes, we stay anonymous — even though the protocol is now governed by the DAO and not exclusively by the founding team. This lets us focus on building rather than litigating bureaucracy.
 
 The team and its operating companies are doxxed to the **Base** and **Coinbase** teams and to multiple partners. The DAO Multisig signers, on the other hand, are public — see [DAO Multisig](alien-base-dao/dao-multisig.md).
-
-
 
 ### Where are the contracts?
 

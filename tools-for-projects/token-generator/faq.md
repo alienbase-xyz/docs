@@ -16,10 +16,6 @@ Any number of tokens that you like, the more tokens you mint, the less value eac
 
 This is the maximum number of tokens that can be minted. It should always be higher than the initial token supply.
 
-**What should I put as Max Token Supply?**
-
-This is the maximum number of tokens that can be minted. It should always be higher than the initial token supply.
-
 #### Should I enable the Mintable Feature?
 
 If you enable the Mintable feature, you can mint more tokens after the token is created. This can be useful if you want to create a farm or airdrop tokens to your community, but it is usually seen as a red flag by traders and automated sniffers.
@@ -98,7 +94,7 @@ By logging in with the owner wallet, you can update the token logo and social in
 
 #### How do I list my token on DexScreener?
 
-Tokens get picked up automatically as soon as there is at least one transaction on the blockchain. However, they don't show any logo or information about the token. To add your logo and social info, you can visit this page: https://marketplace.dexscreener.com/product/token-info. The listing fee is 300$, but we will soon have a discount for tokens that are created on Alien Base.
+Tokens get picked up automatically as soon as there is at least one transaction on the blockchain. However, they don't show any logo or information about the token. To add your logo and social info, you can visit this page: https://marketplace.dexscreener.com/product/token-info. The standard listing fee is $300; tokens created on Alien Base can qualify for a discount — see [Listing your token](../listing-your-token.md).
 
 #### How do I list my token on CoinGecko?
 

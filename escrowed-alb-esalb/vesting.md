@@ -45,7 +45,7 @@ ALB held in vesting contracts is **non-circulating** until released. The "circul
 - Tokens still in vesting contracts (not yet released to the recipient).
 - Tokens locked as esALB (locked, but technically held by the user — counted as circulating in some methodologies).
 
-Per the latest analytics, ~234 M ALB is reported as circulating against ~461 M minted. The gap is split between vesting contracts, the DAO multisig & treasury addresses, the team operations Safe, and unvested farm-emission accumulator state.
+Per the latest analytics, ~234 M ALB is reported as circulating against ~465 M minted. The gap is split between vesting contracts, the DAO multisig & treasury addresses, the team operations Safe, and unvested farm-emission accumulator state.
 
 ## See also
 

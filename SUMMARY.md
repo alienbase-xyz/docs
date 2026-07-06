@@ -23,6 +23,7 @@
 * [Concentrated Liquidity (V3)](liquidity/v3.md)
 * [Bunni explainer](liquidity/bunni.md)
 * [V2 Pools (legacy)](liquidity/v2-pools.md)
+* [Mothership (pre-launch)](liquidity/mothership.md)
 
 ## ALB & esALB
 
