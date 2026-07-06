@@ -4,11 +4,21 @@ description: Public, dated record of what shipped on Alien Base
 
 # Changelog
 
-A public, dated record of what shipped on Alien Base. Source-cited where possible; "{{cit}}" markers indicate gaps the docs team should fill from internal records.
+A public, dated record of what shipped on Alien Base, source-cited where possible.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## 2026
+
+### July — Trading terminal + Epsilon Router launch
+
+Full app redesign around a professional **trading terminal**: TradingView chart, chain-wide token search, position tracking (Balances / Open orders / Active DCAs / Closed orders / Trades), and a trending ticker — all on [app.alienbase.xyz/swap](https://app.alienbase.xyz/swap).
+
+The **Epsilon Router** ([`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580), audited) goes live, bringing order execution on-chain and shipping new order types: **Limit / Take Profit / Stop Loss / Stop Buy**, **Trailing Stop**, and upgraded **DCA** with trigger prices and stop-loss aborts. Order fees are tiered by asset class — see [Fees](fees.md).
+
+The **Vaults** page is redesigned around named strategies (Wide / Narrow / Ultra Narrow / Classic V3) with three tabs: Vaults, Locked earn (esALB + esLP staking), and Legacy farms. A **Dashboard** page aggregates positions, earnings, and rewards per wallet.
+
+Carbon-powered Limit / Range / Recurring orders are **deprecated** in favor of the Router order system; existing Carbon orders remain visible from the Dashboard and withdrawable on-chain. See [Archive — Carbon Orders](archive/carbon-orders.md).
 
 ### April — Alien Base 2.0 (AIP-5) approved
 
@@ -48,7 +58,7 @@ The Explore page goes live. GoPlus-powered safety checks per token. Per-pool cha
 
 ### Early year — multi-chain B3 deployment
 
-Alien Base ships on B3 chain (deployment of an isolated V2 fork). The deployment was later flagged as having underperformed expectations and is no longer a strategic focus — see [Archive — B3](archive/b3.md). {{cit — exact ship date}}
+Alien Base ships on B3 chain (deployment of an isolated V2 fork), announced January 31, 2025 as "our first multi-chain deployment", supporting the B3 token launch of February 10, 2025. The deployment was later flagged as having underperformed expectations and is no longer a strategic focus — see [Archive — B3](archive/b3.md).
 
 ## 2024
 
@@ -72,9 +82,9 @@ Emissions drop from 7.5 → 3.75 ALB/sec.
 
 [Introducing EsALB](https://medium.com/@alienbase/introducing-esalb-the-next-phase-of-alien-base-tokenomics-e5bfa049486f). Single-staking, governance, Real Yield. Initial reception was strong — esALB became the central long-term holder primitive on Alien Base.
 
-### Q1 — Token Generator
+### March 26 — Token Generator
 
-The Token Generator MVP launches. Simple / Mintable / Burnable / Mint+Burn / Tax templates. ETH fee per mint. {{cit — exact launch month}}
+The Token Generator MVP launches (orchestrator [`0xBcE7…d08d`](https://basescan.org/address/0xBcE75497D72b25c3509B62ae1a47CCfb502AD08d) deployed on-chain March 26, 2024). Simple / Mintable / Burnable / Mint+Burn / Tax templates. 0.015 ETH fee per mint.
 
 ## 2023
 

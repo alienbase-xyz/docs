@@ -6,7 +6,7 @@ description: Audit status and security posture of Alien Base contracts
 
 This page tracks the security posture of every contract Alien Base has deployed. It is updated whenever a new audit report is published, a new contract is deployed, or a permission boundary changes.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## Summary
 
@@ -14,20 +14,21 @@ Alien Base contracts fall into three buckets:
 
 | Bucket | What it means | Examples |
 | --- | --- | --- |
-| **Audited / under review** | Contracts written by Alien Base, audited by a third party; report is being reviewed before publication. | Epsilon (off-chain meta-aggregator + on-chain Epsilon Router) |
+| **Audited** | Contracts written by Alien Base, audited by a third party, report complete. | Epsilon Router (+ off-chain meta-aggregator integration) |
 | **Audit upcoming** | Contracts written by Alien Base that have an audit scoped and in flight, but no report yet. The contract may be live on mainnet behind supply caps or feature flags during this period. | Mothership |
 | **Inherited upstream audits** | Forks of well-audited upstream protocols. Audit coverage applies only to the unchanged-core parts. | V2 / V3 core, BunniHub, SmartRouter, CarbonController, MasterChef-style farm |
 
 We deliberately do not claim audit coverage we don't have. If you see a third-party article saying "Alien Base contracts have been audited by reputable firms" without naming the firm, date, scope, and report URL, treat it as marketing rather than evidence.
 
-## Audited / under review
+## Audited
 
-### Epsilon
+### Epsilon Router
 
-- **Scope:** the off-chain meta-aggregator integration + on-chain Epsilon Router contracts.
-- **Status:** audit complete, report under review with the Alien Base team prior to publication.
-- **What this means for users:** Epsilon is the path most swaps take. The auditor's findings have been incorporated; we're publishing once the review cycle finalizes the language.
-- **Report:** *to be linked here when published.*
+- **Scope:** the on-chain Epsilon Router — the contract holding and settling all resting orders (Limit, Take Profit, Stop Loss, Trailing Stop, DCA) — plus the off-chain meta-aggregator integration.
+- **Contract:** [`0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580) — verified source on Basescan.
+- **Status:** **audit complete.** The Router is live in production and executes all order types in the trading terminal.
+- **Report:** *PDF being attached to these docs.* <!-- TODO:USER add the audit report PDF (auditor name, date) and link it here -->
+- **What this means for users:** Epsilon is the path most swaps take, and the Router holds resting-order funds. The auditor's findings were incorporated before launch.
 
 ## Audit upcoming
 
@@ -35,7 +36,7 @@ We deliberately do not claim audit coverage we don't have. If you see a third-pa
 
 - **Scope:** Alien Base's first ALM (Automated Liquidity Manager). Components include `MothershipVaultRouter`, `MothershipVaultPublic` (ERC-20 share vault), `UniManyDirectCore` (multi-range V3 position manager), and `UniManyDirectHelper`.
 - **Status:** pre-audit hardening complete. The public [`Mothership`](https://github.com/alienbase-xyz/Mothership) repo includes an explicit `audit-scope` commit (Jan 15, 2026) and a fuzz-test suite. The audit firm and report will be published before the MVP is opened to the public without supply caps.
-- **Pre-launch posture:** any Mothership contracts deployed before audit completion run with strict supply caps and gated access; see the [Vaults](vaults.md) page for the live status.
+- **Pre-launch posture:** any Mothership contracts deployed before audit completion run with strict supply caps and gated access; see the [Vaults](liquidity/vaults.md) page for the live status.
 - **Report:** *to be linked here when published.*
 
 ## Inherited upstream audits
@@ -79,7 +80,7 @@ For unchanged-core forks, the upstream auditor's findings transfer. We list what
   - [PeckShield — Carbon v1.0](https://github.com/alienbase-xyz/carbon-contracts/blob/dev/docs/audits/PeckShield-Audit-Report-Bancor-Carbon-v1.0.pdf)
   - [PeckShield — CarbonVortex v1.0.1](https://github.com/alienbase-xyz/carbon-contracts/blob/dev/docs/audits/PeckShield-Audit-Report-Bancor-CarbonVortex-v1.0.1.pdf)
   - [ChainSecurity — Carbon](https://github.com/alienbase-xyz/carbon-contracts/blob/dev/docs/audits/ChainSecurity_Carbon_Audit_Report.pdf)
-- **Coverage on Alien Base:** the CarbonController at `0xe3763886…716e` (deployed Aug 12, 2024) and the Voucher proxy at `0x2f3b0d35…2dc9` ("CARBON-STRAT" NFT) are the unchanged Bancor implementation. Alien Base did not modify these contracts.
+- **Coverage on Alien Base:** the CarbonController at `0xe3763886…716e` (deployed Aug 12, 2024) and the Voucher proxy at `0x2f3b0d35…2dc9` ("CARBON-STRAT" NFT) are the unchanged Bancor implementation. Alien Base did not modify these contracts. Carbon order creation is [deprecated](archive/carbon-orders.md) as of July 2026, but the contracts remain live and existing orders stay withdrawable.
 
 ### Camelot xGRAIL — esALB / EsToken family
 
@@ -88,7 +89,7 @@ For unchanged-core forks, the upstream auditor's findings transfer. We list what
 
 ## Onchain control surface
 
-A security review is incomplete without checking *who* can pull which lever. As of {{today}}:
+A security review is incomplete without checking *who* can pull which lever. As of July 6, 2026:
 
 | Contract | Privileged role | Holder | Type |
 | --- | --- | --- | --- |

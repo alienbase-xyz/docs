@@ -6,7 +6,7 @@ description: Quick definitions for terms used across Alien Base
 
 A short reference for terms you'll see repeatedly in Alien Base's docs and UI.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ### ADIP
 
@@ -38,7 +38,7 @@ A Uniswap V3 LP-position wrapper that turns NFT positions into ERC-20 tokens. Al
 
 ### Carbon
 
-Alien Base's integration of Bancor's Carbon DeFi technology. Powers Limit Orders, Range Orders, and Recurring (grid) Strategies. See [Trading](trading/limit-orders.md).
+Alien Base's former integration of Bancor's Carbon DeFi technology, which powered Limit, Range, and Recurring (grid) orders until July 2026. Deprecated in favor of the Epsilon Router order system; existing Carbon orders remain withdrawable. See [Archive — Carbon Orders](archive/carbon-orders.md).
 
 ### CEX-quality UI / UX
 
@@ -50,11 +50,15 @@ A V3 LP design where LPs choose a price range for their liquidity rather than sp
 
 ### DCA
 
-Dollar-Cost Averaging. Splits a buy or sell into small chunks executed over time. Alien Base ships a built-in DCA tool that uses the same fee schedule as Epsilon (0.03% blue chips / 0.20% other) per chunk. See [DCA Orders](trading/dca-orders.md).
+Dollar-Cost Averaging. Splits a buy or sell into small chunks executed over time, with optional trigger price and stop loss. Fees per chunk are tiered by asset class (0.01% stables / 0.10% blue chips / 0.20% other). See [DCA Orders](trading/dca-orders.md).
 
 ### Epsilon
 
-Alien Base's meta-aggregator. Routes swaps through whichever venue (Alien Base V2/V3, Aerodrome, Uniswap, etc.) gives the best price. The on-chain **Epsilon Router** unlocks native order types (stop loss, trailing stop, etc.); the **Epsilon Analytics** suite exposes the underlying data. See [Epsilon](trading/epsilon.md).
+Alien Base's trading engine: the meta-aggregator that routes swaps through whichever venue (Alien Base V2/V3, Aerodrome, Uniswap, etc.) gives the best price, plus the on-chain **Epsilon Router** that holds and settles resting orders (Limit, Take Profit, Stop Loss, Trailing Stop, DCA). The **Explorer** exposes the underlying data. See [Epsilon](trading/epsilon.md).
+
+### Epsilon Router
+
+The on-chain contract ([`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580)) where Alien Base's resting orders live. Audited; live since July 2026. See [Epsilon](trading/epsilon.md#the-epsilon-router).
 
 ### esALB / esLP
 
@@ -80,9 +84,13 @@ A new staked-escrow form of esALB introduced by [AIP-5](alien-base-2-0.md): **10
 
 The Dev Line of Credit introduced by [AIP-5](alien-base-2-0.md): the team's funding becomes tracked debt with interest paid to esALB holders. Price-tier grant tranches at $0.40, $1, and $2 unlock as ALB sustains those moving averages. See [Alien Labs](alien-base-dao/alien-labs.md).
 
+### Matcher
+
+Epsilon's execution engine. Watches resting orders in the Epsilon Router and fills them through the meta-aggregator when their trigger condition is met, charging a flat 0.05% execution fee per fill. Users pay gas only at order creation/cancellation; the Matcher pays execution gas. See [Epsilon](trading/epsilon.md#the-matcher).
+
 ### Meta-DEX
 
-The umbrella term Alien Base uses for itself. Combines a native DEX (V2 + V3), a meta-aggregator (Epsilon), advanced order types (Carbon), liquidity management (Mothership), and developer tools (Token Generator) — all on a single platform.
+The umbrella term Alien Base uses for itself. Combines a native DEX (V2 + V3), a meta-aggregator + on-chain order engine (Epsilon), liquidity management (Mothership), and developer tools (Token Generator) — all on a single platform.
 
 ### Mothership
 
@@ -92,21 +100,21 @@ Alien Base's in-house Automated Liquidity Manager (ALM). First fully-original Al
 
 Liquidity owned by the protocol itself — typically held in the DAO Multisig — rather than rented from individual LPs via emissions. AIP-5 establishes a POL Fund whose yield is used for buyback-and-burn ALB.
 
-### Range Order
-
-An order placed across a price range. Buys when the price drops into the range and sells as the price rises through it (or vice versa). See [Limit & Range Orders](trading/limit-orders.md).
-
 ### Real Yield
 
 Protocol fees redistributed to esALB stakers in WETH (and other liquid assets) — not in ALB inflation. See [Real Yield](escrowed-alb-esalb/real-yield.md).
 
-### Recurring Order (grid)
-
-A standing two-sided order: buy at price X, sell at price Y, repeat. Equivalent to a small-grid market-making bot. See [Recurring Orders](trading/recurring-orders.md).
-
 ### Snapshot
 
 Off-chain governance voting platform. Alien Base's space: [`alienbase-dex.eth`](https://snapshot.org/#/alienbase-dex.eth).
+
+### Stop Loss / Stop Buy
+
+Orders that trigger when price crosses a level in the adverse direction: a Stop Loss sells when price drops to your level; a Stop Buy buys when price climbs to it. Executed on-chain by the Epsilon Router. See [Limit, Take Profit & Stop Loss](trading/limit-orders.md).
+
+### Take Profit
+
+A sell order that triggers when price climbs to your target. See [Limit, Take Profit & Stop Loss](trading/limit-orders.md).
 
 ### Timelock
 
@@ -115,6 +123,10 @@ A contract that delays execution of privileged actions (e.g., minting ALB, chang
 ### Token Generator
 
 A tool for deploying tokens on Base from preset templates (Simple, Mintable, Burnable, Mint/Burn, Tax). Charges a small ETH fee per mint, deposited to the team operating budget. See [Token Generator](tools-for-projects/token-generator/README.md).
+
+### Trailing Stop
+
+A sell order whose trigger follows the market price up by a fixed percentage and fires when price retraces by that amount from its peak. See [Trailing Stop](trading/trailing-stop.md).
 
 ### TVL (Total Value Locked)
 

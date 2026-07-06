@@ -6,7 +6,7 @@ description: How to acquire ALB on Base
 
 ALB is the native token of Alien Base. The fastest path to acquire it is on Alien Base itself — but several other venues also have ALB liquidity.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## On Alien Base (recommended)
 
@@ -21,7 +21,7 @@ The deepest market is the V2 ALB-WETH pool ([`0xbcd27A43…6fcB`](https://basesc
 
 ALB also has pools on:
 
-- **Uniswap** (3 pools as of {{today}})
+- **Uniswap** (3 pools as of July 6, 2026)
 - **Aerodrome**
 - **SwapBased**
 - A few smaller venues

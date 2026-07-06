@@ -6,7 +6,7 @@ description: Connect MetaMask, Coinbase Wallet, Rabby, or any other wallet to Al
 
 Alien Base works with any standard EVM wallet. There's nothing custom on the wallet side — the app supports the standard `wallet_connect` and WalletConnect flows.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## Supported wallets
 
@@ -18,7 +18,7 @@ Alien Base works with any standard EVM wallet. There's nothing custom on the wal
 
 ## How to connect
 
-![Dashboard prompts you to connect a wallet on first visit](../screenshots/07-dashboard-empty.png)
+![Dashboard prompts you to connect a wallet on first visit](../.gitbook/assets/12-dashboard.png)
 
 1. Visit [app.alienbase.xyz](https://app.alienbase.xyz/).
 2. Click **Connect Wallet** (top right).

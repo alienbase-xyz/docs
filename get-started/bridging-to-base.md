@@ -6,7 +6,7 @@ description: Move ETH or assets from Ethereum (or other chains) onto Base
 
 To use Alien Base you need ETH on **Base**. This page covers the canonical and third-party bridging options.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## TL;DR
 

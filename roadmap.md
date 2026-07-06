@@ -1,39 +1,57 @@
+---
+description: What's shipping next on Alien Base
+---
+
 # Roadmap
 
-Alien Base is designed to be the human-friendly DEX for trading on Base and beyond. By focusing on user interface and utility, you will be able to enjoy the richest trading experience across all chains and all other liquidity sources.
+Alien Base's mission is to be the human-friendly trading hub on Base — a meta-DEX that aggregates the entire chain's liquidity behind a CEX-quality interface, with custom protocols built on top to push capital efficiency further than any single DEX could.
 
-The idea is: when you trade on Alien Base, you use alien technology to trade everywhere.
+> *Last updated: July 6, 2026.*
+> *For what already shipped, see the [Changelog](changelog.md). This page focuses on what's coming.*
 
-### 2024 Roadmap
+## Right now
 
-**Liquidity Aggregation and Indexing**
+The active build cycle is the **Alien Base 2.0** rollout authorized by [AIP-5](https://snapshot.org/#/alienbase-dex.eth/proposal/0x9328ecc5a0d2527a1e73fd30085e7ba2120a985b7782ce843f15ee2ddf38ca63) (April 2026). The team is shipping the new tokenomics and the next product layer in parallel:
 
-The first stage of our vision is integrating liquidity and pairs from everywhere. From Alien Base, you will be able to see at a glance everything that is happening onchain to make quick and snappy decisions.
+| Workstream | Status | What's in it |
+| --- | --- | --- |
+| **Trading terminal + Epsilon Router** | **Shipped — July 2026** | Full app redesign around a TradingView-powered trading terminal, plus the on-chain Epsilon Router ([`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580)) with native order types: Limit, Take Profit, Stop Loss, Trailing Stop, trigger-price DCA, stop-loss DCA. Audited. See [Epsilon](trading/epsilon.md). |
+| **Mothership** (ALM) | Pre-launch — audit in flight, alpha imminent | Custom-built Automated Liquidity Manager. First "from-scratch" Alien Base protocol. Multi-range V3 management with strategy-plugin architecture. Public alpha launches with strict supply caps. |
+| **Alien Base 2.0 tokenomics** | Onchain rollout in progress | POL Fund, Dev Line of Credit, govALB token, raised supply cap (cap raise not yet executed on-chain). See [ALB Token](alb-token.md#alien-base-2-0-aip-5). |
+| **Vaults** | Live since Jan 2026; redesigned July 2026 | Unifies V3 strategy vaults (Wide / Narrow / Ultra Narrow / Classic V3), Locked earn (esALB + esLP), and Legacy farms in one page. |
+| **Explorer** (Epsilon Analytics) | Live since May 2025 | Chain-wide Explorer, GoPlus-powered token safety checks, per-pool charts. |
 
-This includes advanced charts, token analysis, holder analysis, tagging and much more.
+## Q3–Q4 2026
 
-**Advanced trading tools**
+Themes for the rest of 2026 (subject to DAO and operating-budget refresh):
 
-Alien Base traders must have full access to trading tools, even in DeFi. This means true limit orders, stop loss, TWAP and more.&#x20;
+- **Mothership Beta** — wider access, multiple strategies, strategy marketplace where third-party LP managers earn fees on user capital.
+- **Token Generator v2** — comprehensive launchpad with fair-launch tooling. Replaces and extends the current Token Generator MVP.
+- **Analytics & Visualization Revamp** — on-chart order overlays + PnL tracking on top of the live TradingView terminal. Deeper Explorer insights including wallet-cluster analysis (multi-wallets per user, bot detection, whale activity, team-sell detection).
+- **Automated esALB reward distribution** — modular fee payouts to esALB stakers, designed to plug into future ALM expansions.
+- **Migration of remaining team-controlled contracts** to the DAO Multisig — see the [onchain control surface](audits-and-security.md#onchain-control-surface) for which contracts are still team-owned.
 
-**Margin Trading & Project Quasar**
+## Bigger horizons
 
-One of the key components of healthy markets is the ability to go leverage long and short. This will be enabled by Quasar, our advanced lending platform.
+Alien Base has consistently set ambitious long-term targets. The list below is honest about which ideas are active engineering and which are research / vision.
 
-Project Quasar is a lending and options platform built on top of the Alien Base pools that allows traders to supply and borrow a much wider range of assets than seen on other platforms.
+| Idea | Status | Notes |
+| --- | --- | --- |
+| **Mothership marketplace** | Active engineering | "Marketplace of liquidity managers": third-party strategists publish strategies, attract user capital, earn fees. The Mothership architecture was designed for this from day one. |
+| **Project Quasar** (lending / IL options) | Research / on hold | Originally pitched as the next product after V3; deprioritized in favor of Mothership and Epsilon Router. Reaffirmed in the [Oct 2025 roadmap](https://medium.com/@alienbase/alien-base-roadmap-plotting-the-next-phase-of-the-invasion-11ede525e2ea) for "2025+" but no shipped artifacts. |
+| **Project Nebula** (next-gen AMM) | Long-term vision | The original "everything in one AMM" vision: 50× concentrated liquidity, single-sided LP, no forced 50/50 split, instant liquidity for derivatives. No active engineering yet; will follow Mothership maturity. |
+| **Multi-chain expansion** | On hold | The 2025 B3 deployment was [explicitly classified as not having delivered](https://medium.com/@alienbase/alien-base-roadmap-plotting-the-next-phase-of-the-invasion-11ede525e2ea) in the Oct 2025 retro. The team is now more cautious about high-investment cross-chain partnerships. |
 
-This includes newly launched tokens for memecoins or smaller DeFi/NFT projects, as well as LP positions on V2 and V3.
+## What we're not building
 
-Over time, this will evolve into a full-on options platform powered by LP positions.
+A short list of things we've explicitly decided against — not because they don't exist on Earth, but because they don't fit Alien Base's strategy:
 
-### Project Nebula
+- **Yet-another-launchpad** detached from a DEX. Token Generator v2 is integrated with the trading and liquidity stack, not a standalone fundraising venue.
+- **Inflationary-only farming as a long-term mechanism.** AIP-5 retired the fixed-halving farming model in favor of POL + buyback-and-burn.
+- **A copy-paste perp DEX.** Project Quasar is the leveraged-trading thesis, but only in a form that uses LP capital efficiently (impermanent-loss-as-options) — not as a generic GMX/dYdX clone.
 
-Project Nebula is Alien Base V2, an evolution of the AMM architecture to enable spot and derivatives trading in one system.
+## How decisions get made
 
-It will support deep, permissionless and flexible liquidity on any kind of asset, from the most liquid to the freshly-launched gems. Compared to existing concentrated liquidity, it will be more effective and automated, maintaining the spirit of DeFi while making it simpler for humans to use.
+Major direction shifts happen via Snapshot proposal in the [`alienbase-dex.eth`](https://snapshot.org/#/alienbase-dex.eth) space. Anyone holding 100,000+ ALB can submit a proposal; see [How to Propose](alien-base-dao/how-to-propose.md). The full history of past votes is on the [AIP Index](alien-base-dao/aip-index.md).
 
-The vision for Nebula is to become the ultimate DeFi platform, uniting all key swapping primitives, spot, derivatives in one place.
-
-### Future Work
-
-The aliens have more ideas to bring to Earth, including things that aren't all about swapping. The roadmap for the far future is in flux for now, but it will not finish any time soon.
+For day-to-day product priorities, the team posts updates on [Discord](https://discord.gg/alienbase) and longer-form articles on [Medium](https://medium.com/@alienbase).

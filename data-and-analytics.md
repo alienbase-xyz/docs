@@ -6,7 +6,7 @@ description: Where to find live data on Alien Base — token, trading, liquidity
 
 Alien Base data is published live across several venues. The **Dune dashboard maintained by Sealaunch** is the canonical, team-developed source — start there for anything that requires depth (per-pair volume, holder analysis, esALB lock/unlock flows, DEX benchmark comparisons). External market-data sites are still useful for headline numbers and price tracking.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## Market snapshot
 
@@ -14,14 +14,14 @@ Point-in-time figures, refreshed manually. Treat these as a sanity check, not li
 
 | Metric | Value | As of | Source |
 | --- | --- | --- | --- |
-| ALB price | ~$0.0039 | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
-| Market cap | ~$0.93M | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
-| Fully-diluted valuation | ~$1.83M | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
-| Circulating supply | ~236M ALB | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
-| Total minted supply | ~467M ALB (~91.6% of the 510M cap) | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
-| All-time high | $0.5724 on 2024-11-27 (−99% from ATH) | 2026-06-30 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
-| TVL | ~$1.5M | 2026-06-30 | [DefiLlama](https://defillama.com/protocol/alien-base) |
-| Deepest pool | ALB/WETH on Alien Base, ~$145k liquidity | 2026-06-30 | [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) |
+| ALB price | ~$0.0047 | 2026-07-06 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Market cap | ~$1.12M | 2026-07-06 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Fully-diluted valuation | ~$2.23M | 2026-07-06 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Circulating supply | ~234M ALB | 2026-07-06 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| Total minted supply | ~465M ALB (~91% of the 510M cap) | 2026-07-06 | [Basescan](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) |
+| All-time high | $0.5724 on 2024-11-27 (−99% from ATH) | 2026-07-06 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
+| TVL | ~$1.63M pooled + ~$1.04M staked | 2026-07-06 | [DefiLlama](https://defillama.com/protocol/alien-base) |
+| Deepest pool | ALB/WETH on Alien Base, ~$172k liquidity | 2026-07-06 | [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) |
 
 > **esALB share, holder counts, per-pair volume, lifetime trades/users, and protocol-fee totals** are not exposed by these public APIs — read them off the [Dune dashboard](https://dune.com/sealaunch/alienbase) (`ALB Token & esALB` and `Alien Base Overview` panels) and update the [Welcome page](README.md) Quick Stats when they move materially. <!-- TODO:USER refresh esALB-locked %, holder counts, lifetime users from Dune -->
 
@@ -42,11 +42,11 @@ What's on it:
 
 Best for: deep dives, cross-DEX benchmarking, token-distribution analysis, governance research, and "is the protocol healthy?" questions.
 
-## In-app — Epsilon Analytics
+## In-app — Explorer
 
-Inside [app.alienbase.xyz](https://app.alienbase.xyz) → **Explore** tab. Chain-wide token & pool explorer powered by Alien Base's own data layer (the same one Epsilon uses for routing). Includes GoPlus-powered token safety checks per token.
+Inside [app.alienbase.xyz](https://app.alienbase.xyz) → **Explorer** in the sidebar ([/info](https://app.alienbase.xyz/info)). Chain-wide token & pool explorer powered by Alien Base's own data layer (the same one Epsilon uses for routing). Includes GoPlus-powered token safety checks per token.
 
-Best for: live exploration of any token or pool on Base from inside the dApp. See [Epsilon Analytics](trading/epsilon-analytics.md).
+Best for: live exploration of any token or pool on Base from inside the dApp. See [Explorer](trading/epsilon-analytics.md).
 
 ## Headline numbers — DefiLlama
 
@@ -61,7 +61,7 @@ Best for: headline TVL, fees-collected, lifetime-volume figures.
 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) | Price, market cap, fully-diluted valuation, social links, watchlists |
 | [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) | Every ALB pool on every DEX on Base, live trade tape |
 | [GeckoTerminal](https://www.geckoterminal.com/) | Alternate pool view; cleaner charts on illiquid pairs |
-| [CoinMarketCap](https://coinmarketcap.com/) | <!-- TODO:USER confirm CMC listing status --> |
+| [CoinMarketCap](https://coinmarketcap.com/currencies/alien-base/) | Price, supply, and market-cap tracking (listed since launch year) |
 
 ## On-chain explorers
 
@@ -87,7 +87,7 @@ Best for: headline TVL, fees-collected, lifetime-volume figures.
 | Holder distribution / concentration | Dune (Sealaunch) "Top 100 ALB + esALB" |
 | esALB lock/unlock flow over time | Dune (Sealaunch) "ALB–esALB Lock/Unlock" |
 | Cross-DEX benchmark (Alien Base vs. Aerodrome vs. Uniswap on Base) | Dune (Sealaunch) "DEX Activity Benchmark" |
-| Live in-app exploration of a Base token | Epsilon Analytics |
+| Live in-app exploration of a Base token | Explorer |
 | Specific contract state (an `eth_call`) | Basescan or Blockscout |
 | Governance proposal text and votes | Snapshot |
 | Treasury composition right now | Safe (live) or Dune Fees panel (over time) |
@@ -95,6 +95,6 @@ Best for: headline TVL, fees-collected, lifetime-volume figures.
 ## See also
 
 - [ALB Token](alb-token.md) — for context on the supply numbers shown in the Dune dashboard.
-- [Epsilon Analytics](trading/epsilon-analytics.md) — the in-app data surface.
+- [Explorer](trading/epsilon-analytics.md) — the in-app data surface.
 - [Audits & Security](audits-and-security.md) — what's verified vs. unverified.
 - [Contracts](contracts.md) — addresses to plug into any explorer.

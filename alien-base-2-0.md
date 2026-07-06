@@ -6,7 +6,7 @@ description: The AIP-5 tokenomics rewrite, in plain language
 
 **Alien Base 2.0** is the package of tokenomics and governance changes authorized by [AIP-5](https://snapshot.org/#/alienbase-dex.eth/proposal/0x9328ecc5a0d2527a1e73fd30085e7ba2120a985b7782ce843f15ee2ddf38ca63) (passed April 2026). It replaces the old "halving farming model" with a new model built around Protocol-Owned Liquidity, a Dev Line of Credit, and a clearer DAO / Foundation / Labs split.
 
-> *Last updated: {{today}}.* Onchain rollout is in progress. This page tracks the moving pieces.
+> *Last updated: July 6, 2026.* Onchain rollout is in progress. This page tracks the moving pieces.
 
 ## The five changes at a glance
 
