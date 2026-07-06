@@ -14,7 +14,7 @@ Some ALB allocations — to the team, contributors, advisors, and certain DAO-bu
 
 This is distinct from the **esALB** locking system:
 
-- **esALB** is short-term, holder-controlled, instantly mintable from ALB, and unlocks in 30 days or 1%/12h.
+- **esALB** is short-term, holder-controlled, instantly mintable from ALB, and unlocks in 30 days or 1%/24h.
 - **Vesting** is long-term, multi-year, and release schedules are fixed by the proposal that authorized them. The recipient cannot accelerate redemption.
 
 The combination of the two ensures that long-tail contributor allocations reach circulating supply slowly while short-term holder behavior remains liquid via the esALB unlock paths.

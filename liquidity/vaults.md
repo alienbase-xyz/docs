@@ -37,6 +37,8 @@ Filters: **All strategies / My positions / In range / Out of range / With reward
 4. Approve (one-time per token) → confirm.
 5. The position appears under **My positions**; rewards accrue immediately.
 
+![My positions — deposited vaults with staked value, fees, and claimable rewards](../.gitbook/assets/20-vaults-with-positions.png)
+
 ### Range lifecycle
 
 When a vault's range gets close to its bounds, a new vault is deployed with refreshed bounds. Old vaults remain available so existing depositors can decide whether to migrate — the **Out of range** filter surfaces positions that need attention.

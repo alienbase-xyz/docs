@@ -62,7 +62,7 @@ The on-chain contract ([`0x303c…2580`](https://basescan.org/address/0x303ca5c6
 
 ### esALB / esLP
 
-*Escrowed ALB / Escrowed LP.* Locked, non-transferable forms of ALB and select LP tokens that earn voting power, single-staking APR, and Real Yield. Convertible 1:1 with the underlying token; redemption paths are 100% in 30 days or 1% every 12 hours. See [esALB](escrowed-alb-esalb/README.md).
+*Escrowed ALB / Escrowed LP.* Locked, non-transferable forms of ALB and select LP tokens that earn voting power, single-staking APR, and Real Yield. Convertible 1:1 with the underlying token; redemption paths are 100% after a 30-day cooldown or 1% instantly every 24 hours. See [esALB](escrowed-alb-esalb/README.md).
 
 ### Fair launch
 

@@ -20,6 +20,10 @@ Open [app.alienbase.xyz/swap](https://app.alienbase.xyz/swap):
 - **Positions panel (bottom).** Five tabs that track your activity: **Balances** (per-asset allocation, average entry price, unrealized P&L), **Open orders**, **Active DCAs**, **Closed orders**, and **Trades**.
 - **Trending ticker (bottom edge).** Live price change strip for the most active tokens on Base.
 
+With a wallet connected, the **Balances** tab becomes a portfolio tracker: allocation percentages, balance, average entry price vs. current price, 24h change, USD value, and unrealized P&L per asset.
+
+![Balances tab with a connected wallet](../.gitbook/assets/19-balances-pnl.png)
+
 ## Finding any token
 
 Click **Search pools or tokens** in the top bar (or paste a contract address). Search covers every token and pool on Base — not just Alien Base's own list — with market cap, 24h volume, holders, and liquidity shown inline, so you can sanity-check a token before opening the chart.
@@ -33,7 +37,11 @@ Click **Search pools or tokens** in the top bar (or paste a contract address). S
 3. Enter an amount — or use the 25% / 50% / 75% / 100% buttons or the slider.
 4. The quoted output appears in the bottom field. [Epsilon](epsilon.md) computes it by routing across every venue on Base.
 5. (Optional) Adjust slippage tolerance (default 0.5%).
-6. Click **Review** → confirm in your wallet.
+6. Click **Review** → check the summary → confirm in your wallet.
+
+The review step shows everything you're agreeing to before you sign: price, minimum received after slippage, the aggregator route, the trading fee, and the price impact.
+
+![Swap review — price, minimum received, fee, and price impact before signing](../.gitbook/assets/21-order-review-modal.png)
 
 ## Slippage
 

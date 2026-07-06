@@ -10,7 +10,7 @@ description: Escrowed ALB — what it is, what it does, and how to use it
 
 ## In one paragraph
 
-You convert ALB → esALB **1:1** via the Lock UI on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is non-transferable. You can stake esALB to earn unlocked ALB, vote on Snapshot, and receive Real Yield in WETH. To convert back, you use one of two paths (mixable): **100% in 30 days** with no penalty, or **1% every 12 hours** instantly. Both are documented below.
+You convert ALB → esALB **1:1** via **Lock & Earn** on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is non-transferable. You can stake esALB to earn unlocked ALB, vote on Snapshot, and receive Real Yield in WETH. To convert back, you use one of two paths (mixable): **100% after a 30-day cooldown** with no penalty, or **1% instantly every 24 hours**. Both are documented below.
 
 ## At a glance
 
@@ -32,13 +32,15 @@ You convert ALB → esALB **1:1** via the Lock UI on the [Dashboard](https://app
 
 ## How to lock ALB into esALB
 
-1. Open the [Dashboard](https://app.alienbase.xyz/dashboard) and find your ALB balance in the portfolio panel on the right.
-2. Click **Lock**. A modal opens.
-3. Choose the amount of ALB to lock.
-4. Approve the esALB contract to spend ALB (one-time, per address).
-5. Confirm the conversion transaction.
+1. Open the [Dashboard](https://app.alienbase.xyz/dashboard) and click **Lock & Earn** (also available from the **Locked earn** tab on the Vaults page via **Lock & Stake**).
+2. Pick the **Escrowed ALB (esALB)** farm. A deposit modal opens.
+3. Choose your input: **Zap (any token)**, **LP Tokens**, or **Lock existing** ALB.
+4. Enter the amount. The modal previews each step (e.g., swap → convert to esALB → stake in farm).
+5. Approve and confirm the transactions (batch zap isn't supported, so expect one transaction per step).
 
-You'll receive 1 esALB for every ALB locked. To see the esALB balance in your wallet, add the contract address [`0x365c6d58…4113`](https://basescan.org/address/0x365c6d588e8611125de3bea5b9280c304fa54113) as a custom token.
+![Lock modal — converting ALB to esALB and staking in one flow](../.gitbook/assets/15-lock-modal.png)
+
+Your deposit is automatically staked in the esALB farm after conversion. You'll receive 1 esALB for every ALB locked. To see the esALB balance in your wallet, add the contract address [`0x365c6d58…4113`](https://basescan.org/address/0x365c6d588e8611125de3bea5b9280c304fa54113) as a custom token.
 
 ## Staking esALB
 
@@ -54,26 +56,28 @@ Your staked esALB still counts for **governance voting** and **Real Yield**.
 
 ## How to unlock back to ALB
 
-You can mix and match two redemption paths:
+Open the **Locked earn** tab on the Dashboard, find your **Escrowed ALB (esALB)** farming position, and click the unstake icon. The unstake modal offers two redemption paths (mixable):
 
-### Path A — 100% in 30 days, no penalty
+![Unstake modal — instant 1% redemption or 30-day unlock](../.gitbook/assets/16-unlock-modal.png)
 
-1. On the Dashboard, find your locked esALB position. (If it's staked in the single-stake vault, unstake first.)
-2. Click **Unlock** → choose **30 days**.
-3. The esALB enters a "Vested" state for 30 days. While vesting, **you continue to earn rewards at a 30% reduction**.
-4. After 30 days the **Redeem** button enables.
+### Path A — full unlock after a 30-day cooldown, no penalty
+
+1. In the unstake modal, choose the **amount to unstake** (slider or 25/50/75/100% presets), leaving **Instant 1% Redemption** off.
+2. Click **Start Unlock Process**. This is a multi-step transaction: unstake, then start the 30-day unlock period for the selected amount.
+3. The position moves to **Locked → Vested** on the Dashboard, where you can track unlock progress. While vesting, **you continue to earn rewards at a 30% reduction**.
+4. After 30 days, redeem the full amount as ALB.
 
 > {% hint style="warning" %}
 > You have **7 days** to redeem after vesting completes. If you miss the window, the position re-locks and starts a new 30-day vesting cycle.
 > {% endhint %}
 
-### Path B — 1% every 12 hours, instant
+### Path B — 1% instant redemption, every 24 hours
 
-1. On the Dashboard, click **Unlock** → choose **1% every 12 hours**.
-2. Confirm the transaction. You instantly receive 1% of your esALB position back as ALB.
-3. You can repeat every 12 hours. A countdown shows when the next claim is available.
+1. In the unstake modal, toggle **Instant 1% Redemption** on.
+2. Confirm the transaction. You instantly receive 1% of your staked esALB back as ALB.
+3. You can repeat every 24 hours.
 
-The 1% is computed against your **total** esALB position, including any portion currently in 30-day vesting. You can use both paths simultaneously — e.g., put half into 30-day redemption and drip the rest 1% per 12h.
+The 1% is computed against your **total** esALB position, including any portion currently in 30-day vesting. You can use both paths simultaneously — e.g., put half into 30-day redemption and drip the rest 1% per day.
 
 ## Common pitfalls
 

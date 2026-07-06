@@ -15,7 +15,7 @@ A non-transferable, lock-wrapped version of an LP token (currently ALB-ETH V2). 
 - Lock LP → esLP **1:1**.
 - esLP earns higher emissions than the unlocked LP farm.
 - esLP also receives a share of the **Real Yield** stream (WETH from protocol fees).
-- Unlock paths mirror esALB: 100% in 30 days (no penalty) or 1% every 12 hours.
+- Unlock paths mirror esALB: 100% after a 30-day cooldown (no penalty) or 1% instantly every 24 hours.
 
 ## Why use esLP
 
@@ -43,7 +43,7 @@ To stake the esLP for boosted rewards, find the corresponding stake card in the 
 Same two paths as esALB:
 
 - **100% in 30 days, no penalty.** The position enters a 30-day vesting state. You still farm at a 30% reduction during this window, then redeem within 7 days after the vest completes (or it re-locks).
-- **1% every 12 hours, instant.** Click "Unlock" → "1% every 12 hours" → confirm.
+- **1% every 24 hours, instant.** In the unstake modal, toggle "Instant 1% Redemption" → confirm.
 
 You can mix the two paths as needed.
 

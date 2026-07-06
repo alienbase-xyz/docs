@@ -82,7 +82,7 @@ Full breakdown — including per-tier rationale, historical changes, and how eac
 
 esALB ("escrowed ALB") is a non-transferable lock-wrapped form of ALB. You convert ALB → esALB 1:1 via the Lock UI on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is what earns governance voting power, single-staking APR (paid in ALB), and **Real Yield** (paid in WETH from protocol fees).
 
-You can convert back at any time via two paths, mixable: 100% in 30 days (no penalty), or 1% every 12 hours (instant). [Full guide](escrowed-alb-esalb/README.md).
+You can convert back at any time via two paths, mixable: 100% after a 30-day cooldown (no penalty), or 1% instantly every 24 hours. [Full guide](escrowed-alb-esalb/README.md).
 
 ### How do I stake ALB?
 

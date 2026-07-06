@@ -26,6 +26,12 @@ Alien Base works with any standard EVM wallet. There's nothing custom on the wal
 4. Approve the connection in your wallet.
 5. Verify the **Base** network is selected. The app will prompt you to switch if needed.
 
+![The wallet selector](../.gitbook/assets/23-wallet-connect-modal.png)
+
+Once connected, the Dashboard shows your full portfolio on Base — asset allocation, vault deposits, locked positions, and claimable rewards:
+
+![Dashboard with a connected wallet](../.gitbook/assets/24-dashboard-positions.png)
+
 ## Adding Base manually
 
 If your wallet doesn't auto-suggest Base, add it manually:

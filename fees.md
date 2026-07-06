@@ -108,7 +108,7 @@ Vaults that auto-compound (Bunni and future Mothership-managed vaults) collect f
 - **Locking ALB → esALB:** free. 1:1.
 - **Unlocking esALB → ALB:**
   - 30-day full unlock: free, no penalty. Vested position continues to earn at a 30%-reduced APR until redemption.
-  - 1% every 12 hours: free, instant.
+  - 1% every 24 hours: free, instant.
   - Redemption window: 7 days after the 30-day vesting completes — if not claimed in 7 days, the position auto-relocks for another 30 days.
 - **Vesting (multi-year):** the AIP-4 / VestingFactory streams have no user-facing fee; they are an internal accounting facility for team / DAO contributors.
 
