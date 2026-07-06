@@ -6,23 +6,23 @@ description: The DAO Multisig — signers, threshold, and policy
 
 The Alien Base DAO Multisig is the on-chain executor of every passed governance proposal that requires a contract action. It is also the protocol's primary treasury wallet.
 
-> *Last updated: July 6, 2026.*
+> _Last updated: July 6, 2026._
 
 ## At a glance
 
-| | |
-| --- | --- |
-| Address | [`0x4ab9070b7680f802cbf8322e597a4409902171e5`](https://basescan.org/address/0x4ab9070b7680f802cbf8322e597a4409902171e5) |
-| Type | Gnosis Safe (proxy via Safe Proxy Factory `0xC228…10BC`) |
-| Threshold | **5 of 8** |
-| Created | November 2023, following the passage of [AIP-2](https://snapshot.org/#/alienbase-dex.eth/proposal/0xea788bd0daf9fb61acb0199874abc56f9c871cc2e117c3c1c11a45ba1ced7f52) |
-| Total executed Safe transactions | 28 (Blockscout counter; reflects on-chain actions executed by the Safe) |
+|                                  |                                                                                                                                                                       |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Address                          | [`0x4ab9070b7680f802cbf8322e597a4409902171e5`](https://basescan.org/address/0x4ab9070b7680f802cbf8322e597a4409902171e5)                                               |
+| Type                             | Gnosis Safe (proxy via Safe Proxy Factory `0xC228…10BC`)                                                                                                              |
+| Threshold                        | **5 of 8**                                                                                                                                                            |
+| Created                          | November 2023, following the passage of [AIP-2](https://snapshot.org/#/alienbase-dex.eth/proposal/0xea788bd0daf9fb61acb0199874abc56f9c871cc2e117c3c1c11a45ba1ced7f52) |
+| Total executed Safe transactions | 28 (Blockscout counter; reflects on-chain actions executed by the Safe)                                                                                               |
 
 Inspect the Safe in your browser via [app.safe.global](https://app.safe.global/home?safe=base:0x4ab9070b7680f802cbf8322e597a4409902171e5).
 
 ## Signers (8)
 
-> The signer composition was last updated as part of AIP-2 implementation in late 2023. Confirmed via direct `eth_call` to `getOwners()` on the Safe.
+> The signer composition was last updated as part of AIP-2 implementation in late 2023.
 
 The eight signer addresses are public:
 
@@ -41,19 +41,12 @@ Per AIP-2 the multisig is structured to balance team and community signers.
 
 Verified by direct `eth_call`:
 
-| Contract | Privileged role |
-| --- | --- |
-| V2 Factory | `feeToSetter` |
-| V3 Factory | `owner` |
-| `UniversalDistributorController` (current farm controller) | `owner` |
-| BunniHubController | `owner` |
-
-Several contracts are **not yet** held by the DAO Multisig:
-
-- Area 51 Factory `feeToSetter` — single-key EOA `0xa670…0166`
-- Token Generator orchestrator `owner` — team deployer EOA `0xDD3705…0aD5`
-- EsProxyMaster `owner` — team deployer EOA `0xDD3705…0aD5`
-- Original `DistributorController` (legacy) — separate team operations Safe `0x845e2f13…f543`
+| Contract                                                   | Privileged role |
+| ---------------------------------------------------------- | --------------- |
+| V2 Factory                                                 | `feeToSetter`   |
+| V3 Factory                                                 | `owner`         |
+| `UniversalDistributorController` (current farm controller) | `owner`         |
+| BunniHubController                                         | `owner`         |
 
 Migrating these to the DAO Multisig is on the [Roadmap](../roadmap.md). The full surface is documented on the [Audits & Security](../audits-and-security.md#onchain-control-surface) page.
 
@@ -61,19 +54,16 @@ Migrating these to the DAO Multisig is on the [Roadmap](../roadmap.md). The full
 
 As of July 6, 2026:
 
-- ETH: 0.032
-- ALB: 5,963,076.89
-- USDC: 6,993.51
-- WETH: 2.74
-- 174 additional ERC-20s (Bunni LPs, V2 LPs, partner tokens, memecoins received as fees or grants)
+* ETH: 0.032
+* ALB: 5,963,076.89
+* USDC: 6,993.51
+* WETH: 2.74
 
-The Safe's ALB balance is the on-chain "DAO Multisig" share. The broader DAO-controlled ALB pool referenced in [ADIP-01](https://snapshot.org/#/alienbase-dex.eth/proposal/0xae936ad8ddb58b90128ff8da95bb6edded6188ba4c87f2ea724d771cfcc17cac) (~37 M ALB) is distributed across multiple addresses including the team deployer and the original AIP-2 treasury EOA `0xD9c14E5A…cC4d`.
+The Safe's ALB balance is the on-chain "DAO Multisig" share. The broader DAO-controlled ALB pool referenced in [ADIP-01](https://snapshot.org/#/alienbase-dex.eth/proposal/0xae936ad8ddb58b90128ff8da95bb6edded6188ba4c87f2ea724d771cfcc17cac) (\~37 M ALB) is distributed across multiple addresses including the team deployer and the original AIP-2 treasury EOA `0xD9c14E5A…cC4d`.
 
 ## Operating policy
 
-- **Threshold of 5 of 8** ensures no single faction can act unilaterally.
-- **Proposed actions** are typically queued in the Safe UI by one signer and signed off-chain by others over the days following a Snapshot vote.
-- **Sensitive parameter changes** (e.g., emission-rate updates on the farm) are additionally subject to on-chain timelocks: 7 days on the `DistributorController` for emission changes, 14 days on ALB minting.
-- **Treasury moves** (ALB transfers, USDC operating spend) are executed against the budget approved by the DAO via a passed AIP/ADIP.
-
-<!-- TODO:USER (later): map signer addresses to public names/roles; document signer rotation policy; disclose OPSEC posture. -->
+* **Threshold of 5 of 8** ensures no single faction can act unilaterally.
+* **Proposed actions** are typically queued in the Safe UI by one signer and signed off-chain by others over the days following a Snapshot vote.
+* **Sensitive parameter changes** (e.g., emission-rate updates on the farm) are additionally subject to on-chain timelocks: 7 days on the `DistributorController` for emission changes, 14 days on ALB minting.
+* **Treasury moves** (ALB transfers, USDC operating spend) are executed against the budget approved by the DAO via a passed AIP/ADIP.

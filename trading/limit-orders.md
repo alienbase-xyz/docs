@@ -1,26 +1,28 @@
 ---
-description: Limit, Take Profit, and Stop Loss orders — executed on-chain by the Epsilon Router
+description: >-
+  Limit, Take Profit, and Stop Loss orders — executed on-chain by the Epsilon
+  Router
 ---
 
 # Limit, Take Profit & Stop Loss
 
 The **Limit** tab of the trading terminal covers every "trade at my price, not the market's price" scenario. Four order modes, all executed on-chain by the [Epsilon Router](epsilon.md#the-epsilon-router):
 
-| Mode | Direction | Triggers when… | Typical use |
-| --- | --- | --- | --- |
-| **Limit Buy** | Buy | Price **drops to** your level | "Buy the dip at my price" |
-| **Stop Buy** | Buy | Price **climbs to** your level | "Buy the breakout confirmation" |
-| **Take Profit** | Sell | Price **climbs to** your level | "Sell into strength at my target" |
-| **Stop Loss** | Sell | Price **drops to** your level | "Cut the loss automatically" |
+| Mode            | Direction | Triggers when…                 | Typical use                       |
+| --------------- | --------- | ------------------------------ | --------------------------------- |
+| **Limit Buy**   | Buy       | Price **drops to** your level  | "Buy the dip at my price"         |
+| **Stop Buy**    | Buy       | Price **climbs to** your level | "Buy the breakout confirmation"   |
+| **Take Profit** | Sell      | Price **climbs to** your level | "Sell into strength at my target" |
+| **Stop Loss**   | Sell      | Price **drops to** your level  | "Cut the loss automatically"      |
 
-> *Last updated: July 6, 2026.*
+> _Last updated: July 6, 2026._
 
 ## How the modes map to the UI
 
 The form adapts to the direction of your trade:
 
-- **Buying** (selling a quote asset like WETH/USDC for a token): the form shows **LIMIT BUY — "When price drops to …"**. Flip the **Stop buy** toggle to trigger on a rise instead.
-- **Selling** (disposing of a token): the form shows **TAKE PROFIT — "When price climbs to …"**. Flip the **Stop sell** toggle to turn it into a **STOP SELL** (stop loss) that triggers on a drop.
+* **Buying** (selling a quote asset like WETH/USDC for a token): the form shows **LIMIT BUY — "When price drops to …"**. Flip the **Stop buy** toggle to trigger on a rise instead.
+* **Selling** (disposing of a token): the form shows **TAKE PROFIT — "When price climbs to …"**. Flip the **Stop sell** toggle to turn it into a **STOP SELL** (stop loss) that triggers on a drop.
 
 Quick preset buttons (**±5% / ±10% / ±25%**) set the trigger relative to the current market price, or type an exact price.
 
@@ -36,7 +38,7 @@ Quick preset buttons (**±5% / ±10% / ±25%**) set the trigger relative to the 
 6. Choose the expiry (default **1 week**) and slippage (default 0.5%).
 7. Review → confirm in your wallet.
 
-The order rests on-chain. You'll find it under **Open orders** in the positions panel — with type, amount, trigger price, live distance to trigger, and time to expiry — and its trigger level is drawn directly on the chart. Filled and expired orders move to **Closed orders**.
+The order, if created via signature, will not be visible onchain. You'll find it under **Open orders** in the positions panel — with type, amount, trigger price, live distance to trigger, and time to expiry — and its trigger level is drawn directly on the chart. Filled and expired orders move to **Closed orders**.
 
 ![Open orders tab — a resting stop loss with its trigger line on the chart](../.gitbook/assets/17-open-orders.png)
 
@@ -56,19 +58,19 @@ Because triggering depends on observed market price and the fill routes through 
 
 ## Fees
 
-Fees are tiered by asset class of the traded pair, plus a flat **0.05% Matcher execution fee** on every fill (see [Fees](../fees.md) for the full schedule):
+Fees are tiered by asset class of the traded pair, plus a flat **0.05% Protocol execution fee** on every fill (see [Fees](../fees.md) for the full schedule):
 
-| Order type | Stables | Blue chips | Everything else |
-| --- | --- | --- | --- |
-| **Limit / Take Profit** | 0.01% | 0.05% | 0.10% |
-| **Stop Loss / Stop Buy** | 0.10% | 0.20% | 0.45% |
-| *+ Matcher fee* | *0.05%* | *0.05%* | *0.05%* |
+| Order type               | Stables | Blue chips | Everything else |
+| ------------------------ | ------- | ---------- | --------------- |
+| **Limit / Take Profit**  | 0.01%   | 0.05%      | 0.10%           |
+| **Stop Loss / Stop Buy** | 0.10%   | 0.20%      | 0.45%           |
+| _+ Protocol fee_         | _0.05%_ | _0.05%_    | _0.05%_         |
 
-Plus gas: you pay gas at order creation and cancellation; execution gas is handled by the Matcher.
+Plus gas: you pay gas during approval, but not during order creation and cancellation; execution gas is handled by the Matcher.
 
 ## Expiry
 
-Every order has an expiry (default **1 week**). If the trigger isn't hit before expiry, the order closes and your funds are released — nothing is locked indefinitely. Expired orders appear under **Closed orders**.
+Every order has an expiry (default **1 week**). If the trigger isn't hit before expiry, the order closes and will not be executed anymore. **Epsilon does not lock your funds.** Expired orders appear under **Closed orders**.
 
 ## What happened to Carbon Limit & Range orders?
 
@@ -76,7 +78,7 @@ Earlier versions of Alien Base offered Limit and Range orders powered by Bancor'
 
 ## See also
 
-- [Trailing Stop](trailing-stop.md) — a stop level that follows the price up.
-- [DCA Orders](dca-orders.md) — split an entry/exit over time instead of one price.
-- [Epsilon](epsilon.md) — the router + matcher underneath.
-- [Fees](../fees.md)
+* [Trailing Stop](trailing-stop.md) — a stop level that follows the price up.
+* [DCA Orders](dca-orders.md) — split an entry/exit over time instead of one price.
+* [Epsilon](epsilon.md) — the router + matcher underneath.
+* [Fees](../fees.md)

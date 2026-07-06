@@ -6,7 +6,7 @@ description: Split a trade across time — with optional trigger price and stop 
 
 A DCA (Dollar-Cost-Average) order splits a single buy or sell into many smaller trades executed at regular intervals. It's the simplest way to enter or exit a large position without timing the market and without taking the price impact in one shot — and with the Epsilon Router upgrade it gained **trigger prices** and **stop-loss protection**.
 
-> *Last updated: July 6, 2026.*
+> _Last updated: July 6, 2026._
 
 ![DCA order](../.gitbook/assets/06-dca.png)
 
@@ -24,37 +24,37 @@ The order rests on-chain in the [Epsilon Router](epsilon.md#the-epsilon-router).
 
 ![Active DCAs tab — a running DCA with progress and next-order countdown](../.gitbook/assets/18-active-dcas.png)
 
-## Stop-loss DCA
+## Triggered & Short-circuit DCA
 
-A DCA can carry a **stop loss**: if price falls below your configured level mid-run, the remaining schedule aborts and the unspent balance is released. This protects long accumulation runs from catastrophic dips — you stop averaging into a token that's collapsing.
+When using a trigger price, DCA orders act as gradual stop loss/take profit orders: they are only executed when the price reaches your pre-defined trigger. Through the "Keep Selling" setting you can also finetune its behavior: by default, DCAs are **short-circuiting** and will continue the full trade schedule as soon as the trigger is hit just once. By flipping the setting, you can ensure that each individual order is only executed if the trigger is currently active. This can be great to set up sturdy stop loss orders that do not get filled prematurely on wicks.
 
 ## When to use a DCA
 
-- You're entering or exiting a large position and don't want to move the market in one trade.
-- You're nervous about timing — DCA averages your entry across many ticks.
-- You want "buy the breakout, slowly": set a trigger price above market and let the DCA start only if the level is claimed.
+* You're entering or exiting a large position and don't want to move the market in one trade.
+* You're nervous about timing — DCA averages your entry across many ticks.
+* You want "buy the breakout, slowly": set a trigger price above market and let the DCA start only if the level is claimed.
 
-## When *not* to use a DCA
+## When _not_ to use a DCA
 
-- You've decided this is the price you want — use a [Limit order](limit-orders.md) instead.
-- You expect a binary event (catalyst, unlock) — DCA's averaging works against you here.
-- You want to protect gains on an existing position — use a [Trailing Stop](trailing-stop.md).
+* You've decided this is the price you want — use a [Limit order](limit-orders.md) instead.
+* You expect a binary event (catalyst, unlock) — DCA's averaging works against you here.
+* You want to protect gains on an existing position — use a [Trailing Stop](trailing-stop.md).
 
 ## Fees
 
-DCA fees are charged per executed chunk, tiered by asset class, plus a flat **0.05% Matcher execution fee** per fill (full table on [Fees](../fees.md)):
+DCA fees are charged per executed chunk, tiered by asset class, plus a flat **0.05% Protocol execution fee** per fill (full table on [Fees](../fees.md)):
 
-| Order type | Stables | Blue chips | Everything else |
-| --- | --- | --- | --- |
-| **DCA chunk** | 0.01% | 0.10% | 0.20% |
-| **DCA stop-loss execution** | 0.10% | 0.20% | 0.45% |
-| *+ Matcher fee* | *0.05%* | *0.05%* | *0.05%* |
+| Order type                  | Stables | Blue chips | Everything else |
+| --------------------------- | ------- | ---------- | --------------- |
+| **DCA chunk**               | 0.01%   | 0.10%      | 0.20%           |
+| **DCA stop-loss execution** | 0.10%   | 0.20%      | 0.45%           |
+| _+ Protocol fee_            | _0.05%_ | _0.05%_    | _0.05%_         |
 
-Plus the underlying pool fee on whichever venue the chunk routes through, and gas at creation/cancellation (execution gas is handled by the Matcher).
+Plus the underlying pool fee on whichever venue the chunk routes through, and gas for the initial approval step (placing orders is gasless, and execution gas is handled by the Matcher).
 
 ## See also
 
-- [Limit, Take Profit & Stop Loss](limit-orders.md) — precise-price entries and exits.
-- [Trailing Stop](trailing-stop.md) — price-based selling instead of time-based.
-- [Epsilon](epsilon.md) — the router + matcher underneath.
-- [Fees](../fees.md)
+* [Limit, Take Profit & Stop Loss](limit-orders.md) — precise-price entries and exits.
+* [Trailing Stop](trailing-stop.md) — price-based selling instead of time-based.
+* [Epsilon](epsilon.md) — the router + matcher underneath.
+* [Fees](../fees.md)
