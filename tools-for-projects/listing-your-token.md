@@ -33,7 +33,7 @@ Once approved, the metadata propagates to many other tools — DexScreener, Geck
 
 ## DexScreener
 
-[DexScreener](https://dexscreener.com/) picks up tokens automatically once they have a trade. To add the logo and socials directly (rather than waiting for Basescan to propagate), use the [token info marketplace](https://marketplace.dexscreener.com/product/token-info). Standard listing fee: $300. Tokens deployed via the Alien Base Token Generator can qualify for a discount — <!-- TODO:USER confirm current discount terms / partnership status -->.
+[DexScreener](https://dexscreener.com/) picks up tokens automatically once they have a trade. To add the logo and socials directly (rather than waiting for Basescan to propagate), use the [token info marketplace](https://marketplace.dexscreener.com/product/token-info). Standard listing fee: $300. Tokens deployed via the Alien Base Token Generator can qualify for a discount — ask in [Discord](https://discord.gg/alienbase) for current terms. <!-- TODO:USER confirm current discount terms / partnership status -->
 
 ## GeckoTerminal
 

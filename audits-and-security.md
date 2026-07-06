@@ -22,13 +22,18 @@ We deliberately do not claim audit coverage we don't have. If you see a third-pa
 
 ## Audited
 
-### Epsilon Router
+### Epsilon Router — audited by Hexens
 
-- **Scope:** the on-chain Epsilon Router — the contract holding and settling all resting orders (Limit, Take Profit, Stop Loss, Trailing Stop, DCA) — plus the off-chain meta-aggregator integration.
+- **Auditor:** [Hexens](https://hexens.io/) — review led by Kasper Zwijsen, Head of Audits.
+- **Scope:** the full Epsilon protocol — the on-chain Epsilon Router and Matcher (the contracts holding and settling all resting orders: Limit, Take Profit, Stop Loss, Trailing Stop, DCA), the TWAP / Redstone price-oracle layer, and the off-chain keeper + indexer infrastructure.
 - **Contract:** [`0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580) — verified source on Basescan.
-- **Status:** **audit complete.** The Router is live in production and executes all order types in the trading terminal.
-- **Report:** *PDF being attached to these docs.* <!-- TODO:USER add the audit report PDF (auditor name, date) and link it here -->
-- **What this means for users:** Epsilon is the path most swaps take, and the Router holds resting-order funds. The auditor's findings were incorporated before launch.
+- **Timeline:** audit started April 27, 2026; final report June 1, 2026 — before the July 2026 production launch.
+- **Findings:** 37 total — 2 critical, 3 high, 14 medium, 12 low, 6 informational. Per the report: *"All reported issues were fixed or acknowledged by the development team and subsequently verified by us."*
+- **Report:**
+
+{% file src=".gitbook/assets/alienbase-epsilon-audit-hexens-2026.pdf" %}
+
+- **What this means for users:** Epsilon is the path most swaps take, and the Router holds resting-order funds. Both critical issues (order registration without signature validation, keeper not bound into the signed order) were fixed and verified before any user funds touched the contract.
 
 ## Audit upcoming
 
@@ -111,7 +116,7 @@ The "gaps" above are contracts whose privileged owner is still a team-controlled
 
 ## Bug bounty
 
-The DAO budget (per ADIP-01) includes a line item for "audits, bug bounties, hosting, nodes, and third-party development". A formal bug-bounty program with explicit severity tiers and contact channels is **on our list to formalize** but not yet live. In the meantime, please report security issues directly to the team via Discord (DM a team member) or email **security@alienbase.xyz**. <!-- TODO:USER confirm security email or alternative channel -->
+The DAO budget (per ADIP-01) includes a line item for "audits, bug bounties, hosting, nodes, and third-party development". A formal bug-bounty program with explicit severity tiers and contact channels is **on our list to formalize** but not yet live. In the meantime, please report security issues directly to the team via Discord (DM a team member) or email **dex@alienbase.xyz**.
 
 ## What to verify yourself
 
@@ -127,5 +132,5 @@ For any contract you interact with:
 Don't post a 0-day in public. Reach the team privately first:
 
 - DM the team via [Discord](https://discord.gg/alienbase) — find a moderator with a "Team" or "Core" role.
-- Email **security@alienbase.xyz**. <!-- TODO:USER confirm -->
+- Email **dex@alienbase.xyz**.
 - After the issue is patched and disclosed, we publish a postmortem on [Medium](https://medium.com/@alienbase) and link it from the [Changelog](changelog.md).

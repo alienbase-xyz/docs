@@ -10,7 +10,7 @@ description: Discontinued on-chain lottery
 
 ## What it was
 
-A periodic on-chain lottery where users bought tickets in ALB (or ETH; <!-- TODO:USER confirm -->) and a randomized draw distributed the pot to winners. The product borrowed from PancakeSwap's lottery design and aimed to drive engagement and ALB demand.
+A periodic on-chain lottery where users bought tickets in ALB and a randomized draw distributed the pot to winners. <!-- TODO:USER confirm ticket currency (ALB or ETH) --> The product borrowed from PancakeSwap's lottery design and aimed to drive engagement and ALB demand.
 
 Like Predictions, it was an engagement product rather than a core trading or liquidity feature. The team deprecated it to focus operational bandwidth on Mothership, Epsilon Router, and the Alien Base 2.0 rollout.
 

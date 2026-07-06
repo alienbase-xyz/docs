@@ -42,11 +42,11 @@ A Cayman foundation is the standard pattern for this in DeFi (Uniswap Foundation
 
 See [Alien Labs](alien-labs.md) for detail on the Labs side.
 
-## Open items
-
-- <!-- TODO:USER -->Public name of the Cayman entity (the formal "Alien Foundation" branding) and any registry / certificate links worth surfacing.
-- <!-- TODO:USER -->Names / roles of Foundation supervisors (if disclosable).
-- <!-- TODO:USER -->Annual reporting cadence (if planned) — Snapshot post, Medium article, or both.
+<!-- TODO:USER (open items, hidden from readers):
+- Public name of the Cayman entity and any registry / certificate links worth surfacing.
+- Names / roles of Foundation supervisors (if disclosable).
+- Annual reporting cadence (if planned) — Snapshot post, Medium article, or both.
+-->
 
 ## References
 

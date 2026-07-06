@@ -47,10 +47,11 @@ Same two paths as esALB:
 
 You can mix the two paths as needed.
 
-## Open items
+## Contracts
 
-- The esLP contracts on Base: `esLP-ALB-ETH` ("Infinite") at [`0x3d3a5ad6…8ea0`](https://basescan.org/address/0x3d3a5ad6d7beab234d7f0338a01e62b1d36d8ea0) and `esLP-B-ALB-ETH` ("Backstop") at [`0x4a023efe…6978`](https://basescan.org/address/0x4a023efe4b5cd304e800f29074186164fda36978). Both appear under **Vaults → Locked earn** in the dApp. ALB-WETH is currently the only pair with esLP positions.
-- <!-- TODO:USER -->Confirm the live esLP boost (e.g., "esLP ALB-ETH receives X% more emissions vs. the unlocked LP farm").
+The esLP contracts on Base: `esLP-ALB-ETH` ("Infinite") at [`0x3d3a5ad6…8ea0`](https://basescan.org/address/0x3d3a5ad6d7beab234d7f0338a01e62b1d36d8ea0) and `esLP-B-ALB-ETH` ("Backstop") at [`0x4a023efe…6978`](https://basescan.org/address/0x4a023efe4b5cd304e800f29074186164fda36978). Both appear under **Vaults → Locked earn** in the dApp. ALB-WETH is currently the only pair with esLP positions.
+
+<!-- TODO:USER (hidden): confirm the live esLP boost (e.g., "esLP ALB-ETH receives X% more emissions vs. the unlocked LP farm"). -->
 
 ## See also
 

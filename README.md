@@ -51,7 +51,7 @@ Trade, provide liquidity, lock ALB for governance + Real Yield, launch a token, 
 
 The contracts that Alien Base wrote from scratch are split between **audited**, **audit upcoming**, and **inherited audits** from the upstream protocols we fork.
 
-- **Epsilon Router** (the on-chain order engine + meta-aggregator integration) — **audited**; live in production since July 2026.
+- **Epsilon Router** (the on-chain order engine + meta-aggregator integration) — **audited by Hexens** (final report June 2026); live in production since July 2026.
 - **Mothership** — audit upcoming. Pre-audit hardening visible in the public repo (fuzz tests, audit-scope commit from January 2026); the audit will run before the MVP is publicly accessible without supply caps.
 - **All other native contracts** (V2 Factory/Router, BasedDistributorV2 farm, esALB / EsProxyMaster / EsTokenController, Token Generator, etc.) **rely on inherited audits** from the protocols they fork. Specifically:
   - **Uniswap V2 / V3 core** — audited by Trail of Bits, ABDK, and the Uniswap V3 Code4rena contest. Applies to the unchanged V2 + V3 cores.

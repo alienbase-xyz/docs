@@ -35,7 +35,7 @@ The eight signer addresses are public:
 7. `0x9a4d392edea94ff73f0452ab482a0437eae9cad3`
 8. `0x3f9bea132fcde4886e277c43e94c9dd08e0c1d82`
 
-Per AIP-2 the multisig is structured to balance team and community signers. <!-- TODO:USER map each address to its human / role identifier (e.g., 0xAw, GotMyGat, etc.) — currently public docs only listed 6 signers and called it 4-of-6, which is now out of date -->
+Per AIP-2 the multisig is structured to balance team and community signers.
 
 ## What the multisig controls
 
@@ -76,8 +76,4 @@ The Safe's ALB balance is the on-chain "DAO Multisig" share. The broader DAO-con
 - **Sensitive parameter changes** (e.g., emission-rate updates on the farm) are additionally subject to on-chain timelocks: 7 days on the `DistributorController` for emission changes, 14 days on ALB minting.
 - **Treasury moves** (ALB transfers, USDC operating spend) are executed against the budget approved by the DAO via a passed AIP/ADIP.
 
-## Open items
-
-- <!-- TODO:USER -->Map each signer address to a public name / X handle / role (current docs only lists 6 signers; this is out of date).
-- <!-- TODO:USER -->Document the signer rotation policy: how a signer is added or removed, and whether that requires a Snapshot vote.
-- <!-- TODO:USER -->Disclose the OPSEC posture (e.g., are signers using hardware wallets exclusively? Geographic distribution? Backup signers?).
+<!-- TODO:USER (later): map signer addresses to public names/roles; document signer rotation policy; disclose OPSEC posture. -->

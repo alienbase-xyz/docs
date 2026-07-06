@@ -57,7 +57,7 @@ The Epsilon Router moves Epsilon's execution logic on-chain. Deployed at [`0x303
 - **[Trailing Stop](trailing-stop.md)** — a stop level that follows the price up.
 - **[DCA](dca-orders.md)** — time-sliced execution, with optional trigger price and stop-loss abort.
 
-The Router has been **audited**; the report is published on [Audits & Security](../audits-and-security.md). <!-- TODO:USER attach the audit report PDF link -->
+The Router has been **audited by [Hexens](https://hexens.io/)** (final report June 2026, before launch); the full report is published on [Audits & Security](../audits-and-security.md#epsilon-router--audited-by-hexens).
 
 ### The Matcher
 

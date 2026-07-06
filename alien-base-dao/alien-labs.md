@@ -45,9 +45,9 @@ Three reasons:
 - **Six-month operating-budget proposals** — the next ADIP-style budget after [ADIP-01](https://snapshot.org/#/alienbase-dex.eth/proposal/0xae936ad8ddb58b90128ff8da95bb6edded6188ba4c87f2ea724d771cfcc17cac) is the cadence.
 - **The Public [Changelog](../changelog.md)** is updated continuously as features ship.
 
-## Open items
-
-- <!-- TODO:USER -->Headcount + roles, even at a high level (e.g., "8 full-time + N contributors" with rough breakdown by function).
-- <!-- TODO:USER -->Hiring channels / how to apply.
-- <!-- TODO:USER -->Public reporting cadence — confirm quarterly retrospectives.
-- <!-- TODO:USER -->LoC drawdown tracker — once the system is live, link to a public dashboard / spreadsheet showing current outstanding LoC balance and tier progress.
+<!-- TODO:USER (open items, hidden from readers):
+- Headcount + roles at a high level (e.g., "8 full-time + N contributors" by function).
+- Hiring channels / how to apply.
+- Public reporting cadence — confirm quarterly retrospectives.
+- LoC drawdown tracker — once live, link to a public dashboard showing outstanding LoC balance and tier progress.
+-->

@@ -14,7 +14,7 @@ A public, dated record of what shipped on Alien Base, source-cited where possibl
 
 Full app redesign around a professional **trading terminal**: TradingView chart, chain-wide token search, position tracking (Balances / Open orders / Active DCAs / Closed orders / Trades), and a trending ticker — all on [app.alienbase.xyz/swap](https://app.alienbase.xyz/swap).
 
-The **Epsilon Router** ([`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580), audited) goes live, bringing order execution on-chain and shipping new order types: **Limit / Take Profit / Stop Loss / Stop Buy**, **Trailing Stop**, and upgraded **DCA** with trigger prices and stop-loss aborts. Order fees are tiered by asset class — see [Fees](fees.md).
+The **Epsilon Router** ([`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580), audited by Hexens) goes live, bringing order execution on-chain and shipping new order types: **Limit / Take Profit / Stop Loss / Stop Buy**, **Trailing Stop**, and upgraded **DCA** with trigger prices and stop-loss aborts. Order fees are tiered by asset class — see [Fees](fees.md).
 
 The **Vaults** page is redesigned around named strategies (Wide / Narrow / Ultra Narrow / Classic V3) with three tabs: Vaults, Locked earn (esALB + esLP staking), and Legacy farms. A **Dashboard** page aggregates positions, earnings, and rewards per wallet.
 

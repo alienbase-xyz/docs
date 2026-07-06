@@ -69,10 +69,10 @@ The split is operational clarity, not new governance. The DAO is still the supre
 | --- | --- | --- |
 | Vote | AIP-5 passes Snapshot | Done (Apr 7, 2026) |
 | Onchain deployments | New contracts (POL Fund, LoC tracker, govALB) deployed via team deployer | In progress (Apr–May 2026) |
-| Cap raise execution | ALB token cap raised to 1.051 B via 14-day timelock | <!-- TODO:USER confirm execution date or pending date --> |
+| Cap raise execution | ALB token cap raised to 1.051 B via 14-day timelock | Pending — expected July 2026 |
 | Farming wind-down | Existing farms deprecated, replaced by Vaults / POL flows | In progress |
-| esALB protection program | APR-stabilization for esALB holders during transition | <!-- TODO:USER confirm implementation status --> |
-| Public dashboards | LoC drawdown tracker, POL holdings, buyback-and-burn cadence | <!-- TODO:USER planned launch --> |
+| esALB protection program | APR-stabilization for esALB holders during transition | Pending — rolls out with the cap raise |
+| Public dashboards | LoC drawdown tracker, POL holdings, buyback-and-burn cadence | Planned — after the on-chain rollout completes |
 
 The 18 unverified contracts deployed by the team deployer between April and May 2026 (visible on Basescan) are the AIP-5 rollout in flight.
 

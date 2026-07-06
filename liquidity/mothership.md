@@ -57,13 +57,13 @@ This is a long-term roadmap item — see [Roadmap](../roadmap.md). The MVP is si
 
 **Audit in flight.** Pre-audit hardening is visible in the public Mothership repo: extensive fuzz tests and an `audit-scope` commit dated January 2026 marking the contracts the auditor is reviewing. The audit will complete before the MVP is publicly accessible without supply caps. Full audit framing: [Audits & Security](../audits-and-security.md).
 
-## Open items
-
-- <!-- TODO:USER -->Add deployed contract addresses for Mothership core + strategies once the alpha goes live.
-- <!-- TODO:USER -->Confirm fee structure (manager fee, performance fee, protocol-share percentage).
-- <!-- TODO:USER -->Confirm initial strategy list (pairs, fee tiers, signal sources).
-- <!-- TODO:USER -->Add a "How to deposit" walkthrough with screenshots once the UI is live.
-- <!-- TODO:USER -->Document the Mothership emergency-pause path and who controls it during the alpha.
+<!-- TODO:USER (open items for launch, hidden from readers):
+- Add deployed contract addresses for Mothership core + strategies once the alpha goes live.
+- Confirm fee structure (manager fee, performance fee, protocol-share percentage).
+- Confirm initial strategy list (pairs, fee tiers, signal sources).
+- Add a "How to deposit" walkthrough with screenshots once the UI is live.
+- Document the emergency-pause path and who controls it during the alpha.
+-->
 
 ## See also
 

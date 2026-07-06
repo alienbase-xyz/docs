@@ -144,7 +144,7 @@ The most recent published dollar allocations are defined in [ADIP-01](https://sn
 | 2026-07 | Epsilon Router launch. Carbon orders (0.40%) deprecated. New tiered schedule: swaps 0.01/0.05/0.15%, Limit/TP 0.01/0.05/0.10%, Stop/Trailing 0.10/0.20/0.45%, DCA 0.01/0.10/0.20%, all + 0.05% Matcher. Former Epsilon front-end fee (0.03%/0.20%, non-native only) retired. | [Changelog](changelog.md) |
 | Current | V2 0.16% · V3 7 tiers (0.01–1.00%) at 50/50 LP/esALB · platform fees tiered by asset class + 0.05% Matcher (see above) | this page |
 
-## Open items
-
-- <!-- TODO:USER -->Confirm exact date the V3 share moved from 60/40 (AIP-2 original) → 50/50 (current). Was this an explicit later proposal, an executive change by the DAO Multisig, or did the AIP-2 implementation always settle at 50/50?
-- <!-- TODO:USER -->Confirm exact date the V3 fee tier ladder expanded from 4 tiers (0.02 / 0.075 / 0.30 / 1.00) to 7 tiers (added 0.01 / 0.03 / 0.04). Was it part of the AIP-5 rollout?
+<!-- TODO:USER (open items, hidden from readers):
+- Confirm exact date the V3 share moved from 60/40 (AIP-2 original) → 50/50 (current), and via which mechanism.
+- Confirm exact date the V3 fee tier ladder expanded from 4 tiers to 7 (added 0.01 / 0.03 / 0.04). Part of AIP-5 rollout?
+-->

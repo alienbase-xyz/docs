@@ -56,11 +56,11 @@ Both streams are claimable from the same Vaults page UI ("Harvest" / "Claim All"
 - AIP-3 (Oct 2024) noted that ~50% of trade-fee revenue was already being redistributed to esALB holders by that point.
 - AIP-5 (Apr 2026) preserves Real Yield and adds the POL Fund's buyback-and-burn flywheel on top.
 
-## Open items
-
-- <!-- TODO:USER -->Concrete numbers: most recent month/quarter Real Yield distribution in WETH (and any other tokens), plus implied APR vs. the staked esALB pool size. The Dune dashboard's **Fees** widget shows protocol-fee accrual; we should be able to derive recent Real Yield from it: [dune.com/sealaunch/alienbase](https://dune.com/sealaunch/alienbase).
-- <!-- TODO:USER -->Distribution cadence — is Real Yield streamed continuously or distributed in epochs? Which contract / function is the user-facing "claim"?
-- <!-- TODO:USER -->Explain how the protocol handles long-tail fee tokens (e.g., a memecoin pool that produces fees in the memecoin) — are they auto-swapped to WETH, distributed in-kind, or kept by the DAO?
+<!-- TODO:USER (open items, hidden from readers):
+- Concrete numbers: most recent month/quarter Real Yield distribution in WETH, plus implied APR vs. the staked esALB pool size (derivable from the Dune Fees widget: dune.com/sealaunch/alienbase).
+- Distribution cadence: streamed continuously or epochs? Which contract/function is the user-facing "claim"?
+- How are long-tail fee tokens handled (auto-swapped to WETH, distributed in-kind, or kept by the DAO)?
+-->
 
 ## See also
 

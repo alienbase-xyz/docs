@@ -69,9 +69,7 @@ For LPs who want full control — pick your own pair, fee tier, and range — th
 
 Actively-managed multi-range vaults arrive with [Mothership](mothership.md), Alien Base's in-house ALM (audit in flight). Mothership-managed vaults will appear on this same page.
 
-## Open items
-
-- <!-- TODO:USER -->Confirm whether Mothership will charge a manager fee + performance fee at launch.
+<!-- TODO:USER (hidden): confirm whether Mothership will charge a manager fee + performance fee at launch. -->
 
 ## See also
 

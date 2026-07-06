@@ -14,10 +14,10 @@ This section documents Alien Base products and initiatives that are **no longer 
 | --- | --- | --- |
 | [Carbon Orders (Limit / Range / Recurring)](carbon-orders.md) | Deprecated — replaced by Epsilon Router orders | July 2026 |
 | [Area 51](area-51.md) | Deprecated | 2024 |
-| [StableSwap](stableswap.md) | Deprecated | <!-- TODO:USER confirm year --> |
+| [StableSwap](stableswap.md) | Deprecated | — <!-- TODO:USER confirm year --> |
 | [B3 multi-chain](b3.md) | Shelved (under-delivered, not strategic priority) | 2025 |
-| [Predictions](predictions.md) | Discontinued | <!-- TODO:USER confirm year --> |
-| [Lottery](lottery.md) | Discontinued | <!-- TODO:USER confirm year --> |
+| [Predictions](predictions.md) | Discontinued | — <!-- TODO:USER confirm year --> |
+| [Lottery](lottery.md) | Discontinued | — <!-- TODO:USER confirm year --> |
 
 ## A note on archival policy
 
