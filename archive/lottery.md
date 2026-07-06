@@ -6,7 +6,7 @@ description: Discontinued on-chain lottery
 
 **Status:** discontinued. No longer offered.
 
-> *Last updated: {{today}}.* <!-- TODO:USER confirm exact discontinuation date and any contract details users need for stranded funds. -->
+> *Last updated: July 6, 2026.* <!-- TODO:USER confirm exact discontinuation date and any contract details users need for stranded funds. -->
 
 ## What it was
 
@@ -16,7 +16,7 @@ Like Predictions, it was an engagement product rather than a core trading or liq
 
 ## Contracts
 
-<!-- TODO:USER -->List the deployed Lottery contract address (on-chain analysis indicates an `AlienbaseLottery` contract was deployed by the team deployer). Users should be able to verify and call into it directly if they have unclaimed positions.
+The `AlienbaseLottery` contract, deployed by the AlienBase Deployer, is at [`0x4384DCF9…48Ff`](https://basescan.org/address/0x4384DCF974769F2E0E52cdE92b6D5fC9be5248Ff) (verified source). If you have unclaimed positions, you can call the contract's claim functions directly from the explorer's Write tab.
 
 ## If you have unclaimed tickets / winnings
 

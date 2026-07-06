@@ -6,17 +6,18 @@ description: Products and initiatives that are no longer active
 
 This section documents Alien Base products and initiatives that are **no longer active**. Each page is preserved for historical context, contract verification, and to direct anyone with stranded funds to the relevant recovery / withdrawal path.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## What's in here
 
 | Item | Status | Last active |
 | --- | --- | --- |
+| [Carbon Orders (Limit / Range / Recurring)](carbon-orders.md) | Deprecated — replaced by Epsilon Router orders | July 2026 |
 | [Area 51](area-51.md) | Deprecated | 2024 |
-| [StableSwap](stableswap.md) | Deprecated | <!-- TODO:USER --> |
+| [StableSwap](stableswap.md) | Deprecated | <!-- TODO:USER confirm year --> |
 | [B3 multi-chain](b3.md) | Shelved (under-delivered, not strategic priority) | 2025 |
-| [Predictions](predictions.md) | Discontinued | <!-- TODO:USER --> |
-| [Lottery](lottery.md) | Discontinued | <!-- TODO:USER --> |
+| [Predictions](predictions.md) | Discontinued | <!-- TODO:USER confirm year --> |
+| [Lottery](lottery.md) | Discontinued | <!-- TODO:USER confirm year --> |
 
 ## A note on archival policy
 

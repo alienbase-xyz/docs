@@ -6,7 +6,7 @@ description: Deprecated isolated-fee-tier DEX
 
 **Status:** deprecated. Liquidity was migrated and the product was removed from the main UI in 2024.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## What it was
 

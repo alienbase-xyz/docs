@@ -6,7 +6,7 @@ description: Deprecated Saddle-style stableswap pools
 
 **Status:** deprecated. No longer surfaced in the dApp's primary UI.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## What it was
 
@@ -22,7 +22,7 @@ It launched as one of several attempts to specialize liquidity for tightly-pegge
 
 ## Contracts
 
-<!-- TODO:USER -->Confirm the StableSwap deployment addresses (pools, factory, gauge if any). The original Medium roadmap announcement of StableSwap should have these; we'll cross-reference and add to the [Contracts — Deprecated section](../contracts.md).
+The Saddle-style `SwapFlashLoan` pool contract is at [`0x927860…bb27`](https://basescan.org/address/0x927860797d8CC9b94e3FdC6F1a4a3C42aDfFbb27) — see the [Contracts — Deprecated section](../contracts.md#deprecated--historical).
 
 ## If you have funds in StableSwap
 

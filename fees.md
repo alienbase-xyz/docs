@@ -6,7 +6,7 @@ description: Single source of truth for every fee on Alien Base
 
 This page lists every fee charged anywhere on Alien Base, what it pays for, and where the value flows.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## TL;DR
 
@@ -18,15 +18,18 @@ This page lists every fee charged anywhere on Alien Base, what it pays for, and 
 
 | Product | Fee | Where it goes |
 | --- | --- | --- |
-| **V2 swap** | **0.16%** | LPs |
-| **V3 swap** | **7 fee tiers** (see below) | **50% LPs / 50% esALB stakers** |
-| **Epsilon** front-end fee (non-native pools) | **0.03%** stables / ETH / BTC, **0.20%** everything else | Treasury / esALB |
-| **Carbon** orders (Limit / Range / Recurring) | **0.40%** on the trade, on top of the maker's spread | Treasury / esALB |
-| **DCA** orders | Same schedule as Epsilon — **0.03%** blue chips / **0.20%** other | Treasury / esALB |
+| **V2 swap** (pool fee) | **0.16%** | LPs |
+| **V3 swap** (pool fee) | **7 fee tiers** (see below) | **50% LPs / 50% esALB stakers** |
+| **Swap** (platform fee) | **0.01% / 0.05% / 0.15%** (stables / blue chips / other) + 0.05% Matcher | Treasury / esALB |
+| **Limit / Take Profit** orders | **0.01% / 0.05% / 0.10%** (stables / blue chips / other) + 0.05% Matcher | Treasury / esALB |
+| **Stop Loss / Stop Buy / Trailing Stop** orders | **0.10% / 0.20% / 0.45%** (stables / blue chips / other) + 0.05% Matcher | Treasury / esALB |
+| **DCA** orders (per chunk) | **0.01% / 0.10% / 0.20%** (stables / blue chips / other) + 0.05% Matcher | Treasury / esALB |
 | **Token Generator** | **0.015 ETH** per token mint | Operating budget |
 | Liquidity ops (add / remove / claim) | None | — |
 | Locking ALB → esALB | None | — |
 | Unlocking esALB → ALB | None | — |
+
+> The **Matcher execution fee** is a flat **0.05%** charged on top of the platform fee for every trade executed through Epsilon — swaps and resting orders alike.
 
 ## Trading fees
 
@@ -53,43 +56,42 @@ The wide tier ladder lets each pool choose the fee that matches its volatility. 
 
 **Distribution:** **50% to LPs** in-pool, **50% to esALB stakers** as Real Yield. esALB Real Yield is paid in WETH (and select underlying tokens / stablecoins).
 
-### Epsilon front-end fee (non-native pools)
+### Swap platform fee (Epsilon)
 
-When [Epsilon](trading/epsilon.md) routes a trade through pools outside Alien Base (e.g., Aerodrome, Uniswap, PancakeSwap, SushiSwap), a small front-end fee is added on top of the underlying pool fees. There is **no Epsilon fee on Alien Base's own pools**.
+Every swap executed through [Epsilon](trading/epsilon.md) pays a small platform fee on top of the underlying pool fees, tiered by asset class, plus the flat Matcher execution fee:
 
-| Asset class | Fee |
-| --- | --- |
-| Blue chips (stables, ETH, BTC and wrapped variants) | **0.03%** |
-| Everything else | **0.20%** |
+| Asset class | Platform fee | + Matcher | Total |
+| --- | --- | --- | --- |
+| Stables | 0.01% | 0.05% | **0.06%** |
+| Blue chips (ETH, BTC and wrapped variants) | 0.05% | 0.05% | **0.10%** |
+| Everything else | 0.15% | 0.05% | **0.20%** |
 
 In nearly every case the fee is significantly less than the price improvement Epsilon captures by aggregating the entire chain.
 
 **Distribution:** routed to the Treasury, with the bulk going to the esALB Real Yield stream.
 
-### Carbon orders (Limit / Range / Recurring)
+### Epsilon Router orders (Limit / Stop / Trailing Stop / DCA)
 
-Alien Base's Limit, Range, and Recurring orders are powered by Bancor's Carbon technology. They behave like irreversible on-chain market-maker positions.
+Resting orders live in the on-chain [Epsilon Router](trading/epsilon.md#the-epsilon-router) and are executed by the Matcher when their trigger fires. Fees are tiered by the asset class of the traded pair; every execution also pays the flat **0.05% Matcher fee**:
 
-- **Maker.** When you create a Limit, Range, or Recurring order, you implicitly define a **spread** between your buy and sell prices. That spread is your margin and you keep all of it.
-- **Alien Base fee.** **0.40% on the executed trade**, on top of the maker's spread. Routed to the Treasury / esALB Real Yield stream.
-- **Gas.** Takers pay gas at fill time. Makers pay gas only at order creation, edit, and withdrawal.
+| Order type | Stables | Blue chips (ETH, BTC) | Everything else |
+| --- | --- | --- | --- |
+| **Limit / Take Profit** | 0.01% | 0.05% | 0.10% |
+| **Stop Loss / Stop Buy / Trailing Stop / DCA stop-loss** | 0.10% | 0.20% | 0.45% |
+| **DCA chunk** | 0.01% | 0.10% | 0.20% |
+| *+ Matcher execution fee (all of the above)* | *0.05%* | *0.05%* | *0.05%* |
 
-A maker's all-in revenue per filled order is therefore: their spread minus the 0.40% Alien Base fee on the executed trade.
+Stop-style orders cost more than plain limit orders because the Matcher must monitor and execute them under adverse, fast-moving market conditions.
 
-### DCA orders
+On top of the order fee, each fill pays the underlying pool fee of whichever venue the Matcher routes through (exactly like a swap placed at that moment), and your slippage setting applies at execution time.
 
-DCA orders use the same fee schedule as Epsilon — each DCA chunk is a swap, so it pays Epsilon-equivalent fees:
-
-| Asset class | Fee per DCA chunk |
-| --- | --- |
-| Blue chips (stables, ETH, BTC) | **0.03%** |
-| Everything else | **0.20%** |
-
-Plus the underlying swap fee from whichever pool Epsilon routes the chunk through.
-
-**Required input asset:** WETH (raw ETH must be wrapped first; the DCA UI surfaces this as an inline warning).
+**Gas:** you pay gas at order creation and cancellation; execution gas is handled by the Matcher (funded by its flat fee).
 
 **Distribution:** routed to the Treasury / esALB Real Yield stream.
+
+### Deprecated: Carbon orders
+
+Carbon-powered Limit / Range / Recurring orders (deprecated July 2026) charged **0.40% on the executed trade** on top of the maker's spread. Existing Carbon orders remain withdrawable; see [Archive — Carbon Orders](archive/carbon-orders.md).
 
 ## Liquidity provision
 
@@ -120,13 +122,13 @@ If your generated token uses the **Tax** template, your token's own buy/sell tax
 
 ## Where the protocol's share goes
 
-Per **AIP-3** and **ADIP-01**, the protocol's share of fees (V3 50% staker share, Epsilon front-end, Carbon 0.40%, DCA, Token Generator) flows to:
+Per **AIP-3** and **ADIP-01**, the protocol's share of fees (V3 50% staker share, Epsilon front-end, Epsilon Router order fees, Token Generator) flows to:
 
 1. **Real Yield to esALB holders** in WETH and protocol tokens — this is the largest line.
 2. **DAO operating budget** (audits, infrastructure, marketing, legal, dev allowances) — set as a USDC and ALB allocation per cycle, not as a percentage.
 3. **Protocol-Owned Liquidity (POL)** — building treasury liquidity that earns yield → buyback-and-burn ALB (ramping under [AIP-5](https://snapshot.org/#/alienbase-dex.eth/proposal/0x9328ecc5a0d2527a1e73fd30085e7ba2120a985b7782ce843f15ee2ddf38ca63)).
 
-The current cycle's specific dollar allocations are defined in [ADIP-01](https://snapshot.org/#/alienbase-dex.eth/proposal/0xae936ad8ddb58b90128ff8da95bb6edded6188ba4c87f2ea724d771cfcc17cac) and refreshed every six months by DAO vote.
+The most recent published dollar allocations are defined in [ADIP-01](https://snapshot.org/#/alienbase-dex.eth/proposal/0xae936ad8ddb58b90128ff8da95bb6edded6188ba4c87f2ea724d771cfcc17cac) (Sept 2025 → Feb 2026); team funding is transitioning to the AIP-5 Line-of-Credit model.
 
 ## Historical fee changes
 
@@ -139,11 +141,10 @@ The current cycle's specific dollar allocations are defined in [ADIP-01](https:/
 | 2024-11 | Epsilon adds Odos with a **0% Epsilon fee promo** for an initial period. | [Epsilon Upgrade](https://medium.com/@alienbase/epsilon-upgrade-odos-integration-and-introduction-to-epsilon-analytics-66b779bf9912) |
 | 2025-06 | Third halving — yearly inflation cut 30% → 15%; fee structure unchanged. | [AIP-4](https://snapshot.org/#/alienbase-dex.eth/proposal/0x3e1f7e1841389638f6fda99baefd61331cf711fdc7f4649ad96713c25a747826) |
 | 2026-04 | AIP-5 ratifies replacing fixed halvings with flexible emissions + persistent buybacks. | [AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2) |
-| Current | V2 0.16% · V3 7 tiers (0.01–1.00%) at 50/50 LP/esALB · Epsilon 0.03%/0.20% · Carbon 0.40% · DCA same as Epsilon | this page |
+| 2026-07 | Epsilon Router launch. Carbon orders (0.40%) deprecated. New tiered schedule: swaps 0.01/0.05/0.15%, Limit/TP 0.01/0.05/0.10%, Stop/Trailing 0.10/0.20/0.45%, DCA 0.01/0.10/0.20%, all + 0.05% Matcher. Former Epsilon front-end fee (0.03%/0.20%, non-native only) retired. | [Changelog](changelog.md) |
+| Current | V2 0.16% · V3 7 tiers (0.01–1.00%) at 50/50 LP/esALB · platform fees tiered by asset class + 0.05% Matcher (see above) | this page |
 
 ## Open items
 
 - <!-- TODO:USER -->Confirm exact date the V3 share moved from 60/40 (AIP-2 original) → 50/50 (current). Was this an explicit later proposal, an executive change by the DAO Multisig, or did the AIP-2 implementation always settle at 50/50?
 - <!-- TODO:USER -->Confirm exact date the V3 fee tier ladder expanded from 4 tiers (0.02 / 0.075 / 0.30 / 1.00) to 7 tiers (added 0.01 / 0.03 / 0.04). Was it part of the AIP-5 rollout?
-- <!-- TODO:USER -->Confirm exact date the Carbon 0.40% Alien Base fee was introduced (early Carbon docs framed it as "0% Alien Base fee — maker keeps the spread").
-- <!-- TODO:USER -->Confirm exact date DCA fees moved from a flat 0.1% to the Epsilon-mirroring 0.03% / 0.20% schedule.

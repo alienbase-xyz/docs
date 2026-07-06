@@ -6,7 +6,7 @@ description: Discontinued price-prediction game
 
 **Status:** discontinued. No longer offered.
 
-> *Last updated: {{today}}.* <!-- TODO:USER confirm exact discontinuation date and any contract details users need for stranded funds. -->
+> *Last updated: July 6, 2026.* <!-- TODO:USER confirm exact discontinuation date and any contract details users need for stranded funds. -->
 
 ## What it was
 
@@ -16,7 +16,7 @@ It was a fun engagement product but not a core part of Alien Base's value propos
 
 ## Contracts
 
-<!-- TODO:USER -->List the on-chain Predictions contracts that were used (e.g., a `PredictionETH` contract — on-chain analysis suggests one was deployed by the team deployer). Even though the game is no longer surfaced, users should be able to verify the contract and confirm there are no unclaimed winnings.
+The `PredictionETH` contract, deployed by the AlienBase Deployer, is at [`0xFBE87Ee1…63e8`](https://basescan.org/address/0xFBE87Ee1Ee62244A2dF80a8093Eab829C52863e8) (verified source). Even though the game is no longer surfaced in the dApp, you can verify the contract and claim any unclaimed winnings directly from the explorer's Write tab.
 
 ## If you have unclaimed winnings
 
