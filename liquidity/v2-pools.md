@@ -6,7 +6,7 @@ description: The original Alien Base AMM — Uniswap V2 fork
 
 V2 pools are the original Alien Base liquidity venue. Built on Uniswap V2 contracts, launched at TGE in **August 2023**. Despite the "legacy" label, V2 still hosts the most active ALB markets and remains a meaningful piece of the protocol.
 
-> *Last updated: {{today}}.*
+> *Last updated: July 6, 2026.*
 
 ## When to use V2
 
@@ -24,9 +24,9 @@ V2 pools are the original Alien Base liquidity venue. Built on Uniswap V2 contra
 
 ## Where to find them
 
-- **Trade.** [Swap UI](https://app.alienbase.xyz/swap) routes through V2 automatically when it's the best venue.
-- **LP.** [Liquidity → V2](https://app.alienbase.xyz/liquidity) — add or remove V2 liquidity directly.
-- **Farm.** Selected V2 pairs (especially ALB-WETH) earn ALB emissions through the legacy V2 Farm. See [Vaults](vaults.md).
+- **Trade.** The [trading terminal](https://app.alienbase.xyz/swap) routes through V2 automatically when it's the best venue.
+- **LP.** **New position** (on the [Vaults](https://app.alienbase.xyz/vaults) or Dashboard page) → select **V2** — add or remove V2 liquidity directly.
+- **Farm.** The old V2 farms live under **Vaults → Legacy farms**; their emissions have wound down under AIP-5, so the tab is mainly for unstaking. See [Vaults](vaults.md#legacy-farms-tab).
 
 ## ALB-WETH — the headline pair
 

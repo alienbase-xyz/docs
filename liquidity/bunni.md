@@ -6,7 +6,7 @@ description: Why Alien Base wraps V3 positions as ERC-20 share tokens
 
 **Bunni** is a Uniswap V3 wrapper developed by [Timeless Finance](https://timelessfi.com/). It turns each V3 LP position from an NFT into an **ERC-20 share token** — making concentrated-liquidity positions composable, transferable, and farmable.
 
-> *Last updated: {{today}}.* Alien Base ships a fork of Bunni alongside its V3 stack.
+> *Last updated: July 6, 2026.* Alien Base ships a fork of Bunni alongside its V3 stack.
 
 ## Why wrap V3 positions
 

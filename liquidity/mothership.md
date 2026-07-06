@@ -6,7 +6,7 @@ description: Alien Base's automated liquidity manager — the next-gen Vault lay
 
 **Mothership** is Alien Base's purpose-built **Automated Liquidity Manager (ALM)**. It's the first protocol Alien Base has written from scratch (no upstream fork). Mothership turns passive concentrated-liquidity Vaults into actively managed strategies that re-balance ranges and re-allocate capital on the fly.
 
-> *Last updated: {{today}}.* Mothership is **pre-launch** as of the time of writing — audit in flight, alpha imminent. This page is shipped to docs but kept hidden until the public alpha opens. <!-- TODO:USER unhide on launch + add screenshots + add the deployed contract addresses -->
+> *Last updated: July 6, 2026.* Mothership is **pre-launch** as of the time of writing — audit in flight, alpha imminent. This page is shipped to docs but kept hidden until the public alpha opens. <!-- TODO:USER unhide on launch + add screenshots + add the deployed contract addresses -->
 
 ## What Mothership is
 
