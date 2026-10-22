@@ -1,5 +1,9 @@
 # Changing allowance
 
+{% hint style="info" %}
+**This page only applies to legacy esALB** (`0x365c…4113`). The new esALB earns without any staking or `approveUsage` step, so there's no allowance to manage. If you still hold legacy esALB, the easiest fix is to [migrate it](../migration/README.md).
+{% endhint %}
+
 esALB uses a different allowance system for allocating to farms — this is what happens when you click **Enable** before staking esALB (today under **Vaults → Locked earn**).
 
 In some cases, the allowance might be insufficient, or you may want to revoke it fully. Tools like revoke.cash don't support this kind of allowance (but also, no one can take esALB from you).

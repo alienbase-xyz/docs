@@ -6,7 +6,7 @@ description: Quick definitions for terms used across Alien Base
 
 A short reference for terms you'll see repeatedly in Alien Base's docs and UI.
 
-> *Last updated: July 6, 2026.*
+> *Last updated: October 22, 2026.*
 
 ### ADIP
 
@@ -18,7 +18,7 @@ A short reference for terms you'll see repeatedly in Alien Base's docs and UI.
 
 ### ALB
 
-The native token of Alien Base. ERC-20 on Base. [`0x1dd2…50c4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4). See [ALB Token](alb-token.md).
+The native token of Alien Base. ERC-20 on Base, hard cap 1,051,000,000. [`0x1b23…cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7). The legacy ALB ([`0x1dd2…50c4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)) migrates 1:1; see [Migration](#migration). See [ALB Token](alb-token.md).
 
 ### ALM (Automated Liquidity Manager)
 
@@ -62,7 +62,7 @@ The on-chain contract ([`0x303c…2580`](https://basescan.org/address/0x303ca5c6
 
 ### esALB / esLP
 
-*Escrowed ALB / Escrowed LP.* Locked, non-transferable forms of ALB and select LP tokens that earn voting power, single-staking APR, and Real Yield. Convertible 1:1 with the underlying token; redemption paths are 100% after a 30-day cooldown or 1% instantly every 24 hours. See [esALB](escrowed-alb-esalb/README.md).
+*Escrowed ALB / Escrowed LP.* Locked, non-transferable forms of ALB and select LP tokens that earn voting power, rewards, and Real Yield. New esALB ([`0x32d9…4473`](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473)) earns automatically while held; it redeems at 85% after 30 days rising to 100% at 60 days, or 2% instantly every 48 hours. esLP and legacy esALB follow the older rules (30-day cooldown or 1% instant). See [esALB](escrowed-alb-esalb/README.md).
 
 ### Fair launch
 
@@ -78,11 +78,15 @@ See [Alien Foundation](alien-base-dao/alien-foundation.md). The Cayman-registere
 
 ### govALB
 
-A new staked-escrow form of esALB introduced by [AIP-5](alien-base-2-0.md): **10× voting power**, 1× earning power, ~2-year effective lock. Designed for users who want maximum governance influence and are willing to commit time.
+*Governance Alien Base Token.* The long-lock tier of esALB introduced by [AIP-5](alien-base-2-0.md) ([`0x7fdb…441d`](https://basescan.org/token/0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d)): converted 1:1 from esALB, **10× voting power**, 1× earning power, 2-year unstake. See [govALB](escrowed-alb-esalb/README.md#govalb).
 
 ### LoC (Line of Credit)
 
 The Dev Line of Credit introduced by [AIP-5](alien-base-2-0.md): the team's funding becomes tracked debt with interest paid to esALB holders. Price-tier grant tranches at $0.40, $1, and $2 unlock as ALB sustains those moving averages. See [Alien Labs](alien-base-dao/alien-labs.md).
+
+### Migration
+
+The one-way, 1:1 swap of legacy ALB and esALB into the new Alien Base 2.0 tokens through the [Migration Contract](https://basescan.org/address/0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d). No deadline; migrated legacy tokens are locked forever. See the [Migration Guide](migration/README.md).
 
 ### Matcher
 
@@ -118,7 +122,7 @@ A sell order that triggers when price climbs to your target. See [Limit, Take Pr
 
 ### Timelock
 
-A contract that delays execution of privileged actions (e.g., minting ALB, changing emission rates). Alien Base's farm controllers and ALB token use timelocks of 7 and 14 days respectively.
+A contract that delays execution of privileged actions (e.g., minting ALB, changing emission rates). The Alien Base 2.0 contracts (new ALB, esALB, govALB, staking, Distributor) are owned by a 7-day TimelockController. On the legacy stack, the farm controllers and ALB token used timelocks of 7 and 14 days respectively.
 
 ### Token Generator
 

@@ -49,7 +49,7 @@ Single-stake escrowed positions (see [esALB](../escrowed-alb-esalb/README.md) fo
 
 | Position | What it is |
 | --- | --- |
-| **esALB** | Locked ALB. Earns unlocked ALB emissions + Real Yield (WETH); APR is shown split by source. |
+| **esALB** | Locked ALB. Earns ALB + Real Yield (WETH); APR is shown split by source. New esALB earns automatically while held; legacy esALB had to be staked here and should be [migrated](../migration/README.md). |
 | **ALB-WETH LP (Infinite)** | Escrowed LP: lock ALB-WETH LP tokens for boosted rewards. |
 | **ALB-WETH LP (Backstop)** | Escrowed LP variant that acts as protocol backstop liquidity. |
 

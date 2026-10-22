@@ -6,7 +6,7 @@ description: Canonical list of every Alien Base contract on Base
 
 Every contract Alien Base has deployed on Base (chain id 8453). Each row links to Basescan and notes who controls it. Verification status, source repos, and audit coverage are tracked separately on the [Audits & Security](audits-and-security.md) page.
 
-> _Last updated: July 6, 2026._ _Verification was performed against_ [_Blockscout_](https://base.blockscout.com/) _and confirmed via `eth_call` on the public Base RPC._
+> _Last updated: October 22, 2026._ _Verification was performed against_ [_Blockscout_](https://base.blockscout.com/) _and confirmed via `eth_call` on the public Base RPC._
 
 ## How to read this page
 
@@ -17,12 +17,37 @@ Every contract Alien Base has deployed on Base (chain id 8453). Each row links t
 
 ## Token
 
-|                      |                                                                                                                                                                                              |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **ALB token**        | [`0x1dd2d631c92b1aCdFCDd51A0F7145A50130050C4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)                                                                        |
-| Standard             | ERC-20, 18 decimals, OpenZeppelin AccessControl                                                                                                                                              |
-| Max supply (current) | 510,000,000 ALB ([AIP-5](https://snapshot.org/#/alienbase-dex.eth/proposal/0x9328ecc5a0d2527a1e73fd30085e7ba2120a985b7782ce843f15ee2ddf38ca63) authorizes a one-time raise to 1,051,000,000) |
-| Mint timelock        | 14 days                                                                                                                                                                                      |
+|                      |                                                                                                                                         |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **ALB token**        | [`0x1b23704e3f4bc7081fb00cec582183e3fe43cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7)                   |
+| Name / symbol        | Alien Base Token / ALB                                                                                                                  |
+| Standard             | ERC-20, 18 decimals, burnable                                                                                                           |
+| Max supply           | 1,051,000,000 ALB, hard-coded (`MAX_SUPPLY`)                                                                                            |
+| Minters              | Migration Contract and Distributor only (`isMinter`)                                                                                    |
+| Owner                | 7-day TimelockController [`0x1c7e…1e21`](https://basescan.org/address/0x1c7e4284423c1a2362c49b1ea223b73e38c81e21) (timelock)            |
+| Recovery admin       | DAO Multisig (can only rescue tokens sent to the ALB contract by mistake)                                                              |
+| Legacy ALB           | [`0x1dd2d631c92b1aCdFCDd51A0F7145A50130050C4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4): **Superseded**, migrates 1:1 (see [Migration Guide](migration/README.md)). 510M cap, OpenZeppelin AccessControl, 14-day mint timelock |
+
+## New token system (AIP-5)
+
+Deployed for [AIP-5](alien-base-2-0.md). All contracts are verified on Basescan / Blockscout. Every contract except the Migration Contract is owned by the 7-day OpenZeppelin `TimelockController` (`0x1c7e…1e21`), so admin changes are visible on-chain for 7 days before they can execute.
+
+| Component | Address | Status | Owner |
+| --- | --- | --- | --- |
+| **ALB** (`ALBToken`) | [`0x1b23704e3f4bc7081fb00cec582183e3fe43cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7) | Active | Timelock |
+| **esALB** (`EsALB`, "Escrowed Alien Base Token") | [`0x32d9f29170a023794025375df6949f56844e4473`](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473) | Active | Timelock |
+| **govALB** (`GovALB`, "Governance Alien Base Token") | [`0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d`](https://basescan.org/token/0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d) | Active | Timelock |
+| **Migration Contract** (legacy → new, 1:1) | [`0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d`](https://basescan.org/address/0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d) | Active | None (no admin functions) |
+| Staking contract (esALB + govALB rewards) | [`0x28a3c9852383eef436a874b74d2acf23047e85cf`](https://basescan.org/address/0x28a3c9852383eef436a874b74d2acf23047e85cf) | Active | Timelock |
+| Distributor (multi-stream farm) | [`0xe98af15fdc6f64ef81e53e0ae8ac8da31c577fc4`](https://basescan.org/address/0xe98af15fdc6f64ef81e53e0ae8ac8da31c577fc4) | Active | Timelock |
+| LoC Factory (Dev Line of Credit) | [`0x4f1debde1bfe0e5a6828d9958bf02dbbb5104fa2`](https://basescan.org/address/0x4f1debde1bfe0e5a6828d9958bf02dbbb5104fa2) | Active | Timelock |
+| ALB price oracle | [`0x0463d4131e637ef7f364b7502f430380a7f00b55`](https://basescan.org/address/0x0463d4131e637ef7f364b7502f430380a7f00b55) | Active | Timelock |
+| ALB TWAP source | [`0x857d751860e7f74169a83ecaebd31968da714851`](https://basescan.org/address/0x857d751860e7f74169a83ecaebd31968da714851) | Active | (no owner) |
+| Uniswap V3 TWAP oracle | [`0x53aa2507294749b561f6250756c0121280d4b3b9`](https://basescan.org/address/0x53aa2507294749b561f6250756c0121280d4b3b9) | Active | Timelock |
+| New ALB/WETH V3 pool | [`0xFF4364b623dC4D9A1556774467748EAb68DfF1B7`](https://basescan.org/address/0xFF4364b623dC4D9A1556774467748EAb68DfF1B7) | Active | — |
+| New ALB/USDC V3 pool | [`0x48676681A1F5BefD4b79273BdA2D85cD5390c97d`](https://basescan.org/address/0x48676681A1F5BefD4b79273BdA2D85cD5390c97d) | Active | — |
+
+Once the migration has run its course, the legacy farming and esALB rows below will be moved to "Superseded".
 
 ## Alien Base V2
 
@@ -69,14 +94,14 @@ Stock Uniswap V3 plus a fork of Bunni for ERC-20-wrapped LP positions.
 
 > **Note on the docs migration:** the previous version of this page listed `0x176ca19…08f0` as the "esALB-ETH pair". That contract is a `BunniToken` (a wrapped V3 LP position over the ALB/WETH pool), **not** a Uniswap V2 pair. Bunni LP tokens are minted by BunniHub, not by the team deployer.
 
-## esALB & escrowed token system
+## Legacy esALB & escrowed token system
 
-The escrow / lock system follows Camelot's xGRAIL pattern.
+The **legacy** escrow / lock system, which follows Camelot's xGRAIL pattern. New esALB and govALB are listed under [Alien Base 2.0](#new-token-system-aip-5); legacy esALB migrates 1:1 via the [Migration Guide](migration/README.md).
 
 | Component                                                             | Address                                                                                                                                                                                                                                          | Status                                                                                      | Owner                |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | -------------------- |
-| esALB (`EsToken`, name "Escrowed ALB", symbol `esALB`)                | [`0xe1afc637f41e05efe08d55296a2ccff0072a4587`](https://basescan.org/address/0xe1afc637f41e05efe08d55296a2ccff0072a4587)                                                                                                                          | Active                                                                                      | —                    |
-| esALB (alt — referenced in the historical "Changing allowance" guide) | [`0x365c6d588e8611125De3bEA5B9280C304FA54113`](https://basescan.org/address/0x365c6d588e8611125De3bEA5B9280C304FA54113)                                                                                                                          | Co-deployed 2024-04-25 — see [Changing allowance](escrowed-alb-esalb/changing-allowance.md) | —                    |
+| Legacy esALB (`EsToken`, name "Escrowed ALB", symbol `esALB`) — the one holders actually used (\~223M supply) | [`0x365c6d588e8611125De3bEA5B9280C304FA54113`](https://basescan.org/address/0x365c6d588e8611125De3bEA5B9280C304FA54113)                                                                                                                          | **Superseded**: migrates 1:1 to new esALB                                                    | —                    |
+| esALB co-deployment (2024-04-25, near-zero supply; not the canonical esALB) | [`0xe1afc637f41e05efe08d55296a2ccff0072a4587`](https://basescan.org/address/0xe1afc637f41e05efe08d55296a2ccff0072a4587)                                                                                                                          | Unused                                                                                      | —                    |
 | `EsProxyMaster` (esALB system orchestrator)                           | [`0xd3968a4a07d64c6e16982d45191b9a09a261ec88`](https://basescan.org/address/0xd3968a4a07d64c6e16982d45191b9a09a261ec88)                                                                                                                          | Active                                                                                      | Team deployer (team) |
 | `EsTokenController` (refresh, 2025-06-05)                             | [`0x154d41a96ad37570a2ad6849063d0b480da1ea99`](https://basescan.org/address/0x154d41a96ad37570a2ad6849063d0b480da1ea99)                                                                                                                          | Active                                                                                      | —                    |
 | `esLP-ALB-ETH` (escrowed LP)                                          | [`0x3d3a5ad6d7beab234d7f0338a01e62b1d36d8ea0`](https://basescan.org/address/0x3d3a5ad6d7beab234d7f0338a01e62b1d36d8ea0)                                                                                                                          | Active                                                                                      | —                    |

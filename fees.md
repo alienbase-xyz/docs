@@ -105,11 +105,14 @@ Vaults that auto-compound (Bunni and future Mothership-managed vaults) collect f
 
 ## ALB locking & vesting
 
-* **Locking ALB → esALB:** free. 1:1.
+* **Migrating legacy ALB / esALB → new ALB / esALB:** free (gas only). 1:1. See [Migration Guide](migration/README.md).
+* **Locking ALB → esALB:** free. 1:1. **esALB → govALB:** free, 1:1, one-way.
 * **Unlocking esALB → ALB:**
-  * 30-day full unlock: free, no penalty. Vested position continues to earn at a 30%-reduced APR until redemption.
-  * 1% every 12 hours: free, instant.
-  * Redemption window: 7 days after the 30-day vesting completes — if not claimed in 7 days, the position auto-relocks for another 30 days.
+  * Standard unstake: redeem from day 30 at **85%**, rising linearly to **100% at day 60**. 70% of the vesting amount keeps earning meanwhile. The share you leave behind by redeeming before day 60 is paid to esALB / govALB holders as ALB, not to the team.
+  * Instant: **2%** of your position every 48 hours, 1:1, no penalty.
+  * No redemption window or auto-relock: a finished position waits at 100% until you claim it.
+* **Unlocking govALB → ALB:** 2-year unstake, then 100%. Instant allowance of 1.436% of the position every 7 days.
+* **Legacy esALB** (pre-migration): 100% after a 30-day unlock with a 7-day claim window (auto-relock if missed), or 1% instantly every 12 hours.
 * **Vesting (multi-year):** the AIP-4 / VestingFactory streams have no user-facing fee; they are an internal accounting facility for team / DAO contributors.
 
 ## Token Generator

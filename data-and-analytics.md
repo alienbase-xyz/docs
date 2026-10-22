@@ -6,11 +6,23 @@ description: Where to find live data on Alien Base — token, trading, liquidity
 
 Alien Base data is published live across several venues. The **Dune dashboard maintained by Sealaunch** is the canonical, team-developed source — start there for anything that requires depth (per-pair volume, holder analysis, esALB lock/unlock flows, DEX benchmark comparisons). External market-data sites are still useful for headline numbers and price tracking.
 
-> *Last updated: July 6, 2026.*
+> *Last updated: October 22, 2026.*
 
-## Market snapshot
+## ALB supply (live)
 
-Point-in-time figures, refreshed manually. Treat these as a sanity check, not live data — click through to the source for the current number.
+Since the [Alien Base 2.0 migration](migration/README.md), ALB lives at [`0x1b23…cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7). Live supply figures for the new token come from the public supply API:
+
+| Endpoint | Returns |
+| --- | --- |
+| [`https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/circulating`](https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/circulating) | Circulating supply (plain number, whole ALB) |
+| [`https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/total`](https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/total) | Total supply (plain number, whole ALB) |
+| [`https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/supply`](https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/supply) | Both, as JSON |
+
+**Circulating supply** = total supply − ALB backing new esALB − ALB backing govALB − ALB held by the DAO Multisig. Max supply is fixed at **1,051,000,000**. Methodology and on-chain sources: [ALB Token → Supply](alb-token.md#supply).
+
+## Market snapshot (legacy ALB, July 2026)
+
+Point-in-time figures for the **legacy** ALB, refreshed manually before the migration. Treat these as historical context, not live data; trackers are being switched to the new contract.
 
 | Metric | Value | As of | Source |
 | --- | --- | --- | --- |
@@ -22,6 +34,8 @@ Point-in-time figures, refreshed manually. Treat these as a sanity check, not li
 | All-time high | $0.5724 on 2024-11-27 (−99% from ATH) | 2026-07-06 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) |
 | TVL | ~$1.63M pooled + ~$1.04M staked | 2026-07-06 | [DefiLlama](https://defillama.com/protocol/alien-base) |
 | Deepest pool | ALB/WETH on Alien Base, ~$172k liquidity | 2026-07-06 | [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) |
+
+New ALB pools: [DexScreener (new ALB)](https://dexscreener.com/base/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7).
 
 > **esALB share, holder counts, per-pair volume, lifetime trades/users, and protocol-fee totals** are not exposed by these public APIs — read them off the [Dune dashboard](https://dune.com/sealaunch/alienbase) (`ALB Token & esALB` and `Alien Base Overview` panels) and update the [Welcome page](README.md) Quick Stats when they move materially. <!-- TODO:USER refresh esALB-locked %, holder counts, lifetime users from Dune -->
 
@@ -59,13 +73,13 @@ Best for: headline TVL, fees-collected, lifetime-volume figures.
 | Site | Use |
 | --- | --- |
 | [CoinGecko](https://www.coingecko.com/en/coins/alienbase) | Price, market cap, fully-diluted valuation, social links, watchlists |
-| [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) | Every ALB pool on every DEX on Base, live trade tape |
+| [DexScreener](https://dexscreener.com/base/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7) | Every ALB pool on every DEX on Base, live trade tape ([legacy ALB](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)) |
 | [GeckoTerminal](https://www.geckoterminal.com/) | Alternate pool view; cleaner charts on illiquid pairs |
 | [CoinMarketCap](https://coinmarketcap.com/currencies/alien-base/) | Price, supply, and market-cap tracking (listed since launch year) |
 
 ## On-chain explorers
 
-- **[Basescan](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)** — primary explorer for Base. Token holders, transfers, contract reads/writes.
+- **[Basescan](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7)** — primary explorer for Base ([legacy ALB](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)). Token holders, transfers, contract reads/writes.
 - **[Blockscout](https://base.blockscout.com/)** — alternative explorer; sometimes faster on read-only queries; native API isn't blocked by Cloudflare.
 
 ## Governance & treasury

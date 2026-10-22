@@ -6,7 +6,7 @@ description: What's shipping next on Alien Base
 
 Alien Base's mission is to be the human-friendly trading hub on Base — a full-stack platform that aggregates the entire chain's liquidity behind a CEX-quality interface, with custom protocols built on top to push capital efficiency further than any single DEX could.
 
-> _Last updated: July 6, 2026._ _For what already shipped, see the_ [_Changelog_](changelog.md)_. This page focuses on what's coming._
+> _Last updated: October 22, 2026._ _For what already shipped, see the_ [_Changelog_](changelog.md)_. This page focuses on what's coming._
 
 ## Right now
 
@@ -16,7 +16,7 @@ The active build cycle is the **Alien Base 2.0** rollout authorized by [AIP-5](h
 | ------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Trading terminal + Epsilon Router** | **Shipped — July 2026**                      | Full app redesign around a TradingView-powered trading terminal, plus the on-chain Epsilon Router ([`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580)) with native order types: Limit, Take Profit, Stop Loss, Trailing Stop, trigger-price DCA, stop-loss DCA. Audited. See [Epsilon](trading/epsilon.md). |
 | **Mothership** (ALM)                  | Pre-launch — audit in flight, alpha imminent | Custom-built Automated Liquidity Manager. First "from-scratch" Alien Base protocol. Multi-range V3 management with strategy-plugin architecture. Public alpha launches with strict supply caps.                                                                                                                                                   |
-| **Alien Base 2.0 tokenomics**         | Onchain rollout in progress                  | POL Fund, Dev Line of Credit, govALB token, raised supply cap (cap raise not yet executed on-chain). See [ALB Token](alb-token.md#alien-base-2-0-aip-5).                                                                                                                                                                                          |
+| **Alien Base 2.0 tokenomics**         | **New token live — migration open (Oct 2026)** | New ALB (1.051B cap), esALB and govALB contracts, staking, Distributor and Line of Credit deployed. Legacy ALB / esALB migrate 1:1 with no deadline ([Migration Guide](migration/README.md)). Still rolling out: POL Fund operations, farming wind-down, esALB protection program, public LoC / POL dashboards. See [Alien Base 2.0](alien-base-2-0.md). |
 | **Vaults**                            | Live since Jan 2026; redesigned July 2026    | Unifies V3 strategy vaults (Wide / Narrow / Ultra Narrow / Classic V3), Locked earn (esALB + esLP), and Legacy farms in one page.                                                                                                                                                                                                                 |
 | **Explorer** (Epsilon Analytics)      | Live since May 2025                          | Chain-wide Explorer, GoPlus-powered token safety checks, per-pool charts.                                                                                                                                                                                                                                                                         |
 
@@ -27,7 +27,7 @@ Themes for the rest of 2026 (subject to DAO and operating-budget refresh):
 * **Mothership Beta** — wider access, multiple strategies, strategy marketplace where third-party LP managers earn fees on user capital.
 * **Token Generator v2** — comprehensive launchpad with fair-launch tooling. Replaces and extends the current Token Generator MVP.
 * **Analytics & Visualization Revamp** — on-chart order overlays + PnL tracking on top of the live TradingView terminal. Deeper Explorer insights including wallet-cluster analysis (multi-wallets per user, bot detection, whale activity, team-sell detection).
-* **Automated esALB reward distribution** — modular fee payouts to esALB stakers, designed to plug into future ALM expansions.
+* **Automated esALB reward distribution** — modular fee payouts to esALB and govALB holders through the new staking contract, designed to plug into future ALM expansions.
 * **Migration of remaining team-controlled contracts** to the DAO Multisig — see the [onchain control surface](audits-and-security.md#onchain-control-surface) for which contracts are still team-owned.
 
 ## Bigger horizons

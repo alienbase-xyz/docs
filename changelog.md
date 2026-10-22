@@ -6,9 +6,15 @@ description: Public, dated record of what shipped on Alien Base
 
 A public, dated record of what shipped on Alien Base, source-cited where possible.
 
-> *Last updated: July 6, 2026.*
+> *Last updated: October 22, 2026.*
 
 ## 2026
+
+### October — New ALB contracts and 1:1 migration
+
+The Alien Base 2.0 token system goes live on Base: a new **ALB** ([`0x1b23…cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7)) with a hard-coded 1,051,000,000 cap, a new **esALB** ([`0x32d9…4473`](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473)) that earns automatically while held, and **govALB** ([`0x7fdb…441d`](https://basescan.org/token/0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d)) with 10× voting power and a 2-year lock. A new staking contract pays ALB and WETH to esALB and govALB holders, and a new multi-stream Distributor replaces the MasterChef-era farms. All of it is owned by the 7-day TimelockController.
+
+The **Migration Contract** ([`0xa53d…9d3d`](https://basescan.org/address/0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d)) opens: legacy ALB and esALB swap 1:1 for the new tokens, with no deadline, at [app.alienbase.xyz/migration](https://app.alienbase.xyz/migration). Public total and circulating supply endpoints launch alongside. See the [Migration Guide](migration/README.md).
 
 ### July — Trading terminal + Epsilon Router launch
 
