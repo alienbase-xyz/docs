@@ -48,7 +48,19 @@ Common causes by transaction type:
 
 ### Lock / esALB tx reverted
 
-- **Approval missing.** Approve ALB for the EsToken contract, then retry. If approve "succeeded" but Lock still fails, see [Managing Token Allowance](managing-token-allowance-guide.md) and the [Changing allowance](../escrowed-alb-esalb/changing-allowance.md) workaround.
+- **Approval missing.** Approve ALB for the esALB contract, then retry. If approve "succeeded" but Lock still fails, see [Managing Token Allowance](managing-token-allowance-guide.md). On **legacy** esALB, also see the [Changing allowance](../escrowed-alb-esalb/changing-allowance.md) workaround.
+- **New esALB / govALB revert reasons:**
+  - `NotWhitelisted` — esALB and govALB can't be sent to other wallets. Only protocol contracts can move them.
+  - `TooEarly` — you tried to finalize an esALB unstake before day 30.
+  - `AmountExceedsAllowance` — the instant redemption is larger than your allowance for the current window (2% per 48 h for esALB).
+  - `WalletCapExceeded` / `SupplyCapExceeded` — the govALB conversion would take your wallet above 5,000,000 govALB, or govALB above its 30,000,000 total cap.
+
+### Migration tx reverted
+
+- **Right after approving:** the approval may not have propagated yet. Wait a few seconds and retry; the migration page re-checks your allowance before each step.
+- **esALB step fails:** your legacy esALB must be unstaked (in your wallet) first. Run the **Unstake esALB** step. Legacy esALB in the middle of a redemption can't be migrated until you finish or cancel that redemption.
+- **`ZeroAmount`:** there's nothing left of that token to migrate in this wallet.
+- More: [Migration FAQ](../migration/faq.md#something-went-wrong).
 
 ### Generic — Basescan tells you why
 

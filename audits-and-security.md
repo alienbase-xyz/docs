@@ -6,7 +6,7 @@ description: Audit status and security posture of Alien Base contracts
 
 This page tracks the security posture of every contract Alien Base has deployed. It is updated whenever a new audit report is published, a new contract is deployed, or a permission boundary changes.
 
-> _Last updated: July 6, 2026._
+> _Last updated: October 22, 2026._
 
 ## Summary
 
@@ -15,7 +15,7 @@ Alien Base contracts fall into three buckets:
 | Bucket                        | What it means                                                                                                                                                                           | Examples                                                                     |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | **Audited**                   | Contracts written by Alien Base, audited by a third party, report complete.                                                                                                             | Epsilon Router (+ off-chain meta-aggregator integration)                     |
-| **Audit upcoming**            | Contracts written by Alien Base that have an audit scoped and in flight, but no report yet. The contract may be live on mainnet behind supply caps or feature flags during this period. | Mothership                                                                   |
+| **Audit upcoming**            | Contracts written by Alien Base that have an audit scoped and in flight, or whose report isn't published yet. The contract may be live on mainnet behind supply caps or feature flags during this period. | Mothership, Alien Base 2.0 contracts                                         |
 | **Inherited upstream audits** | Forks of well-audited upstream protocols. Audit coverage applies only to the unchanged-core parts.                                                                                      | V2 / V3 core, BunniHub, SmartRouter, CarbonController, MasterChef-style farm |
 
 We deliberately do not claim audit coverage we don't have. If you see a third-party article saying "Alien Base contracts have been audited by reputable firms" without naming the firm, date, scope, and report URL, treat it as marketing rather than evidence.
@@ -42,6 +42,16 @@ We deliberately do not claim audit coverage we don't have. If you see a third-pa
 * **Scope:** Alien Base's first ALM (Automated Liquidity Manager). Components include `MothershipVaultRouter`, `MothershipVaultPublic` (ERC-20 share vault), `UniManyDirectCore` (multi-range V3 position manager), and `UniManyDirectHelper`.
 * **Status:** pre-audit hardening complete. The public [`Mothership`](https://github.com/alienbase-xyz/Mothership) repo includes an explicit `audit-scope` commit (Jan 15, 2026) and a fuzz-test suite. The audit firm and report will be published before the MVP is opened to the public without supply caps.
 * **Pre-launch posture:** any Mothership contracts deployed before audit completion run with strict supply caps and gated access; see the [Vaults](liquidity/vaults.md) page for the live status.
+* **Report:** _to be linked here when published._
+
+### New token system (AIP-5)
+
+* **Scope:** the [AIP-5](alien-base-2-0.md) token system: `ALBToken`, `EsALB`, `GovALB` (on the shared `EscrowedToken` base), `StakingContract`, `Distributor`, `MigrationContract`, the Line-of-Credit contracts, the ALB price oracles, and the fee / POL contracts. Addresses: [Contracts](contracts.md#new-token-system-aip-5).
+* **Status:** live on mainnet. The code went through an audit review round before deployment, and the fixes from that round are in the deployed contracts. The full report hasn't been published yet.
+* **Design choices that limit risk:**
+  * The **Migration Contract** has no owner, no pause and no withdraw. It can only take legacy tokens in and mint new ones 1:1.
+  * **New ALB** has a hard-coded 1,051,000,000 cap, only whitelisted minters (Migration Contract, Distributor), and ownership that can't be renounced or bypassed.
+  * Every other 2.0 contract is owned by the **7-day TimelockController**, so admin changes are public for a week before they can execute.
 * **Report:** _to be linked here when published._
 
 ## Inherited upstream audits
@@ -94,11 +104,15 @@ For unchanged-core forks, the upstream auditor's findings transfer. We list what
 
 ## Onchain control surface
 
-A security review is incomplete without checking _who_ can pull which lever. As of July 6, 2026:
+A security review is incomplete without checking _who_ can pull which lever. As of October 22, 2026:
 
 | Contract                                                                            | Privileged role                         | Holder                                 | Type                   |
 | ----------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------- | ---------------------- |
-| ALB token                                                                           | DEFAULT\_ADMIN\_ROLE (OZ AccessControl) | Team Safe / DAO                        | Multisig               |
+| ALB token (new)                                                                     | `owner` (add/revoke minters)            | TimelockController `0x1c7e…1e21`       | 7-day timelock         |
+| ALB token (new)                                                                     | `recoveryAdmin` (rescue stray tokens)   | DAO Safe `0x4ab9070b…71e5`             | 5-of-8 Gnosis Safe     |
+| esALB, govALB, Staking contract, Distributor, LoC Factory, price oracle (2.0)       | `owner`                                 | TimelockController `0x1c7e…1e21`       | 7-day timelock         |
+| Migration Contract                                                                  | none                                    | —                                      | No admin functions     |
+| ALB token (legacy)                                                                  | DEFAULT\_ADMIN\_ROLE (OZ AccessControl) | Team Safe / DAO                        | Multisig               |
 | V2 Factory                                                                          | `feeToSetter`                           | DAO Safe `0x4ab9070b…71e5`             | 5-of-8 Gnosis Safe     |
 | V3 Factory                                                                          | `owner`                                 | DAO Safe                               | 5-of-8 Gnosis Safe     |
 | `UniversalDistributorController` (current farm controller, active since 2025-06-05) | `owner`                                 | DAO Safe                               | 5-of-8 Gnosis Safe     |
@@ -109,7 +123,7 @@ A security review is incomplete without checking _who_ can pull which lever. As 
 ## Multisig & timelock
 
 * **DAO Multisig**: [`0x4ab9070b7680f802cbf8322e597a4409902171e5`](https://basescan.org/address/0x4ab9070b7680f802cbf8322e597a4409902171e5) — 5-of-8 Gnosis Safe. Signers and policy: see [DAO Multisig](alien-base-dao/dao-multisig.md).
-* **Timelock**: an OpenZeppelin `TimelockController` is deployed at [`0x1c7e4284…1e21`](https://basescan.org/address/0x1c7e4284423c1a2362c49b1ea223b73e38c81e21). The original `DistributorController` enforces a 7-day delay on emission-rate changes; ALB token mint changes go through a 14-day total time lock.
+* **Timelock**: an OpenZeppelin `TimelockController` is deployed at [`0x1c7e4284…1e21`](https://basescan.org/address/0x1c7e4284423c1a2362c49b1ea223b73e38c81e21). Its minimum delay is **7 days**, and it owns every Alien Base 2.0 contract except the Migration Contract. On the legacy stack, the original `DistributorController` enforces a 7-day delay on emission-rate changes and legacy ALB mint changes go through a 14-day total time lock.
 
 ## Bug bounty
 

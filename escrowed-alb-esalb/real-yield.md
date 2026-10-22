@@ -8,7 +8,7 @@ description: How protocol fees are distributed to esALB stakers as WETH yield
 
 It's the central reason esALB exists: instead of diluting holders with emissions, the protocol returns a portion of its actual revenue to the people who lock long-term.
 
-> _Last updated: July 6, 2026._
+> _Last updated: October 22, 2026._ With Alien Base 2.0, Real Yield is paid to holders of the **new** esALB and govALB. Old esALB holders should [migrate](../migration/README.md).
 
 ## How it works
 
@@ -37,16 +37,18 @@ Protocol-share collection mechanics:
 * **Epsilon platform fees** on every swap — **0.01%** stables / **0.05%** blue chips / **0.15%** everything else, plus the flat 0.05% Matcher execution fee. Routed to the Treasury / esALB stream.
 * **Epsilon Router orders** — The 0.05% Protocol fee is routed to the esALB real yield stream. Full table: [Fees](../fees.md).
 
-The protocol share is converted into **WETH** (and select stablecoins / partner tokens) and distributed pro-rata to esALB stakers via the EsToken reward distributor (`EsTokenController` and the rewarder family — see [Contracts](../contracts.md)).
+The protocol share is converted into **WETH** (and select stablecoins / partner tokens) and distributed pro-rata to esALB and govALB holders through the Alien Base 2.0 **staking contract** ([`0x28a3…85cf`](https://basescan.org/address/0x28a3c9852383eef436a874b74d2acf23047e85cf)). Before the migration this ran through the legacy `EsTokenController` and rewarder family (see [Contracts](../contracts.md)).
 
 ## What you receive
 
-When you stake esALB in the esALB Single Stake vault:
+When you hold new esALB or govALB (no staking step needed):
 
-* **Unlocked ALB rewards** — the standard farm-style emissions stream.
-* **Real Yield** — primarily WETH; some weeks may include USDC, ETH, or tokens received as fees.
+* **ALB rewards** — including the ALB left behind by holders who exit esALB early.
+* **Real Yield** — primarily WETH; some weeks may include other tokens received as fees.
 
-Both streams are claimable from the same Vaults page UI ("Harvest" / "Claim All").
+Rewards are shared per token: 1 esALB and 1 govALB earn the same. Claim them from the app, or call `claim` on the staking contract with the reward tokens you want.
+
+_Legacy esALB_ earned these streams only while staked in the esALB Single Stake vault, and they were claimed with "Harvest" / "Claim All" on the Vaults page.
 
 ## Historical context
 
@@ -55,6 +57,7 @@ Both streams are claimable from the same Vaults page UI ("Harvest" / "Claim All"
 * AIP-2 (Nov 2023) established the V3 LP / staker fee-sharing structure that powers Real Yield today.
 * AIP-3 (Oct 2024) noted that \~50% of trade-fee revenue was already being redistributed to esALB holders by that point.
 * AIP-5 (Apr 2026) preserves Real Yield and adds the POL Fund's buyback-and-burn flywheel on top.
+* Alien Base 2.0 migration (Oct 2026): Real Yield moves to the new staking contract and is paid automatically to new esALB and govALB holders.
 
 ## See also
 

@@ -8,6 +8,10 @@ description: Escrowed LP positions — locked liquidity that earns boosted yield
 
 > *Last updated: July 6, 2026.* esLP was introduced after esALB shipped (April 2024) and is referenced in the [Welcome page](../README.md) and the AIP-2 fee-split structure.
 
+{% hint style="warning" %}
+**Alien Base 2.0:** esLP positions are built on the **legacy** ALB and legacy escrow system. They are not migrated automatically. To move to the new token, unlock your esLP, withdraw the LP to get legacy ALB + ETH, then [migrate the ALB 1:1](../migration/README.md). See the [Migration FAQ](../migration/faq.md#what-about-my-lp-positions-and-vaults).
+{% endhint %}
+
 ## What esLP is
 
 A non-transferable, lock-wrapped version of an LP token (currently ALB-ETH V2). The pattern is identical to esALB:
@@ -15,7 +19,7 @@ A non-transferable, lock-wrapped version of an LP token (currently ALB-ETH V2). 
 - Lock LP → esLP **1:1**.
 - esLP earns higher emissions than the unlocked LP farm.
 - esLP also receives a share of the **Real Yield** stream (WETH from protocol fees).
-- Unlock paths mirror esALB: 100% after a 30-day cooldown (no penalty) or 1% instantly every 24 hours.
+- Unlock paths mirror legacy esALB: 100% after a 30-day cooldown (no penalty) or 1% instantly on a cooldown.
 
 ## Why use esLP
 

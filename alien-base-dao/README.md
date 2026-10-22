@@ -20,7 +20,9 @@ Alien Base is governed by the holders of $ALB through the Alien Base DAO. Decisi
 
 Voting power is weighted by **esALB** holdings (and selected esLP variants), not raw ALB. The full strategy is implemented as a fork of Snapshot's strategies engine — see [`alienbase-xyz/snapshot-strategies`](https://github.com/alienbase-xyz/snapshot-strategies) and the on-chain `EsVoting` helpers ([`0x3f8d116e…ddc1`](https://basescan.org/address/0x3f8d116e99bce42b38989a62394fa9bb532dddc1) and [`0xd3cfcb52…2e7b`](https://basescan.org/address/0xd3cfcb52ec5715652c5096bdf99ea078c4df2e7b)).
 
-Under [AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2), a new **govALB** token will offer **10× voting power** in exchange for a \~2-year effective lock — designed to align voting weight with long-term commitment. Mechanics will be documented as it goes live.
+Under [AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2), **govALB** ([`0x7fdb…441d`](https://basescan.org/token/0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d)) offers **10× voting power** in exchange for a 2-year lock, designed to align voting weight with long-term commitment. It's live: convert esALB 1:1 into govALB ([mechanics](../escrowed-alb-esalb/README.md#govalb)).
+
+With the [Alien Base 2.0 migration](../migration/README.md), voting weight moves to the **new** esALB and govALB. Each proposal's Snapshot page lists the exact strategies (and so the tokens) it counts. If you still hold legacy esALB, migrate it so your voting power carries over.
 
 ## How decisions move from idea to execution
 

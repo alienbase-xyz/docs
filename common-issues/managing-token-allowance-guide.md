@@ -28,7 +28,11 @@ If you encounter transaction failures, it might be due to insufficient allowance
 
 Here’s how you can adjust the allowances to ensure proper functionality of your interactions:
 
-**Setting Allowance**:
+**Migration approvals**: the [ALB migration](../migration/README.md) uses a normal ERC-20 `approve` of your **legacy ALB or legacy esALB** to the Migration Contract `0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d`. If a migration step reverts right after approving, wait a few seconds and retry. Never approve your tokens to any other address in the name of "migration".
+
+**Setting `approveUsage` allowance (legacy esALB only)**:
+
+The steps below apply to the **legacy** esALB, which used a custom usage-allowance for staking. The new esALB has no such step.
 
 * **Navigate to the Smart Contract**: Visit [Basescan's Contract Interaction Page](https://basescan.org/token/0x365c6d588e8611125De3bEA5B9280C304FA54113#writeContract).
 * **Connect Your Wallet**: Click 'Connect to Web3' to interact with the blockchain.

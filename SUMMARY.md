@@ -2,6 +2,11 @@
 
 * [Welcome to Alien Base](README.md)
 
+## ALB Migration
+
+* [Migration Guide](migration/README.md)
+* [Migration FAQ](migration/faq.md)
+
 ## Get Started
 
 * [Bridging to Base](get-started/bridging-to-base.md)
@@ -25,11 +30,11 @@
 * [V2 Pools (legacy)](liquidity/v2-pools.md)
 * [Mothership (pre-launch)](liquidity/mothership.md)
 
-## ALB & esALB
+## ALB, esALB & govALB
 
 * [ALB Token](alb-token.md)
-* [Escrowed ALB (esALB)](escrowed-alb-esalb/README.md)
-  * [Changing allowance](escrowed-alb-esalb/changing-allowance.md)
+* [Escrowed ALB (esALB) & govALB](escrowed-alb-esalb/README.md)
+  * [Changing allowance (legacy)](escrowed-alb-esalb/changing-allowance.md)
 * [esLP](escrowed-alb-esalb/eslp.md)
 * [Vesting](escrowed-alb-esalb/vesting.md)
 * [Real Yield (WETH)](escrowed-alb-esalb/real-yield.md)

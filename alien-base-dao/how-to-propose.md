@@ -12,7 +12,7 @@ A practical guide for ALB holders who want to submit a proposal.
 
 You need:
 
-- **At least 100,000 ALB of voting power**, in **esALB** form (or supported esLP variants), at the snapshot block.
+- **At least 100,000 ALB of voting power**, in **esALB** / **govALB** form (or supported esLP variants), at the snapshot block. Since the [migration](../migration/README.md), that means the new esALB and govALB; govALB counts 10×.
 - An **EVM wallet** that owns those tokens.
 - A clear thesis. Vague proposals lose votes regardless of how good the underlying idea is.
 

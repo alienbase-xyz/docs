@@ -4,6 +4,10 @@ description: Welcome to Alien Base
 
 # Welcome to Alien Base
 
+{% hint style="warning" %}
+**ALB has moved to a new contract.** Swap old ALB and esALB **1:1** for the new tokens at [app.alienbase.xyz/migration](https://app.alienbase.xyz/migration). No deadline, no fee. Read the [Migration Guide](migration/README.md) and [FAQ](migration/faq.md).
+{% endhint %}
+
 ## What is Alien Base?
 
 Alien Base is a meta-DEX native to the Base chain. It combines new and existing DeFi technologies in an accessible interface to give seasoned and new DeFi users the best tools available for **trading**, **providing liquidity**, and **launching new projects**.
@@ -14,16 +18,16 @@ What does that mean? We don't really know — ChatGPT wrote it. But in plain Ear
 
 * **Trade any token on Base** in a full trading terminal — Swaps, Limit orders, Take Profit, Stop Loss, Trailing Stops, and DCA, all executed on-chain by the Epsilon Router.
 * **Provide liquidity** in Concentrated-Liquidity (V3) pools, or strategy Vaults to earn fees and ALB rewards.
-* **Lock $ALB into esALB** for governance, single-staking, and Real Yield in WETH from protocol fees.
+* **Lock $ALB into esALB or govALB** for governance and rewards, including Real Yield in WETH from protocol fees.
 * **Launch a token** with the Token Generator — Simple, Mintable, Burnable, Mint/Burn, or Tax templates, ready for trading on Alien Base or any other DEX.
 * **Discover and analyze** every token, pool, and trade on Base via the Explorer — our chain-wide analytics layer.
-* **Vote on protocol decisions** as an esALB holder via Snapshot.
+* **Vote on protocol decisions** as an esALB or govALB holder via Snapshot.
 
 ## Quick Stats
 
 |                      |                                                                                             |
 | -------------------- | ------------------------------------------------------------------------------------------- |
-| Token                | $ALB ([0x1dd2…50c4](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)) |
+| Token                | $ALB ([0x1b23…cef7](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7)). Legacy: [0x1dd2…50c4](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4), [migrate 1:1](migration/README.md) |
 | Network              | Base (ChainId 8453)                                                                         |
 | Launch               | August 8, 2023                                                                              |
 | Lifetime swap volume | \~$2.86 B                                                                                   |
@@ -32,7 +36,7 @@ For up-to-date market data, see our [Dune dashboard](https://dune.com/sealaunch/
 
 ## Where can I start?
 
-1. **Track ALB and Alien Base** on [CoinGecko](https://www.coingecko.com/en/coins/alienbase), [CoinMarketCap](https://coinmarketcap.com/currencies/alien-base/), [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4), and inside [Coinbase Wallet](https://www.coinbase.com/wallet). Add us to your watchlist.
+1. **Track ALB and Alien Base** on [CoinGecko](https://www.coingecko.com/en/coins/alienbase), [CoinMarketCap](https://coinmarketcap.com/currencies/alien-base/), [DexScreener](https://dexscreener.com/base/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7), and inside [Coinbase Wallet](https://www.coinbase.com/wallet). Add us to your watchlist.
 2. **Join our community** — [Discord](https://discord.gg/alienbase) is the main hub. Real humans, real Aliens, lively debate on Alien Base, Base in general, memecoins, and beyond.
 3. **Explore the dApp** at [app.alienbase.xyz](https://app.alienbase.xyz). If anything breaks, ping the team on Discord — someone will respond.
 4. **Read these docs** — tutorials and reference material for every product.
@@ -78,15 +82,21 @@ Full breakdown — including per-tier rationale, historical changes, and how eac
 
 ### What is esALB?
 
-esALB ("escrowed ALB") is a non-transferable lock-wrapped form of ALB. You convert ALB → esALB 1:1 via **Lock & Earn** on the [Dashboard](https://app.alienbase.xyz/dashboard). esALB is what earns governance voting power, single-staking APR (paid in ALB), and **Real Yield** (paid in WETH from protocol fees).
+esALB ("escrowed ALB") is a non-transferable, locked form of ALB. You convert ALB → esALB 1:1. Holding esALB earns rewards in ALB and **Real Yield** in WETH from protocol fees, automatically, and gives you governance voting power. For 10× voting power with a 2-year lock, convert it to **govALB**.
 
-You can convert back at any time via two paths, mixable: 100% after a 30-day cooldown (no penalty), or 1% instantly every 12 hours. [Full guide](escrowed-alb-esalb/).
+To exit, start an unstake: from day 30 you can redeem 85%, rising to 100% at day 60, and 70% of the position keeps earning meanwhile. There's also a 2% instant redemption allowance every 48 hours. [Full guide](escrowed-alb-esalb/).
+
+Holding the **old** esALB? [Migrate it 1:1](migration/README.md); the new esALB starts earning straight away.
 
 ### How do I stake ALB?
 
-1. Acquire ALB on the [Swap](https://app.alienbase.xyz/swap) page (any pair routed through Epsilon will give the best price).
-2. Open the [Dashboard](https://app.alienbase.xyz/dashboard) and click **Lock & Earn** (or use **Lock & Stake** under Vaults → Locked earn).
-3. Pick the **esALB** farm, choose how much to lock, and confirm. Your ALB converts 1:1 to non-transferable esALB and is staked automatically — rewards start accruing immediately.
+1. Acquire ALB on the [Swap](https://app.alienbase.xyz/swap) page (any pair routed through Epsilon will give the best price). Holding old ALB? [Migrate it first](migration/README.md).
+2. Lock it into esALB from the [Dashboard](https://app.alienbase.xyz/dashboard) (**Lock & Earn**). Your ALB converts 1:1 to non-transferable esALB.
+3. That's it. esALB earns while it sits in your wallet; there's no separate staking step. Details: [esALB](escrowed-alb-esalb/).
+
+### What's the ALB migration?
+
+[AIP-5](alien-base-2-0.md) moved ALB, esALB and the new govALB to a fresh set of contracts with a 1.051B supply cap. Old ALB and esALB swap **1:1** at [app.alienbase.xyz/migration](https://app.alienbase.xyz/migration), with no deadline. See the [Migration Guide](migration/README.md) and [FAQ](migration/faq.md).
 
 ### Is the team doxxed?
 
@@ -98,11 +108,13 @@ The team and its operating companies are doxxed to the **Base** and **Coinbase**
 
 Full canonical list in [Contracts](contracts.md). The headline ones:
 
-* ALB token: [`0x1dd2…50c4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)
+* ALB token: [`0x1b23…cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7) (legacy [`0x1dd2…50c4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4))
+* esALB: [`0x32d9…4473`](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473) · govALB: [`0x7fdb…441d`](https://basescan.org/token/0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d)
+* Migration Contract: [`0xa53d…9d3d`](https://basescan.org/address/0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d)
 * Epsilon Router (orders): [`0x303c…2580`](https://basescan.org/address/0x303ca5c65AabCb1CE242DF93F478c41E0E4D2580)
 * V2 Factory / Router / Farm: see [Contracts](contracts.md)
 * V3 Factory / SmartRouter / NFTPositionManager / BunniHub: see [Contracts](contracts.md)
-* esALB system (EsToken, EsProxyMaster, EsTokenController): see [Contracts](contracts.md)
+* Legacy esALB system (EsToken, EsProxyMaster, EsTokenController): see [Contracts](contracts.md)
 * Token Generator orchestrator: [`0xBcE7…d08d`](https://basescan.org/address/0xBcE75497D72b25c3509B62ae1a47CCfb502AD08d)
 * DAO Multisig (5-of-8 Safe): [`0x4ab9…71e5`](https://basescan.org/address/0x4ab9070b7680f802cbf8322e597a4409902171e5)
 
@@ -113,9 +125,10 @@ Source code lives in [github.com/alienbase-xyz](https://github.com/alienbase-xyz
 ## Documentation map
 
 * [**Get Started**](get-started/bridging-to-base.md) — bridging, wallets, and buying ALB
+* [**ALB Migration**](migration/README.md) — move old ALB / esALB to the new contracts, 1:1
 * [**Trading**](trading/swap.md) — the trading terminal, Epsilon, Limit / Stop / Trailing Stop / DCA orders
 * [**Liquidity**](liquidity/vaults.md) — Vaults, V3, Bunni, V2, Mothership
-* [**ALB & esALB**](alb-token.md) — tokenomics, staking, vesting, Real Yield
+* [**ALB & esALB**](alb-token.md) — tokenomics, supply, esALB, govALB, vesting, Real Yield
 * [**Governance**](alien-base-dao/) — DAO, Foundation, Labs, AIP index
 * [**Builders**](tools-for-projects/token-generator/) — Token Generator and listing your project
 * [**Reference**](contracts.md) — Contracts, Fees, Audits & Security, Glossary
@@ -123,4 +136,4 @@ Source code lives in [github.com/alienbase-xyz](https://github.com/alienbase-xyz
 * [**Common Issues**](common-issues/rpc-troubleshooting-guide.md)
 * [**Archive**](archive/) — deprecated products (Area 51, StableSwap, Carbon orders, B3, Predictions, Lottery)
 
-> _Last updated: July 6, 2026. Found something out of date? Open an issue on_ [_github.com/alienbase-xyz/docs_](https://github.com/alienbase-xyz/docs/issues) _or ping the team on Discord._
+> _Last updated: October 22, 2026. Found something out of date? Open an issue on_ [_github.com/alienbase-xyz/docs_](https://github.com/alienbase-xyz/docs/issues) _or ping the team on Discord._

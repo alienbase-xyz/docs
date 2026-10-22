@@ -85,6 +85,8 @@ Full tokenomics rewrite. Replaces farming with a **Protocol-Owned-Liquidity (POL
 - **Supply cap raised** (one-time): **510,000,000 → 1,051,000,000 ALB**. Direct allocation increase = 200M; remainder reserved for esALB protection program and strategic allocations. Expected actual supply post-rollout ≤ 800M.
 - **Governance split** between Alien Base DAO (onchain contracts) and Alien Labs (offchain product/frontend/revenue).
 
+**Implementation (Oct 2026):** delivered as a new token system (new ALB with the 1.051B cap, new esALB, govALB, staking, Distributor) with a 1:1 migration from legacy ALB / esALB. See [Alien Base 2.0](../alien-base-2-0.md) and the [Migration Guide](../migration/README.md).
+
 The minority dissent (0.36 M for "keep halvings") is the only non-zero "no" vote in the project's history.
 
 ## Author concentration

@@ -6,29 +6,72 @@ description: ALB tokenomics, emission history, and value flow
 
 ALB is the native token of Alien Base — used for governance, staking, liquidity incentives, and the platform's Real Yield rewards system.
 
-> _Last updated: July 6, 2026._
+> _Last updated: October 22, 2026._
+
+{% hint style="warning" %}
+**ALB has moved to a new contract.** Under [AIP-5](alien-base-2-0.md), ALB and esALB were redeployed as part of Alien Base 2.0. Old ALB and old esALB swap **1:1** for the new tokens, with no deadline. See the [Migration Guide](migration/README.md).
+{% endhint %}
 
 ## At a glance
 
-|                        |                                                                                                                       |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Token contract         | [`0x1dd2d631c92b1aCdFCDd51A0F7145A50130050C4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) |
-| Standard               | ERC-20 (18 decimals), OpenZeppelin AccessControl                                                                      |
-| Network                | Base (chain id 8453)                                                                                                  |
-| Token Generation Event | August 8, 2023                                                                                                        |
-| Current max supply     | 510,000,000 ALB                                                                                                       |
-| Currently minted       | \~465,000,000 ALB (\~91% of cap)                                                                                      |
-| Circulating supply     | \~234,000,000 ALB (\~46% of cap)                                                                                      |
-| Mint timelock          | 14 days (no insider mint without delay)                                                                               |
+|                        |                                                                                                                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Token contract         | [`0x1b23704e3f4bc7081fb00cec582183e3fe43cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7)            |
+| Name / symbol          | Alien Base Token / ALB                                                                                                           |
+| Standard               | ERC-20, 18 decimals, burnable                                                                                                    |
+| Network                | Base (chain id 8453)                                                                                                             |
+| Max supply             | **1,051,000,000 ALB**, hard-coded in the contract (`MAX_SUPPLY`)                                                                 |
+| Who can mint           | Only whitelisted minters: the [Migration Contract](migration/README.md) and the new farm Distributor, never above the cap         |
+| Admin                  | 7-day [TimelockController](https://basescan.org/address/0x1c7e4284423c1a2362c49b1ea223b73e38c81e21); ownership can't be renounced |
+| Live supply            | [Supply section](#supply) below, or the [public supply API](#supply-api)                                                         |
+| Legacy token           | [`0x1dd2d631…50C4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) (TGE August 8, 2023), migrates 1:1   |
 
-For up-to-date market data: [CoinGecko](https://www.coingecko.com/en/coins/alienbase) · [DexScreener](https://dexscreener.com/base/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4) · [DefiLlama](https://defillama.com/protocol/alien-base-v3).
+For market data: [DexScreener (new ALB)](https://dexscreener.com/base/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7) · [CoinGecko](https://www.coingecko.com/en/coins/alienbase) · [DefiLlama](https://defillama.com/protocol/alien-base-v3). Trackers are being switched to the new contract; until they are, some may still show the legacy token.
 
 ## What ALB is for
 
-* **Governance.** ALB locked into [esALB](escrowed-alb-esalb/) carries voting power on Snapshot. Soon, [govALB](alb-token.md#alien-base-2-0-aip-5) will offer 10× voting weight in exchange for a 2-year lock.
+* **Governance.** ALB locked into [esALB](escrowed-alb-esalb/) carries voting power on Snapshot. [govALB](escrowed-alb-esalb/#govalb) offers 10× voting weight in exchange for a 2-year lock.
 * **Real Yield.** esALB stakers earn a share of protocol fees, paid in **WETH** and other liquid assets — not in extra ALB. This is the heart of the value-distribution model: the protocol's revenue goes back to long-term holders.
 * **Liquidity incentives.** Active LPs in V2 and V3 vaults earn ALB emissions on top of pool fees. (Note: [AIP-5](https://snapshot.org/#/alienbase-dex.eth/proposal/0x9328ecc5a0d2527a1e73fd30085e7ba2120a985b7782ce843f15ee2ddf38ca63) replaces farming with a Protocol-Owned-Liquidity model — see below.)
-* **Single-staking.** Lock ALB → esALB and stake esALB to earn unlocked ALB rewards.
+* **Single-staking.** Lock ALB → esALB (or govALB). Holding it is enough to earn ALB and WETH rewards; there's no separate staking step on the new contracts.
+
+## Supply
+
+The new ALB starts from zero and is minted only in two ways: **1:1 against migrated legacy ALB / esALB**, and **emissions** through the new farm Distributor. Both are bounded by the hard cap of **1,051,000,000 ALB**. Legacy ALB that is migrated is locked in the Migration Contract forever, so it leaves circulation as the new supply grows.
+
+### Circulating supply definition
+
+**Circulating supply = total supply − ALB backing new esALB − ALB backing govALB − ALB held by the [DAO Multisig](alien-base-dao/dao-multisig.md).**
+
+esALB and govALB are fully backed by ALB held inside their contracts, so that ALB is locked rather than circulating. The DAO Multisig's ALB is treasury, not float.
+
+### Snapshot (October 22, 2026)
+
+| Metric                             | Value                     |
+| ---------------------------------- | ------------------------- |
+| Max supply                         | 1,051,000,000 ALB         |
+| Total supply (new ALB)             | \~653,416 ALB             |
+| ALB backing new esALB              | \~1,832 ALB               |
+| ALB backing govALB                 | 160 ALB                   |
+| Legacy ALB migrated so far         | \~349,693 ALB             |
+| Legacy esALB migrated so far       | \~1,983 esALB             |
+| Legacy ALB total supply            | \~485,407,206 ALB         |
+
+These numbers move every time someone migrates. Use the API below or read the contracts for live values.
+
+### Supply API
+
+Public endpoints for trackers and integrators. They return plain numbers in whole ALB (not wei):
+
+| Endpoint | Returns |
+| --- | --- |
+| [`/prod/circulating`](https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/circulating) | Circulating supply |
+| [`/prod/total`](https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/total) | Total supply |
+| [`/prod/supply`](https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com/prod/supply) | JSON with both: `{"totalSupply": "...", "circulatingSupply": "..."}` |
+
+Base URL: `https://sxxtwqn1v0.execute-api.eu-central-1.amazonaws.com`.
+
+On-chain sources: `totalSupply()` on [ALB](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7#readContract); ALB `balanceOf` the [esALB](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473) and [govALB](https://basescan.org/token/0x7fdb2cbe3dd946b6b4521d4a2cce62296ec1441d) contracts; `totalLegacyALBLocked()` / `totalLegacyEsALBLocked()` on the [Migration Contract](https://basescan.org/address/0xa53d1fd0aae780f5f4f3c2f75a35ca9e74269d3d#readContract).
 
 ## Emission history
 
@@ -43,7 +86,7 @@ Alien Base's emission schedule has changed several times since launch as the DAO
 | 2025-06    | \~1.875 ALB/sec (yearly inflation 30% → 15%)    | 3rd halving — confirmed in the [Oct 2025 roadmap retrospective](https://medium.com/@alienbase/alien-base-roadmap-plotting-the-next-phase-of-the-invasion-11ede525e2ea)                                               |
 | 2026-04    | **Flexible emissions, no fixed halving**        | [AIP-5](https://medium.com/@alienbase/aip-5-building-alien-base-2-0-96dc24984cd2) — replaces farming with POL fund + buyback-and-burn                                                                                |
 
-Today, **\~91% of the original 510M cap has been minted** (\~465M ALB, of which \~234M circulates and the rest is locked as esALB). The team cannot mint additional ALB without going through the 14-day timelock; farming emission parameters are also timelocked for 7 days.
+By mid-2026, **\~91% of the legacy token's 510M cap had been minted** (\~465M ALB, of which \~234M circulated and the rest was locked as esALB). That near-exhausted cap is one of the reasons AIP-5 moved ALB to a new contract with a 1.051B cap. On the legacy token, minting went through a 14-day timelock; on the new token, admin changes go through the 7-day TimelockController and minting is limited to the Migration Contract and the Distributor.
 
 > The original "halving every 9 months" schedule was a launch-time plan. As the project matured, the DAO adjusted the path twice (AIP-3, AIP-4) to align emissions with revenue, and finally replaced the halving model entirely (AIP-5) with a flexible system tied to protocol earnings.
 
@@ -75,6 +118,8 @@ V3 pool fees are split **50/50 between LPs and esALB stakers**; Epsilon swap and
 The full fee table — V2, V3 tiers, Epsilon swaps, Epsilon Router orders (Limit / Stop / Trailing Stop / DCA), Token Generator — is on the [Fees](fees.md) page.
 
 ## Initial supply & distribution
+
+_This section describes the legacy token's launch in 2023. The new token's supply comes entirely from migration and Distributor emissions; see [Supply](#supply)._
 
 The initial 26 million ALB (\~5.1% of the cap) was minted at launch, of which 1 million seeded the original V2 launch liquidity pool. The remaining 25 million was directed to a timelock contract because sniper-bot activity made the planned full liquidity-pool seed impossible at launch.
 
@@ -112,23 +157,28 @@ The team uses bots to TWAP-sell its ALB allocation slowly — both to avoid impa
 * **Splits governance** into **Alien Base DAO** (governs onchain contracts) and **Alien Labs** (offchain product, frontend, revenue).
 * **govALB:** a new staked-escrow form of esALB with **10× voting power**, 1× earning power, and a \~2-year effective lock.
 * **Supply cap raised** (one-time) from **510,000,000 → 1,051,000,000** ALB. Direct allocation increase = 200M; remainder reserved for esALB protection program and strategic allocations. Expected actual supply post-rollout: ≤ 800M.
+* **New token contracts.** Rather than modifying the legacy token, the new cap and mechanics ship as a fresh ALB, esALB and govALB, with a 1:1 [migration](migration/README.md) from the legacy tokens.
 
-Implementation is rolling out now; see [Roadmap](roadmap.md) and [Alien Base 2.0](alien-base-2-0.md) for current status.
+The new contracts are live and migration is open. See [Alien Base 2.0](alien-base-2-0.md) for the rollout status.
 
 ## ALB liquidity
 
-ALB is traded across multiple Base DEXes. As of July 6, 2026 there are \~27 ALB pairs across all venues, dominated by:
+**New ALB** trades on Alien Base V3. Pools as of October 22, 2026:
 
-* **Alien Base** — Several pairs, primary liquidity source with ALB/WETH at [`0xbcd2…6fcB`](https://basescan.org/address/0xbcd27A437eBe92555Cee6b5bBeDdAC639a1b6fcB).
-* **Uniswap** — 3 pools.
-* **Aerodrome / others** — small parallel liquidity.
+* ALB/WETH: [`0xFF43…F1B7`](https://basescan.org/address/0xFF4364b623dC4D9A1556774467748EAb68DfF1B7)
+* ALB/USDC: [`0x4867…c97d`](https://basescan.org/address/0x48676681A1F5BefD4b79273BdA2D85cD5390c97d)
 
-If you swap on Alien Base, [Epsilon](trading/epsilon.md) routes through whichever venue gives the best price (almost always the native pools).
+Live list: [DexScreener (new ALB)](https://dexscreener.com/base/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7).
+
+**Legacy ALB** still trades while holders migrate. As of July 6, 2026 it had \~27 pairs across Base DEXes, led by the Alien Base V3 ALB/WETH pool at [`0xbcd2…6fcB`](https://basescan.org/address/0xbcd27A437eBe92555Cee6b5bBeDdAC639a1b6fcB), plus Uniswap (3 pools) and smaller venues. Legacy ALB bought anywhere can be [migrated](migration/README.md) 1:1.
+
+If you swap on Alien Base, [Epsilon](trading/epsilon.md) routes through whichever venue gives the best price. Always check which ALB contract you're buying.
 
 ## Resources
 
-* ALB on Basescan: [`0x1dd2d631…50c4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4)
-* Source code: [`alienbase-xyz/alienbase-contracts`](https://github.com/alienbase-xyz/alienbase-contracts)
+* ALB on Basescan: [`0x1b23704e…cef7`](https://basescan.org/token/0x1b23704e3f4bc7081fb00cec582183e3fe43cef7) (legacy: [`0x1dd2d631…50c4`](https://basescan.org/token/0x1dd2d631c92b1acdfcdd51a0f7145a50130050c4))
+* [Migration Guide](migration/README.md) and [Migration FAQ](migration/faq.md)
+* Source code: legacy contracts at [`alienbase-xyz/alienbase-contracts`](https://github.com/alienbase-xyz/alienbase-contracts); the Alien Base 2.0 contracts are verified on Basescan (see [Contracts](contracts.md#new-token-system-aip-5))
 * Tokenomics articles on Medium:
   * [Strategic Roadmap Update for Alien Base](https://medium.com/@alienbase/strategic-roadmap-update-for-alien-base-c569f2bfcc46) — Sep 2023
   * [Introducing EsALB: The Next Phase of Alien Base Tokenomics](https://medium.com/@alienbase/introducing-esalb-the-next-phase-of-alien-base-tokenomics-e5bfa049486f) — Apr 2024
