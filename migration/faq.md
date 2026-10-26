@@ -71,7 +71,7 @@ LP tokens, V3 positions, Bunni vaults and esLP positions that contain old ALB ar
 2. Migrate the old ALB you receive on the [migration page](https://app.alienbase.xyz/migration).
 3. If you want to keep providing liquidity, add the new ALB to a new-ALB pool or vault.
 
-Old esLP positions follow their own redemption rules; see [esLP](../escrowed-alb-esalb/eslp.md).
+esLP positions are **withdrawable immediately**, with no unlock period, so step 1 is instant for them. See [esLP](../escrowed-alb-esalb/eslp.md).
 
 ### Are the old farms still running?
 
