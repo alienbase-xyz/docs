@@ -62,7 +62,7 @@ The on-chain contract ([`0x303c…2580`](https://basescan.org/address/0x303ca5c6
 
 ### esALB / esLP
 
-*Escrowed ALB / Escrowed LP.* Locked, non-transferable forms of ALB and select LP tokens that earn voting power, rewards, and Real Yield. New esALB ([`0x32d9…4473`](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473)) earns automatically while held; it redeems at 85% after 30 days rising to 100% at 60 days, or 2% instantly every 48 hours. esLP and legacy esALB follow the older rules (30-day cooldown or 1% instant). See [esALB](escrowed-alb-esalb/README.md).
+*Escrowed ALB / Escrowed LP.* Locked, non-transferable forms of ALB and select LP tokens that earn voting power, rewards, and Real Yield. New esALB ([`0x32d9…4473`](https://basescan.org/token/0x32d9f29170a023794025375df6949f56844e4473)) earns automatically while held; it redeems at 85% after 30 days rising to 100% at 60 days, or 2% instantly every 48 hours. Legacy esALB follows the older rules (30-day cooldown or 1% instant); esLP is withdrawable immediately. See [esALB](escrowed-alb-esalb/README.md).
 
 ### Fair launch
 
