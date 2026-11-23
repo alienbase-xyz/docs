@@ -1,0 +1,11 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Alien Base
+  structure:
+    - type: space
+      key: space-1
+      title: Alien Base
+      path: alienbase
+      default: true
+      content:
+        directory: ./alienbase
